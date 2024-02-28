@@ -1,0 +1,44 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Services from '@/components/Services.astro';
+import Features from '@/components/Features.astro';
+import Hero from '@/components/Hero.astro';
+import SubHero from '@/components/SubHero.astro';
+import Beneficios from '@/components/Beneficios.astro';
+import Consejos from '@/components/Consejos.astro';
+---
+
+<Layout 
+	title="Más Bella - Depilación Láser y estética avanzada"
+	canonical="https://masbellamedical.com"
+	metaTitle="Más Bella - Depilación Láser y estética avanzada"
+	metaDescription="En nuestra clínica Más Bella, brindamos tratamientos personalizados para cada necesidad. Nuestro objetivo es ayudarte a que te sientas bien. Te ayudaremos a encontrar el tratamiento perfecto para lo que necesitas, ofrecemos atención personalizada, responderemos todas tus dudas, contamos con tecnología avanzada y equipos médicos de última generación."
+	metaImg="https://masbellamedical.com/img/welcome.jpg"
+>
+	<!-- Hero Section Begin -->
+    <Hero />
+    <!-- Hero Section End -->
+	<main id="main">
+        <SubHero />
+        
+        <Features />
+
+        <Services />
+   
+        <Beneficios />
+   
+        <Consejos
+            title="Tips para tener en cuenta"
+            subTitle1="Comunica tus necesidades"
+            description1="Habla con tu terapeuta o esteticista sobre tus necesidades y expectativas para que puedan personalizar el tratamiento para ti"
+            subTitle2="Cuida tu piel después del tratamiento"
+            description2="Para mantener los resultados, aplica una crema hidratante y evita exponer tu piel al sol durante unos días después del tratamiento"
+            subTitle3="Descansa adecuadamente"
+            description3="Duerme lo suficiente para permitir que tu piel se recupere y mantenga su apariencia fresca y radiante."
+        />
+    </main>
+</Layout>
+
+<style>
+	
+</style>

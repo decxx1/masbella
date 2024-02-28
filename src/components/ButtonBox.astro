@@ -1,0 +1,19 @@
+<div class="wrapper">
+    <div id="main-div">
+      <div id="main-button" class="tooltip--left wave">
+        <i class="fa fa-comments"></i>
+      </div>
+      <button><i class="fa fa-phone-alt"></i> Primera cita Gratis</button>
+        <a class="tooltip--left telegram-color" target="_blank" href="https://maps.app.goo.gl/ft5wWbRZyTWD1j166" data-tooltip="Ubicación"><i class="fa fa-map-marker"></i></a>
+        <a target="_blank" href="https://wa.me/34621289620" class="tooltip--left whatsapp-color" data-tooltip="WhatsApp"><i class="fa fa-whatsapp"></i></a>
+        <a target="_blank" href="tel:951018043" class="tooltip--left messenger-color" data-tooltip="Teléfono"><i class="fa fa-phone"></i></a>
+    </div>
+</div>
+<script>
+    var mainDiv = document.getElementById('main-button');
+		mainDiv.addEventListener('click', function(){
+			this.children.item(0).classList.toggle('fa-times');
+			this.children.item(0).classList.toggle('fa-comments');
+			this.classList.toggle('open');
+		});
+</script>

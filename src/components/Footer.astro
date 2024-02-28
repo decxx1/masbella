@@ -1,0 +1,152 @@
+---
+import Facebook from '@/components/icons/Facebook.astro';
+import Instagram from '@/components/icons/Instagram.astro';
+import MapMarker from '@/components/icons/MapMarker.astro';
+import Phone from '@/components/icons/Phone.astro';
+import WhatsApp from '@/components/icons/WhatsApp.astro';
+import Envelope from '@/components/icons/Envelope.astro';
+---
+<footer class="footer">
+    <div class="footer__top" >
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4">
+                    <div class="footer__logo">
+                        <a href="./"><img src="img/logo-blanco.png" alt="logo blanco de más bella" style="width:160px"></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-8">
+                    <div class="footer__newslatter text-center">
+                        <p class="text-white text-bold" style="font-size:18px;">La belleza comienza en el amor propio, ámate y siéntete <strong>Más Bella</strong> porque lo importante eres tú</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <div class="footer__social">
+                        <a target="_blank" href="https://www.instagram.com/masbella_medical/">
+                            <Instagram />
+                        </a>
+                        <a target="_blank" href="https://www.facebook.com/profile.php?id=100089553376989">
+                            <Facebook />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" >
+        <div class="row">
+            <div class="col-lg-2 col-md-3 col-sm-6">
+                <div class="footer__widget">
+                    <h5>Enlaces útiles</h5>
+                    <ul>
+                        <li><a href="./">Inicio</a></li>
+                        <li><a href="./about">Sobre Nosotros</a></li>
+                        <li><a href="./servicios">Servicios</a></li>
+                        <li><a href="./contacto">Contacto</a></li>
+                        <li><a class="boton-enlace" data-toggle="modal" data-target="#modal-default">Declaración de cookies</a></li>
+                        <li><a href="./aviso-legal">Aviso Legal</a></li>
+                        <li><a href="./politica-privacidad">Política de Privacidad</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-6">
+                <div class="footer__widget">
+                    <h5>Horarios</h5>
+                    <p style="color:#fff;">Lunes a viernes de 10:00 a 20:30 hs</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="footer__address">
+                    <h5>Contactenos</h5>
+                    <ul>
+                        <li><a target="_blank" href="https://maps.app.goo.gl/ft5wWbRZyTWD1j166">
+                            <MapMarker />
+                            Calle del Mar 6, torre del mar</a>
+                        </li>
+                        <li><a target="_blank" href="tel:951018043">
+                            <Phone />
+                            951 01 80 43</a>
+                        </li>
+                        <li><a target="_blank" href="https://wa.me/34621289620">
+                            <WhatsApp />
+                            621 289 620</a>
+                        </li>
+                        <li><a target="_blank" href="mailto:info@masbellamedical.com">
+                            <Envelope />
+                            info@masbellamedical.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12 col-sm-6">
+                <div class="footer__map">
+                    <a target="_blank" href="https://maps.app.goo.gl/ft5wWbRZyTWD1j166"><img src="./img/map.jpg" alt="mapa MasBella"/></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer__copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    <div class="footer__copyright__text">
+                        <p>Diseñado por <a class="text-white" target="_blank" href="https://manejoweb.com.ar/">ManejoWeb</a></p>
+                    </div>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                </div>
+
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Footer Section End -->
+
+
+
+    <div class="modal fade" id="modal-politicas">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Información básica sobre Protección de datos</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <p>De acuerdo con lo establecido por el Reglamento (UE) 2016/679 del Parlamento
+            Europeo y del Consejo, y de la Ley 3/2018 de Protección de Datos Personales y
+            Garantías de los Derechos Digitales, le informamos que los datos personales aportados
+            serán tratados por MÓNICA GÓMEZ VITALI, con domicilio en C/ Nuestra Señora del
+            Carmen 2, 29740 Torre Del Mar, Málaga (España).</p>
+            <p>Los datos aportados por usted son necesarios para atender su solicitud.</p>
+            <p>La legitimación del Responsable del Tratamiento para realizar el tratamiento de sus
+            datos es: Ejecución de un contrato: Gestión de potenciales clientes que se han interesado
+            sobre nuestros productos y/o servicios. (RGPD, art. 6.1.b, LSSICE art.21). Interés
+            legítimo del Responsable: Gestión de los datos de contacto profesionales (LOPDGDD
+            art.19, RGPD art. 6.1.f).</p>
+            <p>Sobre los destinatarios de los datos, no se cederán datos a terceros, salvo obligación
+            legal.</p>
+            <p>Tiene derecho a acceder, rectificar y suprimir los datos, así como otros derechos,
+            indicados en la información adicional, que puede ejercer dirigiéndose a
+            privacidad@masbellamedical.com o C/ Francisco Guerra 12 Portal 4 1ºC, 06011
+            Badajoz (España).</p>
+            <p>Los datos proceden del propio interesado.</p>
+            <p>Puede consultar información adicional y detallada sobre Protección de Datos aquí:<br/>
+            <a target="_blank" href="./politica-privacidad">Política de privacidad</a></p>
+        </div>
+        <div class="modal-footer justify-content-between">
+          <button type="button" class="btn btn-default w-100" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+
+<style>
+.boton-enlace {
+cursor: pointer;
+}
+</style>

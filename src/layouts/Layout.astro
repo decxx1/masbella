@@ -1,0 +1,144 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ButtonBox from '../components/ButtonBox.astro';
+import ModalDeclaration from '../components/ModalDeclaration.jsx';
+import { ViewTransitions } from 'astro:transitions';
+import '@fontsource/poppins/300.css';
+import '@fontsource/poppins/400.css';
+import '@fontsource/poppins/500.css';
+import '@fontsource/poppins/600.css';
+import '@fontsource/poppins/700.css';
+import '@fontsource/poppins/800.css';
+import '@fontsource/poppins/900.css';
+interface Props {
+	title: string;
+	canonical: string;
+	metaTitle: string;
+	metaDescription: string;
+	metaImg: string;
+}
+
+const { 
+	title,
+	canonical,
+	metaTitle,
+	metaDescription,
+	metaImg,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<!-- Favicons -->
+		<link href="img/favicon.png" rel="icon">
+		<link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+		<title>{title}</title>
+		
+		<!-- Css Styles -->
+		<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+		<link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+		<!-- <link rel="stylesheet" href="css/flaticon.css" type="text/css"> -->
+		<!-- <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css"> -->
+		<!-- <link rel="stylesheet" href="css/slicknav.min.css" type="text/css"> -->
+		<link rel="stylesheet" href="css/style.css" type="text/css">
+		<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="7862cd37-4076-44cb-9688-c3581e4fd905" data-blockingmode="auto" type="text/javascript" is:inline></script>
+		<!-- Google tag (gtag.js) -->
+		<script src="https://www.googletagmanager.com/gtag/js?id=G-N19WTPX46S" is:inline></script>
+		<!-- <script is:inline>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			
+			gtag('config', 'G-N19WTPX46S');
+		</script> -->
+		
+		<!-- assets de página -->
+		
+		<link rel="canonical" href={canonical} />
+		<!-- GOOGLE -->
+		<meta name="title" content={metaTitle} />
+		<meta name="description" content={metaDescription}/>
+		<meta http-equiv="Cache-Control" content="no-cache" />
+		<meta http-equiv="Expires" content="Mon, 01 Jul 1970 00:00:00 GMT" />
+		<meta name="robots" content="index, follow" />
+		<meta name="googlebot" content="index, follow" />
+		 <!-- FACEBOOK OPEN GRAPH TAGS -->
+		<meta property="og:title" content={metaTitle} />
+		<meta property="og:description" content={metaDescription} />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={canonical} />
+		<meta property="og:image" content={metaImg} />
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:site" content="@" />
+		<meta name="twitter:title" content={metaTitle} />
+		<meta name="twitter:description" content={metaDescription} />
+		<meta name="twitter:url" content={canonical} />
+		<meta name="twitter:image" content={metaImg} />
+		
+		<ViewTransitions />
+
+	</head>
+	<body>
+		<Header />
+		<slot />
+		<Footer />
+		<ButtonBox />
+		<ModalDeclaration />
+	<script >
+		//Menu Hamburguesa
+		const openButton = document.querySelector(".canvas__open");
+		const menuWrapper = document.querySelector(".offcanvas-menu-wrapper");
+		const overlay = document.querySelector(".offcanvas-menu-overlay");
+
+		openButton.addEventListener('click', function() {
+			menuWrapper.classList.add("active");
+			overlay.classList.add("active");
+		});
+
+		overlay.addEventListener('click', function() {
+			menuWrapper.classList.remove("active");
+			overlay.classList.remove("active");
+		});
+
+		/**
+		 * Easy on scroll event listener 
+		 */
+		const onscroll = (el, listener) => {
+			el.addEventListener('scroll', listener);
+		};
+
+		/**
+		 * Header fixed top on scroll
+		 */
+		const selectHeader = document.querySelector('.header');
+		const selectTopbar = document.querySelector('.header__top');
+		if (selectHeader) {
+			const headerScrolled = () => {
+				if (window.scrollY > 88) {
+					selectHeader.classList.add('header-scrolled');
+				if (selectTopbar) {
+					selectTopbar.classList.add('topbar-scrolled');
+				}
+				} else {
+					selectHeader.classList.remove('header-scrolled');
+					if (selectTopbar) {
+						selectTopbar.classList.remove('topbar-scrolled');
+					}
+				}
+			};
+			window.addEventListener('load', headerScrolled);
+			onscroll(document, headerScrolled);
+		}
+	</script>
+	</body>
+</html>
+<style is:global>
+	
+</style>
+../components/ModalDeclaracion.jsx
