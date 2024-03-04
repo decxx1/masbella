@@ -1,19 +1,202 @@
+---
+import {
+  whatsappLinkeable,
+  telphoneLinkeable,
+  mapUrl,
+} from "@/services/enviroment.js";
+import IconPhone from "@/components/icons/Phone.astro";
+import IconMapMarker from "@/components/icons/MapMarker.astro";
+import IconWhatsApp from "@/components/icons/WhatsAppSimple.astro";
+---
 <div class="wrapper">
     <div id="main-div">
-      <div id="main-button" class="tooltip--left wave">
-        <i class="fa fa-comments"></i>
+      <div id="main-button" class="wave">
+        <i class="fa--comments"></i>  
       </div>
-      <button><i class="fa fa-phone-alt"></i> Primera cita Gratis</button>
-        <a class="tooltip--left telegram-color" target="_blank" href="https://maps.app.goo.gl/ft5wWbRZyTWD1j166" data-tooltip="Ubicación"><i class="fa fa-map-marker"></i></a>
-        <a target="_blank" href="https://wa.me/34621289620" class="tooltip--left whatsapp-color" data-tooltip="WhatsApp"><i class="fa fa-whatsapp"></i></a>
-        <a target="_blank" href="tel:951018043" class="tooltip--left messenger-color" data-tooltip="Teléfono"><i class="fa fa-phone"></i></a>
+      <button>Primera cita Gratis</button>
+        <a class="tooltip--left telegram-color" target="_blank" href={mapUrl} data-tooltip="Ubicación"><IconMapMarker /></a>
+        <a target="_blank" href={'https://wa.me/34' + whatsappLinkeable} class="tooltip--left whatsapp-color" data-tooltip="WhatsApp"><IconWhatsApp /></a>
+        <a target="_blank" href={'tel:' + telphoneLinkeable} class="tooltip--left messenger-color" data-tooltip="Teléfono"><IconPhone /></a>
     </div>
 </div>
 <script>
     var mainDiv = document.getElementById('main-button');
 		mainDiv.addEventListener('click', function(){
-			this.children.item(0).classList.toggle('fa-times');
-			this.children.item(0).classList.toggle('fa-comments');
+			this.children.item(0).classList.toggle('fa--times');
+			this.children.item(0).classList.toggle('fa--comments');
 			this.classList.toggle('open');
 		});
 </script>
+<style>
+  /*Boton whatsapp*/
+
+#main-div {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 110;
+}
+
+#main-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 50px;
+  width: 50px;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+  background-color: var(--color-primary);
+  box-shadow: 0 0 10px 0 rgba(0,0,0,.5);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+#main-button ~ button {
+  visibility: hidden;
+  font-weight: 600;
+  height: 50px;
+  padding: 0 20px;
+  color: #fff;
+  background: linear-gradient(90deg, #00a1f5, var(--color-primary));
+  box-shadow: 0 0 10px 0 rgba(0,0,0,.5);
+  border: 0;
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: .2s all linear;
+  -webkit-transition: .2s all linear;
+  -moz-transition: .2s all linear;
+  -ms-transition: .2s all linear;
+  -o-transition: .2s all linear;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+#main-button.open ~ button {
+  visibility: visible;
+  right: 70px;
+  opacity: 1;
+  transition: .4s all cubic-bezier(0, 0.01, 0, 1.27);
+  -webkit-transition: .4s all cubic-bezier(0, 0.01, 0, 1.27);
+  -moz-transition: .4s all cubic-bezier(0, 0.01, 0, 1.27);
+  -ms-transition: .4s all cubic-bezier(0, 0.01, 0, 1.27);
+  -o-transition: .4s all cubic-bezier(0, 0.01, 0, 1.27);
+}
+
+#main-button ~ a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
+	height: 50px;
+	width: 50px;
+	font-size: 24px;
+	opacity: 0;
+	text-decoration: none;
+	color: #fff;
+	background-color: #fff;
+	box-shadow: 0 0 10px 0 rgba(0,0,0,.5);
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+	transition: .2s all linear;
+	-webkit-transition: .2s all linear;
+	-moz-transition: .2s all linear;
+	-ms-transition: .2s all linear;
+	-o-transition: .2s all linear;
+	border: inherit;
+}
+
+#main-button ~ .telegram-color {
+  background: linear-gradient(0deg, #017AB1, #01ABE6);
+}
+
+#main-button ~ .whatsapp-color {
+  background: linear-gradient(0deg, #00B100, #09db09);
+}
+
+#main-button ~ .messenger-color {
+  background: linear-gradient(0deg, #0078FF, #00C6FF);
+}
+
+#main-button.open ~ a {
+  opacity: 1;
+  transition: .4s all cubic-bezier(0, 0.01, 0, 1.27);
+  -webkit-transition: .4s all cubic-bezier(0, 0.01, 0, 1.27);
+  -moz-transition: .4s all cubic-bezier(0, 0.01, 0, 1.27);
+  -ms-transition: .4s all cubic-bezier(0, 0.01, 0, 1.27);
+  -o-transition: .4s all cubic-bezier(0, 0.01, 0, 1.27);
+}
+
+#main-button.open ~ a:nth-of-type(2) {
+  bottom: 180px;
+}
+#main-button.open ~ a:nth-of-type(3) {
+  bottom: 120px;
+}
+#main-button.open ~ a:nth-of-type(1) {
+  bottom: 60px;
+}
+
+.wave {
+  animation-name: wave;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes wave {
+  0% {box-shadow: 0 0 0px 0px rgba(255, 255, 255, 0.5);}
+  100% {box-shadow: 0 0 0px 10px rgba(255, 255, 255, 0);}
+}
+
+.open {
+  animation-iteration-count: 1;
+}
+.fa--comments {
+  display: inline-block;
+  width: 1.28em;
+  height: 1em;
+  --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1792 1408'%3E%3Cpath fill='%23000' d='M1408 512q0 139-94 257t-256.5 186.5T704 1024q-86 0-176-16q-124 88-278 128q-36 9-86 16h-3q-11 0-20.5-8t-11.5-21q-1-3-1-6.5t.5-6.5t2-6l2.5-5l3.5-5.5l4-5l4.5-5l4-4.5q5-6 23-25t26-29.5t22.5-29t25-38.5t20.5-44Q142 841 71 736T0 512q0-139 94-257T350.5 68.5T704 0t353.5 68.5T1314 255t94 257m384 256q0 120-71 224.5T1526 1169q10 24 20.5 44t25 38.5t22.5 29t26 29.5t23 25q1 1 4 4.5t4.5 5t4 5t3.5 5.5l2.5 5l2 6l.5 6.5l-1 6.5q-3 14-13 22t-22 7q-50-7-86-16q-154-40-278-128q-90 16-176 16q-271 0-472-132q58 4 88 4q161 0 309-45t264-129q125-92 192-212t67-254q0-77-23-152q129 71 204 178t75 230'/%3E%3C/svg%3E");
+  background-color: currentColor;
+  -webkit-mask-image: var(--svg);
+  mask-image: var(--svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+.fa--times {
+  display: inline-block;
+  width: 0.93em;
+  height: 1em;
+  --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1216 1312'%3E%3Cpath fill='%23000' d='M1202 1066q0 40-28 68l-136 136q-28 28-68 28t-68-28L608 976l-294 294q-28 28-68 28t-68-28L42 1134q-28-28-28-68t28-68l294-294L42 410q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 294l294-294q28-28 68-28t68 28l136 136q28 28 28 68t-28 68L880 704l294 294q28 28 28 68'/%3E%3C/svg%3E");
+  background-color: currentColor;
+  -webkit-mask-image: var(--svg);
+  mask-image: var(--svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+</style>

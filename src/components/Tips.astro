@@ -1,0 +1,53 @@
+---
+interface Props {
+    title: string;
+    subTitle1: string;
+    description1: string;
+    subTitle2: string;
+    description2: string;
+    subTitle3: string;
+    description3: string;
+}
+const { title, description1, subTitle1, description2, subTitle2, description3, subTitle3 } = Astro.props;
+---
+<section class="latest spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-6">
+                <div class="section-title">
+                    <span>Mini consejos</span>
+                    <h2>{title}</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="latest__item">
+                    <h5><strong>{subTitle1}</strong></h5>
+                    <p>{description1}</p>
+                    <ul>
+                        <li><img src="img/simbolo.png" alt="" style="height: auto !important;"> Más Bella</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="latest__item">
+                    <h5><strong>{subTitle2}</strong></h5>
+                    <p>{description2}</p>
+                    <ul>
+                        <li><img src="img/simbolo.png" alt="" style="height: auto !important;"> Más Bella</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="latest__item">
+                    <h5><strong>{subTitle3}</strong></h5>
+                    <p>{description3}</p>
+                    <ul>
+                        <li><img src="img/simbolo.png" alt="" style="height: auto !important;"> Más Bella</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

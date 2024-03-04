@@ -1,0 +1,46 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import FranchiseHero from '@/components/franchise/FranchiseHero.astro';
+import Pricing from '@/components/franchise/Pricing.astro';
+import FranchiseForm from '@/components/franchise/FranchiseForm.jsx';
+import FranchiseFeatures from '@/components/franchise/FranchiseFeatures.astro';
+import OurParteners from '@/components/franchise/OurPartners.astro';
+import Supplies from '@/components/franchise/Supplies.astro';
+import Gallery from '@/components/franchise/Gallery.astro';
+import Tips from '@/components/Tips.astro';
+---
+<Layout
+	title="Más Bella - Franquicias"
+	canonical="https://masbellamedical.com/franquicias"
+	metaTitle="Más Bella - Franquicias"
+	metaDescription=""
+	metaImg=""
+>
+    <FranchiseHero
+		subtitulo="Abre tu franquicia Más Bella"
+		titulo="Te facilitamos todo para que puedas abrir tu propio centro"
+		background="img/centro/7.jpg"
+	/>
+	<FranchiseFeatures />
+	<Pricing />
+	<FranchiseForm client:load />
+	<OurParteners />
+	<Supplies />
+	<div class="container margenes">
+        <div class="section-title text-center">
+            <h2 style="color:var(--color-primary)">Rompe con la tradicional forma de trabajo de otras franquicias!</h2>
+        </div>
+    </div>
+	<Gallery />
+	<Tips
+        title="Camino hacia la excelencia"
+        subTitle1="Construyendo relaciones duraderas"
+        description1="Trabajamos con nuestros clientes sesión a sesión"
+        subTitle2="Comprometidos con el éxito de nuestros clientes"
+        description2="Los fidelizamos con nuestros esfuerzos y resultados"
+        subTitle3="Calidad y asequibilidad en cada sesión"
+        description3="Ofertamos un servicio excelente a buen precio"
+    />
+</Layout>
+<!-- recaptcha v3 -->
+<script async src="https://www.google.com/recaptcha/api.js?render=6Ld3kmckAAAAAIEH2AEWmw7-2LM9VYVeuqLi7RXa"></script>

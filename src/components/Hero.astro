@@ -1,12 +1,45 @@
-<section class="hero spad set-bg" style="background-image: url('img/hero-bg.jpg')">
+---
+interface Props {
+	background: string;
+	subtitulo: string;
+	titulo: string;
+}
+const { background, subtitulo, titulo } = Astro.props;
+---
+<section class="hero spad set-bg" style=`background-image: url(${background})`>
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
                 <div class="hero__text">
-                    <h1><em>Depilación láser de Diodo y estética avanzada</em>Cuidamos de tu belleza y bienestar</h1>
+                    <h1><em>{subtitulo}</em>{titulo}</h1>
                     <a href="./contacto" class="primary-btn normal-btn">Contactanos</a>
                 </div>
             </div>
         </div>
     </div>
 </section>
+<style>
+.hero {
+	padding-top: 145px;
+	padding-bottom: 215px;
+	margin-bottom: -90px;
+	margin-top: 110px;
+}
+
+.hero__text h1 em {
+	font-size: 15px;
+	font-weight: 500;
+	color: var(--color-primary);
+	text-transform: uppercase;
+	display: block;
+}
+
+.hero__text h2,.hero__text h1 {
+	font-size: 48px;
+	color: #111111;
+	font-weight: 700;
+	line-height: 60px;
+	margin-top: 10px;
+	margin-bottom: 35px;
+}
+</style>

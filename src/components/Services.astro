@@ -108,3 +108,95 @@ import IconLaser from '@/components/icons/Laser.astro';
         </div>
     </div>
 </section>
+
+<style>
+    .services {
+	padding-bottom: 70px;
+}
+
+.services .section-title span {
+	color: var(--color-primary);
+}
+
+.services .section-title h2 {
+	color: #ffffff;
+}
+
+.services__btn {
+	text-align: right;
+}
+
+.services__btn .primary-btn {
+	color: #ffffff;
+}
+
+.services__item {
+	background: #ffffff;
+	padding: 45px 30px 45px 50px;
+	margin-bottom: 30px;
+	border-radius: 5px;
+}
+
+.services__item:hover {
+	background: var(--color-primary);
+	-webkit-transition: all, 0.3s;
+	-o-transition: all, 0.3s;
+	transition: all, 0.3s;
+}
+
+.services__item:hover .services__item__icon span,.services__item:hover .services__item__text ul li {
+	color: #ffffff;
+}
+.services__item:hover .services__item__text ul li i {
+	color: #ff82c8;
+}
+
+.services__item:hover .services__item__text h5 {
+	color: #ffffff;
+}
+
+.services__item:hover .services__item__text p {
+	color: #ffffff;
+}
+
+.services__item__icon {
+	float: left;
+	margin-right: 30px;
+}
+
+.services__item__icon span {
+	color: var(--color-primary);
+	font-size: 40px;
+	display: inline-block;
+	line-height: 76px;
+	-webkit-transition: all, 0.3s;
+	-o-transition: all, 0.3s;
+	transition: all, 0.3s;
+}
+
+.services__item__icon span:before {
+	font-size: 70px;
+}
+
+.services__item__text {
+	overflow: hidden;
+}
+
+.services__item__text h5 {
+	font-size: 20px;
+	color: #111111;
+	font-weight: 600;
+	margin-bottom: 14px;
+	-webkit-transition: all, 0.3s;
+	-o-transition: all, 0.3s;
+	transition: all, 0.3s;
+}
+
+.services__item__text p {
+	margin-bottom: 0;
+	-webkit-transition: all, 0.3s;
+	-o-transition: all, 0.3s;
+	transition: all, 0.3s;
+}
+
+</style>

@@ -1,8 +1,9 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import ButtonBox from '../components/ButtonBox.astro';
-import ModalDeclaration from '../components/ModalDeclaration.jsx';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import ButtonBox from '@/components/ButtonBox.astro';
+import ModalDeclaration from '@/components/ModalDeclaration.jsx';
+import ModalPolitics from '@/components/ModalPolitics.jsx';
 import { ViewTransitions } from 'astro:transitions';
 import '@fontsource/poppins/300.css';
 import '@fontsource/poppins/400.css';
@@ -11,6 +12,7 @@ import '@fontsource/poppins/600.css';
 import '@fontsource/poppins/700.css';
 import '@fontsource/poppins/800.css';
 import '@fontsource/poppins/900.css';
+import '@/styles/style.css'
 interface Props {
 	title: string;
 	canonical: string;
@@ -27,7 +29,6 @@ const {
 	metaImg,
 } = Astro.props;
 ---
-
 <!doctype html>
 <html lang="en">
 	<head>
@@ -41,24 +42,19 @@ const {
 		
 		<!-- Css Styles -->
 		<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-		<link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+		<!-- <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css"> -->
 		<!-- <link rel="stylesheet" href="css/flaticon.css" type="text/css"> -->
-		<!-- <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css"> -->
-		<!-- <link rel="stylesheet" href="css/slicknav.min.css" type="text/css"> -->
-		<link rel="stylesheet" href="css/style.css" type="text/css">
-		<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="7862cd37-4076-44cb-9688-c3581e4fd905" data-blockingmode="auto" type="text/javascript" is:inline></script>
+		<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="7862cd37-4076-44cb-9688-c3581e4fd905" data-blockingmode="auto" type="text/javascript"></script>
 		<!-- Google tag (gtag.js) -->
-		<script src="https://www.googletagmanager.com/gtag/js?id=G-N19WTPX46S" is:inline></script>
-		<!-- <script is:inline>
+		<script src="https://www.googletagmanager.com/gtag/js?id=G-N19WTPX46S"></script>
+		<script is:inline>
 			window.dataLayer = window.dataLayer || [];
 			function gtag(){dataLayer.push(arguments);}
 			gtag('js', new Date());
 			
 			gtag('config', 'G-N19WTPX46S');
-		</script> -->
-		
-		<!-- assets de página -->
-		
+		</script>
+		<!-- SEO -->
 		<link rel="canonical" href={canonical} />
 		<!-- GOOGLE -->
 		<meta name="title" content={metaTitle} />
@@ -80,8 +76,9 @@ const {
 		<meta name="twitter:description" content={metaDescription} />
 		<meta name="twitter:url" content={canonical} />
 		<meta name="twitter:image" content={metaImg} />
-		
-		<ViewTransitions />
+		<!-- preconnect para Google Recaptcha -->
+		<link rel="preconnect" href="https://www.google.com">
+		<link rel="preconnect" href="https://www.gstatic.com" crossorigin>
 
 	</head>
 	<body>
@@ -89,7 +86,8 @@ const {
 		<slot />
 		<Footer />
 		<ButtonBox />
-		<ModalDeclaration />
+		<ModalDeclaration client:load />
+		<ModalPolitics client:load />
 	<script >
 		//Menu Hamburguesa
 		const openButton = document.querySelector(".canvas__open");
@@ -122,9 +120,9 @@ const {
 			const headerScrolled = () => {
 				if (window.scrollY > 88) {
 					selectHeader.classList.add('header-scrolled');
-				if (selectTopbar) {
-					selectTopbar.classList.add('topbar-scrolled');
-				}
+					if (selectTopbar) {
+						selectTopbar.classList.add('topbar-scrolled');
+					}
 				} else {
 					selectHeader.classList.remove('header-scrolled');
 					if (selectTopbar) {
@@ -132,13 +130,20 @@ const {
 					}
 				}
 			};
-			window.addEventListener('load', headerScrolled);
 			onscroll(document, headerScrolled);
 		}
 	</script>
 	</body>
 </html>
 <style is:global>
-	
+	.link-politica {
+    color: gray !important;
+    text-decoration: none;
+}
+
+.link-politica:hover {
+    cursor: pointer;
+    color: blue !important;
+    text-decoration: underline !important;
+}
 </style>
-../components/ModalDeclaracion.jsx

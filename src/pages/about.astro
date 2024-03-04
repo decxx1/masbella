@@ -1,0 +1,42 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import BreadCrumbs from '@/components/BreadCrumbs.astro';
+import Beneficios from '@/components/Beneficios.astro';
+import Tips from '@/components/Tips.astro';
+import Consultation from '@/components/Consultation.astro';
+import IconBoxes from '@/components/IconBoxes.astro';
+---
+<Layout
+	title="Más Bella - Sobre nosotros"
+	canonical="https://masbellamedical.com/about"
+	metaTitle="Más Bella - Sobre nosotros"
+	metaDescription="Nuestra clínica ofrece un enfoque exclusivamente personalizado en tratamientos estéticos no invasivos y preventivos. Contamos con un trato cercano y familiar. Descubre nuestro equipo altamente cualificado"
+	metaImg="https://masbellamedical.com/img/mas-bella-modelo.jpg"
+>
+    <BreadCrumbs title="Sobre Nosotros" />
+    <Consultation />
+    <IconBoxes />
+    <div class="container margenes">
+        <div class="section-title text-center">
+            <h2 style="color:var(--color-primary)">La belleza comienza con el amor propio, ámate y siéntete “Más Bella”. Porque lo importante eres tú.</h2>
+        </div>
+    </div>
+    <Beneficios />
+    <Tips
+        title="Tips para empezar"
+        subTitle1="Mantén tu piel hidratada"
+        description1="Beber suficiente agua y usar productos hidratantes adecuados para tu tipo de piel pueden mejorar la apariencia y la salud de tu piel."
+        subTitle2="Evalúa tus necesidades y objetivos"
+        description2="Es importante determinar tus necesidades y objetivos a largo plazo. ¿Quieres reducir arrugas, mejorar la textura de tu piel, o ambos? Un profesional calificado puede ayudarte a identificar tus necesidades y objetivos específicos."
+        subTitle3="Conoce tus opciones de tratamiento"
+        description3="Aprende sobre los diferentes tipos de tratamientos de estética avanzada disponibles, sus beneficripciones, ventajas y riesgos para tomar una decisión informada."
+    />
+</Layout>
+<!-- recaptcha v3 -->
+<script async src="https://www.google.com/recaptcha/api.js?render=6Ld3kmckAAAAAIEH2AEWmw7-2LM9VYVeuqLi7RXa"></script>
+<style>
+    .margenes {
+        margin: 80px auto;
+    }
+    
+</style>

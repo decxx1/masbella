@@ -1,0 +1,107 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import BreadCrumbs from '@/components/BreadCrumbs.astro';
+import MapMarker from '@/components/icons/MapMarker.astro';
+import Phone from '@/components/icons/Phone.astro';
+import WhatsAppSimple from '@/components/icons/WhatsAppSimple.astro';
+import Envelope from '@/components/icons/Envelope.astro';
+import Tips from '@/components/Tips.astro';
+import ContactForm from '@/components/ContactForm.jsx';
+import { 
+    telphoneReadble,
+    telphoneLinkeable,
+    whatsappReadble,
+    whatsappLinkeable,
+    email,
+    address,
+    mapUrl,
+    mapIframe,
+
+} from '@/services/enviroment.js';
+---
+<Layout 
+	title="Más Bella - Contacto"
+	canonical="https://masbellamedical.com/contacto"
+	metaTitle="Más Bella - Contacto"
+	metaDescription="¿Tienes alguna duda o pregunta sobre nuestros servicios? Contacta con Más Bella, La primer cita es gratis, solicita tu cita hoy mismo sin compromiso."
+	metaImg="https://masbellamedical.com/img/logo-web.png"
+>
+    <BreadCrumbs title="Contacto" />
+    <section class="contact spad">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <div class="contact__widget">
+                        <div class="contact__widget__icon">
+                            <MapMarker />
+                        </div>
+                        <div class="contact__widget__text">
+                            <h5>Dirección</h5>
+                            <p><a target="_blank" href={mapUrl}>{address}</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <div class="contact__widget">
+                        <div class="contact__widget__icon">
+                            <Phone />
+                        </div>
+                        <div class="contact__widget__text">
+                            <h5>Teléfono</h5>
+                            <p><a target="_blank" href={'tel:' + telphoneLinkeable}>{telphoneReadble}</a></p>
+                        </div>
+                    </div>
+                </div>
+				<div class="col-lg-4 col-md-4 col-sm-6">
+                    <div class="contact__widget">
+                        <div class="contact__widget__icon">
+                            <Envelope />
+                        </div>
+                        <div class="contact__widget__text">
+                            <h5>E-mail</h5>
+                            <p><a target="_blank" href={'mailto:' + email}>{email}</a></p>
+                        </div>
+                    </div>
+                </div>
+				 <div class="col-lg-4 col-md-4 col-sm-6">
+                    <div class="contact__widget">
+                        <div class="contact__widget__icon">
+                            <WhatsAppSimple />
+                        </div>
+                        <div class="contact__widget__text">
+							<h5>WhatsApp</h5>
+							<p><a target="_blank" href={'https://wa.me/34' + whatsappLinkeable}> {whatsappReadble}</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact__content">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="contact__pic" set:html={ mapIframe }>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <ContactForm client:load />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <Tips
+        title="Tips para contactarnos"
+        subTitle1="¡Comunícate con nosotros!"
+        description1="No dudes en preguntar sobre cualquier servicio o tratamiento que te interese."
+        subTitle2="Haz una cita previa"
+        description2="Para asegurarte de que tengamos tiempo para atenderte."
+        subTitle3="Infórmanos sobre tus necesidades y expectativas"
+        description3="Para que podamos personalizar tu tratamiento."
+    />
+</Layout>
+
+<!-- recaptcha v3 -->
+<script async src="https://www.google.com/recaptcha/api.js?render=6Ld3kmckAAAAAIEH2AEWmw7-2LM9VYVeuqLi7RXa"></script>
+<style>
+
+</style>

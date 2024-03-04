@@ -1,0 +1,202 @@
+---
+import AboutForm from '@/components/AboutForm.jsx';
+---
+<section class="consultation mb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="consultation__form">
+                    <div class="section-title">
+                        <span>Escríbenos</span>
+                        <h2>Consultas</h2>
+                    </div>
+                    <AboutForm client:load />
+
+                </div>
+            </div>
+            
+            <div class="col-lg-8">
+                <div class="consultation__text">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="consultation__text__item">
+                                <div class="section-title">
+                                    <span>Depilación Láser y Estética Avanzada</span>
+                                    <h2 style="color:var(--color-primary)">¡Tu clínica de confianza!</h2>
+                                </div>
+                                <p>Nuestra clínica ofrece un enfoque exclusivamente personalizado en tratamientos estéticos no invasivos y preventivos. Nuestro objetivo es que te sientas como en casa, ofreciendo la mayor calidad en cuidados, un trato cercano y familiar.</p>
+                                <br/><p>Mas Bella surgió con el propósito de poner a disposición su amplia gama de tratamientos – estéticos más avanzados y enfocados para satisfacer tus necesidades, cuidando tu salud y mejorando tu autoestima.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<style is:global>
+/*---------------------
+  Consultation
+-----------------------*/
+
+.consultation__form {
+	padding: 50px;
+	-webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+	margin-top: -70px;
+	background: #ffffff;
+}
+
+.consultation__form .section-title {
+	margin-bottom: 35px;
+}
+
+.consultation__form form .input,.consultation__form form textarea {
+	font-size: 15px;
+	color: #666666;
+	width: 100%;
+	padding-left: 20px;
+	border: 1px solid #f2f2f2;
+	border-radius: 5px;
+	margin-bottom: 20px;
+}
+
+.consultation__form form input {
+	height: 50px;
+}
+
+.consultation__form form input::-webkit-input-placeholder,.consultation__form form textarea::-webkit-input-placeholder {
+	color: #666666;
+}
+
+.consultation__form form input::-moz-placeholder,.consultation__form form textarea::-moz-placeholder {
+	color: #666666;
+}
+
+.consultation__form form input:-ms-input-placeholder,.consultation__form form textarea:-ms-input-placeholder {
+	color: #666666;
+}
+
+.consultation__form form input::-ms-input-placeholder,.consultation__form form textarea::-ms-input-placeholder {
+	color: #666666;
+}
+
+.consultation__form form input::placeholder,.consultation__form form textarea::placeholder {
+	color: #666666;
+}
+
+.consultation__form form input:focus,.consultation__form form textarea:focus {
+	border-color: #9d9d9d;
+}
+
+.consultation__form form .datepicker__item {
+	position: relative;
+}
+
+.consultation__form form .datepicker__item i {
+	position: absolute;
+	right: 20px;
+	top: 18px;
+	font-size: 15px;
+	color: #666666;
+}
+
+.consultation__form form .nice-select {
+	float: none;
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	padding-left: 20px;
+	border-radius: 5px;
+	margin-bottom: 20px;
+}
+
+.consultation__form form .nice-select:after {
+	border-bottom: 1.5px solid #666666;
+	border-right: 1.5px solid #666666;
+	height: 8px;
+	right: 20px;
+	top: 46%;
+	width: 8px;
+}
+
+.consultation__form form .nice-select span {
+	font-size: 15px;
+	color: #666666;
+}
+
+.consultation__form form .nice-select.active,
+.consultation__form form .nice-select.open,
+.consultation__form form .nice-select:focus {
+	border-color: #666666;
+}
+
+.consultation__form form .nice-select .list {
+	width: 100%;
+	margin-top: 0;
+	border-radius: 5px;
+}
+
+.consultation__form form button {
+	width: 100%;
+}
+
+.consultation__text {
+	padding: 100px 0;
+	position: relative;
+}
+
+.consultation__text:after {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 1px;
+	background: #f2f2f2;
+	content: "";
+}
+
+.consultation__text__item .section-title {
+	margin-bottom: 15px;
+}
+
+.consultation__text__item .section-title h2 {
+	line-height: 47px;
+}
+
+.consultation__text__item .section-title h2 b {
+	font-weight: 700;
+	color: var(--color-primary);
+}
+
+.consultation__text__item p {
+	color: #444444;
+	margin-bottom: 0;
+}
+
+.consultation__video {
+	height: 262px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+}
+
+.consultation__video .play-btn {
+	display: inline-block;
+	height: 50px;
+	width: 50px;
+	background: var(--color-primary);
+	border-radius: 50%;
+	line-height: 50px;
+	text-align: center;
+	font-size: 18px;
+	color: #ffffff;
+}
+
+</style>

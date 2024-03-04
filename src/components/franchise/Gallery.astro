@@ -1,0 +1,105 @@
+<script>
+    import PhotoSwipeLightbox from 'photoswipe/lightbox';
+    import 'photoswipe/style.css';
+    
+    const lightbox = new PhotoSwipeLightbox({
+        gallery: '#galleryID',
+        children: 'a',
+        mouseMovePan: true,
+        showHideAnimationType: 'zoom',
+        initialZoomLevel: 'fit',
+        secondaryZoomLevel: 1.5,
+        maxZoomLevel: 1,
+    
+        imageClickAction: 'close',
+        tapAction: 'close',
+    
+        pswpModule: () => import('photoswipe')
+        
+    });
+    
+    lightbox.init();
+</script>
+<section class="section">
+    <div class="container">
+        <div class="grid-wrapperimg" id="galleryID">
+            <a class="" data-pswp-src="img/centro/1.jpg" data-pswp-width="1536" data-pswp-height="2048">
+                <img loading="lazy" src="img/centro/thumb/1.jpg" class="img-grid-mosaic" />
+            </a>
+            <a class="wide" data-pswp-src="img/centro/2.jpg" data-pswp-width="1536" data-pswp-height="2048">
+                <img loading="lazy" src="img/centro/thumb/2.jpg" class="img-grid-mosaic" />
+            </a>
+            <a class="" data-pswp-src="img/centro/3.jpg" data-pswp-width="1536" data-pswp-height="2048">
+                <img loading="lazy" src="img/centro/thumb/3.jpg" class="img-grid-mosaic" />
+            </a>
+            <a class="tall" data-pswp-src="img/centro/4.jpg" data-pswp-width="1536" data-pswp-height="2048">
+                <img loading="lazy" src="img/centro/thumb/4.jpg" class="img-grid-mosaic" />
+            </a>
+            <a class="big" data-pswp-src="img/centro/5.jpg" data-pswp-width="1536" data-pswp-height="2048">
+                <img loading="lazy" src="img/centro/thumb/5.jpg" class="img-grid-mosaic" />
+            </a>
+            <a class="tall" data-pswp-src="img/centro/6.jpg" data-pswp-width="1536" data-pswp-height="2048">
+                <img loading="lazy" src="img/centro/thumb/6.jpg" class="img-grid-mosaic" />
+            </a>
+        </div>
+    </div>
+</section>
+
+<style>
+    /*Galería */
+
+
+.img-grid-mosaic {
+	max-width: 100%;
+	height: auto;
+	vertical-align: middle;
+	display: inline-block;
+}
+
+/* Main CSS */
+.grid-wrapperimg > div,.grid-wrapperimg > a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.grid-wrapperimg > div > img,.grid-wrapperimg > a > img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 5px;
+	margin-bottom: 12px;
+}
+.grid-wrapperimg > div > img:hover,.grid-wrapperimg > a > img:hover {
+	cursor: pointer;
+    transform: scale(1.1);
+}
+@media (min-width: 500px) {
+	.grid-wrapperimg {
+		display: grid;
+		grid-gap: 10px;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		grid-auto-rows: 200px;
+		grid-auto-flow: dense;
+	}
+	.ludwig {
+		position: relative;
+		padding-left: 1em;
+		border-left: 0.2em solid var(--color-primary);
+		font-family: 'Times New Roman', serif;
+		font-size: 2.4em;
+		line-height: 1.5em;
+		font-weight: 100;
+	}
+}
+.grid-wrapperimg .wide {
+	grid-column: span 2;
+}
+.grid-wrapperimg .tall {
+	grid-row: span 2;
+}
+.grid-wrapperimg .big {
+	grid-column: span 2;
+	grid-row: span 2;
+}
+
+</style>

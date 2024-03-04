@@ -1,0 +1,74 @@
+---
+interface Props {
+	background: string;
+	subtitulo: string;
+	titulo: string;
+}
+const { background, subtitulo, titulo } = Astro.props;
+---
+<section class="hero" >
+	<img loading="eager" decoding="async" src={background} class="backgroundImage" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="hero__text">
+                    <h1><em>{subtitulo}</em>{titulo}</h1>
+                    <a href="#franchiseForm" class="primary-btn normal-btn">Contactanos</a>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="texture"></div>
+</section>
+<style>
+	@media screen and (min-width: 1200px) {
+		.backgroundImage {
+			width: -moz-available !important;
+		}
+	}
+	.backgroundImage {
+		position: absolute;
+		z-index: -1;
+		min-width: -webkit-fill-available;
+		width: max-content;
+		height: 100%;
+		top: 0;
+  		object-fit: cover;
+	}
+	.texture {
+		width: 100%;
+		height: 100%;
+		background-color: #000;
+		opacity: .4;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+	}
+.hero {
+	padding-top: 145px;
+	padding-bottom: 215px;
+	margin-bottom: -90px;
+	margin-top: 110px;
+}
+
+.hero__text h1 em {
+	font-size: 25px;
+	font-weight: 500;
+	color: var(--color-primary);
+	text-transform: uppercase;
+	display: block;
+	text-shadow: 0px 2px 4px rgba(255, 255, 255, 0.56);
+
+}
+
+.hero__text h2,.hero__text h1 {
+	font-size: 48px;
+	color: white;
+	font-weight: 700;
+	line-height: 60px;
+	margin-top: 10px;
+	margin-bottom: 35px;
+	text-shadow: 0px 2px 4px rgba(0,0,0,.56);
+}
+</style>
