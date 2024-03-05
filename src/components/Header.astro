@@ -15,7 +15,6 @@ import IconMapMarker from "@/components/icons/MapMarker.astro";
 import IconClock from "@/components/icons/Clock.astro";
 import IconInstagram from "@/components/icons/Instagram.astro";
 import IconFacebook from "@/components/icons/Facebook.astro";
-const path = Astro.url.pathname;
 ---
 
 <div class="offcanvas-menu-overlay"></div>
@@ -100,9 +99,7 @@ const path = Astro.url.pathname;
         </div>
       </div>
       <div class="col-lg-10">
-        <Menu client:load 
-          path={path}
-        />
+        <Menu client:load />
       </div>
     </div>
     <div class="canvas__open">

@@ -4,7 +4,6 @@ import Footer from '@/components/Footer.astro';
 import ButtonBox from '@/components/ButtonBox.astro';
 import ModalDeclaration from '@/components/ModalDeclaration.jsx';
 import ModalPolitics from '@/components/ModalPolitics.jsx';
-import { ViewTransitions } from 'astro:transitions';
 import '@fontsource/poppins/300.css';
 import '@fontsource/poppins/400.css';
 import '@fontsource/poppins/500.css';
@@ -42,18 +41,16 @@ const {
 		
 		<!-- Css Styles -->
 		<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-		<!-- <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css"> -->
-		<!-- <link rel="stylesheet" href="css/flaticon.css" type="text/css"> -->
 		<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="7862cd37-4076-44cb-9688-c3581e4fd905" data-blockingmode="auto" type="text/javascript"></script>
 		<!-- Google tag (gtag.js) -->
-		<script src="https://www.googletagmanager.com/gtag/js?id=G-N19WTPX46S"></script>
-		<script is:inline>
+		<!-- <script src="https://www.googletagmanager.com/gtag/js?id=G-N19WTPX46S"></script>
+		<script>
 			window.dataLayer = window.dataLayer || [];
 			function gtag(){dataLayer.push(arguments);}
 			gtag('js', new Date());
 			
 			gtag('config', 'G-N19WTPX46S');
-		</script>
+		</script> -->
 		<!-- SEO -->
 		<link rel="canonical" href={canonical} />
 		<!-- GOOGLE -->
@@ -79,7 +76,6 @@ const {
 		<!-- preconnect para Google Recaptcha -->
 		<link rel="preconnect" href="https://www.google.com">
 		<link rel="preconnect" href="https://www.gstatic.com" crossorigin>
-
 	</head>
 	<body>
 		<Header />
@@ -88,7 +84,7 @@ const {
 		<ButtonBox />
 		<ModalDeclaration client:load />
 		<ModalPolitics client:load />
-	<script >
+	<script>
 		//Menu Hamburguesa
 		const openButton = document.querySelector(".canvas__open");
 		const menuWrapper = document.querySelector(".offcanvas-menu-wrapper");

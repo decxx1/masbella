@@ -1189,7 +1189,7 @@ ol {
 		margin-right: 0;
 	}
 	.header__top {
-		display: none;
+		/* display: none; */
 	}
 	.header__menu__option {
 		display: none;
@@ -1674,4 +1674,9 @@ recaptcha v3 a la izquierda
 
 .grecaptcha-badge:hover {
 	width: 256px !important;
+}
+
+.modal-body {
+    overflow-y: auto;
+    max-height: 560px;
 }

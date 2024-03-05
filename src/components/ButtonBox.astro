@@ -23,12 +23,12 @@ import IconDate from "@/components/icons/Date.astro";
     </div>
 </div>
 <script>
-    var mainDiv = document.getElementById('main-button');
-		mainDiv.addEventListener('click', function(){
-			this.children.item(0).classList.toggle('fa--times');
-			this.children.item(0).classList.toggle('fa--comments');
-			this.classList.toggle('open');
-		});
+  var mainDiv = document.getElementById('main-button');
+  mainDiv.addEventListener('click', function(){
+    this.children.item(0).classList.toggle('fa--times');
+    this.children.item(0).classList.toggle('fa--comments');
+    this.classList.toggle('open');
+  });
 </script>
 <style>
   /*Boton whatsapp*/
