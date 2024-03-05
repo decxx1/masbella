@@ -2,6 +2,7 @@ import { Toaster, toast } from 'sonner'
 import { OpenModalPolitics } from '@/components/OpenModalPolitics'
 import { useState } from 'react'
 import axios from 'axios';
+import { endPoint, secretKey } from '@/services/enviroment.js';
 
 
 export default function Contactform () {
@@ -16,7 +17,7 @@ export default function Contactform () {
         if(!isSending){
             setIsSending(true);
             grecaptcha.ready(function() {
-                grecaptcha.execute('6Ld3kmckAAAAAIEH2AEWmw7-2LM9VYVeuqLi7RXa', { action: 'contacto' }).then(function(getToken) {
+                grecaptcha.execute(secretKey, { action: 'contacto' }).then(function(getToken) {
                     fields.token = getToken;
                     fields.action = 'contacto';
                     
@@ -26,7 +27,7 @@ export default function Contactform () {
         }
     }
     const sendForm = (fields) => {
-        axios.post('https://masbellamedical.com/api.php', fields, {
+        axios.post(endPoint, fields, {
             headers: {
               'Content-Type': 'multipart/form-data'
             }

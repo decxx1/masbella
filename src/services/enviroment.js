@@ -9,3 +9,6 @@ export const instagram = import.meta.env.PUBLIC_INSTAGRAM;
 export const facebook = import.meta.env.PUBLIC_FACEBOOK;
 export const mapUrl = import.meta.env.PUBLIC_MAP_URL;
 export const mapIframe = import.meta.env.PUBLIC_MAP_IFRAME;
+export const endPoint = import.meta.env.PUBLIC_ENDPOINT;
+export const secretKey = import.meta.env.PUBLIC_SECRET_KEY;
+export const dateLink = import.meta.env.PUBLIC_DATE_LINK;

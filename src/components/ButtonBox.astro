@@ -3,10 +3,12 @@ import {
   whatsappLinkeable,
   telphoneLinkeable,
   mapUrl,
+  dateLink,
 } from "@/services/enviroment.js";
 import IconPhone from "@/components/icons/Phone.astro";
 import IconMapMarker from "@/components/icons/MapMarker.astro";
 import IconWhatsApp from "@/components/icons/WhatsAppSimple.astro";
+import IconDate from "@/components/icons/Date.astro";
 ---
 <div class="wrapper">
     <div id="main-div">
@@ -15,8 +17,9 @@ import IconWhatsApp from "@/components/icons/WhatsAppSimple.astro";
       </div>
       <button>Primera cita Gratis</button>
         <a class="tooltip--left telegram-color" target="_blank" href={mapUrl} data-tooltip="Ubicación"><IconMapMarker /></a>
-        <a target="_blank" href={'https://wa.me/34' + whatsappLinkeable} class="tooltip--left whatsapp-color" data-tooltip="WhatsApp"><IconWhatsApp /></a>
         <a target="_blank" href={'tel:' + telphoneLinkeable} class="tooltip--left messenger-color" data-tooltip="Teléfono"><IconPhone /></a>
+        <a target="_blank" href={'https://wa.me/34' + whatsappLinkeable} class="tooltip--left whatsapp-color" data-tooltip="WhatsApp"><IconWhatsApp /></a>
+        <a target="_blank" href={dateLink} class="tooltip--left date-color" data-tooltip="Cita online"><IconDate /></a>
     </div>
 </div>
 <script>
@@ -138,6 +141,9 @@ import IconWhatsApp from "@/components/icons/WhatsAppSimple.astro";
 #main-button ~ .messenger-color {
   background: linear-gradient(0deg, #0078FF, #00C6FF);
 }
+#main-button ~ .date-color {
+  background: linear-gradient(0deg, var(--color-hover), var(--color-primary));
+}
 
 #main-button.open ~ a {
   opacity: 1;
@@ -148,10 +154,13 @@ import IconWhatsApp from "@/components/icons/WhatsAppSimple.astro";
   -o-transition: .4s all cubic-bezier(0, 0.01, 0, 1.27);
 }
 
-#main-button.open ~ a:nth-of-type(2) {
-  bottom: 180px;
+#main-button.open ~ a:nth-of-type(4) {
+  bottom: 240px;
 }
 #main-button.open ~ a:nth-of-type(3) {
+  bottom: 180px;
+}
+#main-button.open ~ a:nth-of-type(2) {
   bottom: 120px;
 }
 #main-button.open ~ a:nth-of-type(1) {

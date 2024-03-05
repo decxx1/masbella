@@ -5,6 +5,8 @@ import Beneficios from '@/components/Beneficios.astro';
 import Tips from '@/components/Tips.astro';
 import Consultation from '@/components/Consultation.astro';
 import IconBoxes from '@/components/IconBoxes.astro';
+import Release from '@/components/Release.astro';
+import { secretKey } from '@/services/enviroment.js';
 ---
 <Layout
 	title="Más Bella - Sobre nosotros"
@@ -31,9 +33,10 @@ import IconBoxes from '@/components/IconBoxes.astro';
         subTitle3="Conoce tus opciones de tratamiento"
         description3="Aprende sobre los diferentes tipos de tratamientos de estética avanzada disponibles, sus beneficripciones, ventajas y riesgos para tomar una decisión informada."
     />
+    <Release />
 </Layout>
 <!-- recaptcha v3 -->
-<script async src="https://www.google.com/recaptcha/api.js?render=6Ld3kmckAAAAAIEH2AEWmw7-2LM9VYVeuqLi7RXa"></script>
+<script async src={'https://www.google.com/recaptcha/api.js?render=' + secretKey}></script>
 <style>
     .margenes {
         margin: 80px auto;

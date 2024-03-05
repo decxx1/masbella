@@ -8,6 +8,7 @@ import OurParteners from '@/components/franchise/OurPartners.astro';
 import Supplies from '@/components/franchise/Supplies.astro';
 import Gallery from '@/components/franchise/Gallery.astro';
 import Tips from '@/components/Tips.astro';
+import { secretKey } from '@/services/enviroment.js';
 ---
 <Layout
 	title="Más Bella - Franquicias"
@@ -43,4 +44,4 @@ import Tips from '@/components/Tips.astro';
     />
 </Layout>
 <!-- recaptcha v3 -->
-<script async src="https://www.google.com/recaptcha/api.js?render=6Ld3kmckAAAAAIEH2AEWmw7-2LM9VYVeuqLi7RXa"></script>
+<script async src={'https://www.google.com/recaptcha/api.js?render=' + secretKey} ></script>

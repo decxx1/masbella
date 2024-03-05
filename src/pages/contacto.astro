@@ -7,6 +7,7 @@ import WhatsAppSimple from '@/components/icons/WhatsAppSimple.astro';
 import Envelope from '@/components/icons/Envelope.astro';
 import Tips from '@/components/Tips.astro';
 import ContactForm from '@/components/ContactForm.jsx';
+import IconDate from "@/components/icons/Date.astro";
 import { 
     telphoneReadble,
     telphoneLinkeable,
@@ -16,6 +17,8 @@ import {
     address,
     mapUrl,
     mapIframe,
+    secretKey,
+    dateLink,
 
 } from '@/services/enviroment.js';
 ---
@@ -74,6 +77,17 @@ import {
                         </div>
                     </div>
                 </div>
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <div class="contact__widget">
+                        <div class="contact__widget__icon">
+                            <IconDate />
+                        </div>
+                        <div class="contact__widget__text">
+							<h5>Haz reserva</h5>
+							<p><a target="_blank" href={dateLink}> Cita Online</a></p>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="contact__content">
                 <div class="row">
@@ -101,7 +115,7 @@ import {
 </Layout>
 
 <!-- recaptcha v3 -->
-<script async src="https://www.google.com/recaptcha/api.js?render=6Ld3kmckAAAAAIEH2AEWmw7-2LM9VYVeuqLi7RXa"></script>
+<script async src={'https://www.google.com/recaptcha/api.js?render=' + secretKey}></script>
 <style>
 
 </style>

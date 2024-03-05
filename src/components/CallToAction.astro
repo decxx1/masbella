@@ -1,0 +1,45 @@
+---
+import {
+  whatsappLinkeable,
+  dateLink,
+} from "@/services/enviroment.js";
+
+import IconWhatsApp from "@/components/icons/WhatsAppSimple.astro";
+import IconDate from "@/components/icons/Date.astro";
+---
+<section class="bg-light call-to-action">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-8 col-sm-6">
+                <div class="section-title">
+                    <span>Pide cita</span>
+                    <h2>Haz una reserva</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-2">
+                <a target="_blank" href={dateLink} class="btn btn-primary rounded-pill btn-masbella w-100" type="button"><IconDate /><span class="ml-2">Cita Online</span></a>
+            </div>
+            <div class="col-2">
+                <a target="_blank" href={'https://wa.me/34' + whatsappLinkeable} class="btn btn-primary rounded-pill whatsapp-color w-100" type="button"><IconWhatsApp /><span class="ml-2">WhatsApp</span></a>
+            </div>
+        </div>
+    </div>
+</section>
+<style>
+    .call-to-action {
+        margin: 100px 0;
+        padding: 60px 0;
+        text-align: center;
+    }
+    .whatsapp-color {
+        background: linear-gradient(0deg, #00B100, #09db09);
+        border:none;
+    }
+    .whatsapp-color:hover {
+        background: white;
+        color: #09db09;
+        border: 1px solid #09db09;
+    }
+</style>
