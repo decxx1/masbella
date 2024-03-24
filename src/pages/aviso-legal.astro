@@ -1,6 +1,13 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 import BreadCrumbs from '@/components/BreadCrumbs.astro';
+import { 
+    addressLegal,
+	schedules,
+	telphoneReadble,
+	whatsappReadble,
+	email,
+} from '@/services/enviroment.js';
 ---
 <Layout 
 	title="Más Bella - Aviso legal"
@@ -29,19 +36,19 @@ import BreadCrumbs from '@/components/BreadCrumbs.astro';
 				<li><span style="color:black;">Otros registros p&uacute;blicos en los que aparezca la entidad:</span></li>
 			</ul>
 			<ul style="list-style-type: undefined;margin-left:2cmundefined;">
-				<li><span style="color:black;">N&uacute;mero de Identificaci&oacute;n de Centro Sanitario de Andaluc&iacute;a N&ordm; 62260. Centro C/ Nuestra Se&ntilde;ora del Carmen 2, 29740 Torre Del Mar, M&aacute;laga (Espa&ntilde;a).</span></li>
+				<li><span style="color:black;">Número de Identificación de Centro Sanitario de Andalucía Nº 64.632. Centro {addressLegal}.</span></li>
 			</ul>
 			<p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:107%;font-size:16px;serif;'>&nbsp;</p>
 			<p><span style='font-size:16px;line-height:107%;serif;'><br>&nbsp;</span></p>
 			<h2 style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:16px;serif;'><span style='serif;font-weight:bold;'><span style="font-size:19px;line-height:107%;">2. COMUNICACIONES</span></span></h2>
 			<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;text-align:justify;line-height:107%;font-size:16px;serif;'>Para comunicarse con nosotros, ponemos a su disposici&oacute;n diferentes medios de contacto que detallamos a continuaci&oacute;n:</p>
 			<ul style="list-style-type: disc;margin-left:26px;">
-				<li>Tfno.:&nbsp;(+34)&nbsp;951 01 80 94 / 601 61 13 21 - De lunes a viernes de 10:00h. a 20:00h.<span style="color:black;">&nbsp;</span></li>
-				<li>Email: <a href="mailto:info@masbellamedical.com" target="_blank">info@masbellamedical.com</a>&nbsp; &nbsp; &nbsp; &nbsp;</li>
-				<li>Direcci&oacute;n postal sede central: C/ Nuestra Se&ntilde;ora del Carmen 2, 29740 Torre Del Mar, M&aacute;laga (Espa&ntilde;a). - &nbsp;De lunes a viernes de 10:00h. a 20:00h.</li>
+				<li>Tel.: {telphoneReadble} / {whatsappReadble} - {schedules}.<span style="color:black;">&nbsp;</span></li>
+				<li>Email: <a href=`mailto:${email}` target="_blank">{email}</a>&nbsp; &nbsp; &nbsp; &nbsp;</li>
+				<li>Direcci&oacute;n postal sede central: {addressLegal}. - {schedules}</li>
 				<li><strong>Delegado en Protecci&oacute;n de Datos:</strong></li>
 			</ul>
-			<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:36.0pt;text-align:justify;line-height:107%;font-size:16px;serif;'>Direcci&oacute;n: C/ Francisco Guerra D&iacute;az 12 P4 1&ordm;C, 06011 Badajoz (Espa&ntilde;a).</p>
+			<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:36.0pt;text-align:justify;line-height:107%;font-size:16px;serif;'>Juan Francisco Moreno - Responsable departamento LOPD y de calidad - Tel:91 037 50 12</p>
 			<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:36.0pt;text-align:justify;line-height:107%;font-size:16px;serif;'>Email: <a href="mailto:privacidad@masbellamedical.com">privacidad@masbellamedical.com</a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
 			<p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;text-align:justify;line-height:107%;font-size:16px;serif;'>Todas las notificaciones y comunicaciones entre los usuarios e M&Aacute;S BELLA MEDICAL se considerar&aacute;n eficaces, a todos los efectos, cuando se realicen a trav&eacute;s de cualquier medio de los detallados anteriormente.</p>
 			<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:16px;serif;'>&nbsp;</p>

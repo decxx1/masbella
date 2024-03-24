@@ -12,3 +12,4 @@ export const mapIframe = import.meta.env.PUBLIC_MAP_IFRAME;
 export const endPoint = import.meta.env.PUBLIC_ENDPOINT;
 export const secretKey = import.meta.env.PUBLIC_SECRET_KEY;
 export const dateLink = import.meta.env.PUBLIC_DATE_LINK;
+export const addressLegal = import.meta.env.PUBLIC_ADDRESS_LEGAL;
