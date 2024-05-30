@@ -1,6 +1,11 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 import BreadCrumbs from '@/components/BreadCrumbs.astro';
+import { 
+    addressLegal,
+	telphoneReadble,
+	whatsappReadble,
+} from '@/services/enviroment.js';
 ---
 <Layout 
 	title="Más Bella - Política de privacidad"
@@ -23,7 +28,7 @@ import BreadCrumbs from '@/components/BreadCrumbs.astro';
 
 				</p>
 				<h2 style="text-align: center;line-height: 150%; margin-bottom: 0in"><span style="display: inline-block; border: none; padding: 0in"><font size="4" style="font-size: 14pt"><font >PROTECCION
-				DE DATOS PERSONALES – PRIVACIDAD</span></font></font></h2>
+				DE DATOS PERSONALES - PRIVACIDAD</span></font></font></h2>
 				<p style="text-align: justify;line-height: 115%; margin-bottom: 0.17in"><font ><font size="3" style="font-size: 12pt">El
 				prestador se encuentra profundamente comprometido con el cumplimiento
 				de la normativa en protección de datos de carácter personal, y
@@ -115,12 +120,10 @@ import BreadCrumbs from '@/components/BreadCrumbs.astro';
 				<p style="text-align: justify;line-height: 150%; margin-top: 0.12in; margin-bottom: 0.12in">
 				<font ><font size="3" style="font-size: 12pt">53742778N.</font></font></p>
 				<p style="text-align: justify;line-height: 150%; margin-top: 0.12in; margin-bottom: 0.12in">
-				<font ><font size="3" style="font-size: 12pt">C/
-				NUESTRA SEÑORA DEL CARMEN 2 - 29740 TORRE DEL MAR - MÁLAGA
-				(ESPAÑA).</font></font></p>
+				<font ><font size="3" style="font-size: 12pt">{addressLegal}.</font></font></p>
 				<p style="text-align: justify;line-height: 150%; margin-top: 0.12in; margin-bottom: 0.12in">
 				<font ><font size="3" style="font-size: 12pt"><span lang="es-ES-u-co-trad">(+34)
-				</span>951 01 80 94 / 601 61 13 21.</font></font></p>
+				</span>{telphoneReadble} / {whatsappReadble}.</font></font></p>
 				<p style="text-align: justify;line-height: 150%; margin-top: 0.12in; margin-bottom: 0.12in">
 				<font ><font size="3" style="font-size: 12pt"><a href="mailto:info@masbellamedical.com" target="_blank"><font ><u>info@masbellamedical.com</u></font></a>
 					  <font > </font></font></font>
@@ -133,13 +136,14 @@ import BreadCrumbs from '@/components/BreadCrumbs.astro';
 						<font ><font size="3" style="font-size: 13pt"><b>Datos
 						de contacto del Delegado de Protección de Datos (DPD):</b></font></font></p>
 						<p style="text-align: justify;line-height: 150%; margin-left: 0.25in; margin-top: 0.12in; margin-bottom: 0.12in">
-				 <font ><font size="3" style="font-size: 12pt">Tuidentidad
-				y Seguridad SLU</font></font></p>
+				 <font ><font size="3" style="font-size: 12pt">Consultoría y Servicios Sapientiam et Laborem, s.l.
+				</font></font></p>
 				<p style="text-align: justify;line-height: 150%; margin-left: 0.25in; margin-top: 0.12in; margin-bottom: 0.12in">
-				 <font ><font size="3" style="font-size: 12pt">C/
-				Francisco Guerra 12 Portal 4 1ºC, 06011 Badajoz (España)</font></font></p>
+				 <font ><font size="3" style="font-size: 12pt">
+					Telf: 91 818 15 31<br/>
+					Mvl: 600 356 894</font></font></p>
 				<p style="text-align: justify;line-height: 150%; margin-left: 0.25in; margin-top: 0.12in; margin-bottom: 0.12in">
-				 <font ><font size="3" style="font-size: 12pt"><a href="mailto:privacidad@masbellamedical.com"><font ><u>privacidad@masbellamedical.com</u></font></a>
+				 <font ><font size="3" style="font-size: 12pt"><a href="mailto:info@GrupoSapientiam.com"><font><u>info@GrupoSapientiam.com</u></font></a>
 				 </font></font>
 				</p>
 						</li>
@@ -263,7 +267,7 @@ import BreadCrumbs from '@/components/BreadCrumbs.astro';
 					cuánto tiempo conservaremos sus datos?</b></font></font></font></p>
 				</ol>
 				<p style="text-align: justify;line-height: 115%; orphans: 0; widows: 0; margin-top: 0.12in; margin-bottom: 0.12in; background: #ffffff">
-				<font ><font ><font size="3" style="font-size: 12pt">Los
+				<font ><font><font size="3" style="font-size: 12pt">Los
 				datos se conservarán:</font></font></font></p>
 				<ol style="margin-left: 50px;">
 					<li><p style="text-align: justify;line-height: 150%; orphans: 0; widows: 0; margin-top: 0.12in; margin-bottom: 0.11in; background: #ffffff">
@@ -762,7 +766,7 @@ import BreadCrumbs from '@/components/BreadCrumbs.astro';
 				<font ><font ><font size="3" style="font-size: 12pt">Podrá
 				ejercitar materialmente sus derechos de la siguiente forma:
 				dirigiéndose a </font></font></font><a href="mailto:privacidad@masbellamedical.com"><font ><font ><font size="3" style="font-size: 12pt"><u>privacidad@masbellamedical.com</u></font></font></font></a><font ><font ><font size="3" style="font-size: 12pt">
-				 o C/ Francisco Guerra 12 Portal 4 1ºC, 06011 Badajoz (España).</font></font></font></p>
+				</font></font></font></p>
 				<p style="text-align: justify;line-height: 150%; orphans: 0; widows: 0; margin-top: 0.12in; margin-bottom: 0.12in; background: #ffffff">
 				<font ><font ><font size="3" style="font-size: 12pt">Cuando
 				se realice el envío de comunicaciones comerciales utilizando como
