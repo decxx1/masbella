@@ -1,22 +1,21 @@
 ---
 import QuoteLeft from '@/components/icons/QuoteLeft.astro';
 ---
-<section class="testimonials spad" style="background: var(--bg-light) !important;">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <div class="section-title">
-                    <span>Beneficios</span>
-                    <h2>Conoce nuestras promos</h2>
-                </div>
+<section class="overflow-hidden pb-24 spad bg-body-light">
+    <div class="container mx-auto">
+        
+        <div class="text-center">
+            <div class="section-title">
+                <span>Beneficios</span>
+                <h2>Conoce nuestras promos</h2>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-6 col-md-6">
+        <div class="grid grid-cols-12 mx-auto">
+            <div class="col-span-12 md:col-span-6  max-md:mb-8 px-4">
                 <div class="testimonial__item">
                     <div class="testimonial__author">
                         <div class="testimonial__author__icon">
-                            <QuoteLeft />
+                            <QuoteLeft className="inline" />
                         </div>
                         <div class="testimonial__author__text">
                             <h5>PLAN AMIGO</h5>
@@ -29,11 +28,11 @@ import QuoteLeft from '@/components/icons/QuoteLeft.astro';
                     <p>Obtendrán un <strong>20% de descuento</strong> en la primera sesión de <strong>Depilación Láser</strong></p>
                 </div>
             </div>
-            <div class="col-lg-6 col-md-6">
+            <div class="col-span-12 md:col-span-6 px-4">
                 <div class="testimonial__item">
                     <div class="testimonial__author">
                         <div class="testimonial__author__icon">
-                            <QuoteLeft />
+                            <QuoteLeft className="inline" />
                         </div>
                         <div class="testimonial__author__text">
                             <h5>Primera Cita</h5>

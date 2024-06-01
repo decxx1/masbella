@@ -46,11 +46,11 @@ export default function AboutForm () {
     return (
         <form id="aboutForm" method="post" onSubmit={handleSubmit}>
             <Toaster richColors position="bottom-right" />
-            <input className="input" type="text" name="nombre" placeholder="Nombre" required />
-            <input className="input" type="tel" name="telefono" placeholder="Teléfono" required />
-            <textarea rows="3" name="mensaje" placeholder="Tu consulta" required></textarea>
-            <div className="form-check mb-2">
-                <input className="form-check-input" name="politicas" type="checkbox" value="" id="flexCheckDefault" required />
+            <input className="input placeholder:text-gray-400 focus:ring-1 ring-primary-50" type="text" name="nombre" placeholder="Nombre" required />
+            <input className="input placeholder:text-gray-400 focus:ring-1 ring-primary-50" type="tel" name="telefono" placeholder="Teléfono" required />
+            <textarea className="placeholder:text-gray-400 focus:ring-1 ring-primary-50" rows="3" name="mensaje" placeholder="Tu consulta" required></textarea>
+            <div className="form-check mb-2 flex">
+                <input className="form-check-input mr-3" name="politicas" type="checkbox" value="" id="flexCheckDefault" required />
                 <label className="form-check-label" htmlFor="flexCheckDefault" >
                     He leído y acepto la <OpenModalPolitics /> y <a target="_blank" className="link-politica" href="./politica-privacidad">Políticas
                     de Privacidad</a>

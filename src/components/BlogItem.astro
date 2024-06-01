@@ -7,13 +7,16 @@ interface Props {
 }
 const { title, img, ruta, ribbon } = Astro.props;
 ---
-<div class="col-lg-4 col-md-6 col-sm-6">
+<div class="col-span-12 sm:col-span-6 lg:col-span-4 px-4">
   <div class="blog__item">
-      <div class="blog__item__pic">
+      <div class="blog__item__pic relative overflow-hidden">
           <img src={img} alt={title}>
           { ribbon && 
-              <div class="ribbon-wrapper ribbon-xl">
-                  <div class="ribbon bg-masbella text-xl">Próximamente</div>
+              <div class="absolute right-0 top-0 h-16 w-16">
+                <div
+                  class="absolute transform rotate-45 bg-primary-100 text-center text-white font-bold py-1 right-[-35px] top-[32px] w-[170px]">
+                  Próximamente
+                </div>
               </div>
           }
       </div>
@@ -23,75 +26,3 @@ const { title, img, ruta, ribbon } = Astro.props;
       </div>
   </div>
 </div>
-<style>
-    /*Ribbons*/
-.ribbon-wrapper {
-  height: 70px;
-  overflow: hidden;
-  position: absolute;
-  right: -2px;
-  top: -2px;
-  width: 70px;
-  z-index: 10;
-}
-
-.ribbon-wrapper.ribbon-lg {
-  height: 120px;
-  width: 120px;
-}
-
-.ribbon-wrapper.ribbon-lg .ribbon {
-  right: 0;
-  top: 26px;
-  width: 160px;
-}
-
-.ribbon-wrapper.ribbon-xl {
-  height: 180px;
-  width: 180px;
-}
-
-.ribbon-wrapper.ribbon-xl .ribbon {
-    right: 32px;
-  top: 58px;
-  width: 240px;
-}
-
-.ribbon-wrapper .ribbon {
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
-  font-size: 1.2rem;
-  line-height: 100%;
-  padding: 0.375rem 0;
-  position: relative;
-  right: -2px;
-  text-align: center;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
-  text-transform: uppercase;
-  top: 10px;
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-  width: 90px;
-}
-
-.ribbon-wrapper .ribbon::before, .ribbon-wrapper .ribbon::after {
-  border-left: 3px solid transparent;
-  border-right: 3px solid transparent;
-  border-top: 3px solid #9e9e9e;
-  bottom: -3px;
-  content: "";
-  position: absolute;
-}
-
-.ribbon-wrapper .ribbon::before {
-  left: 0;
-}
-
-.ribbon-wrapper .ribbon::after {
-  right: 0;
-}
-.bg-masbella{
-    background-color: #df2a8e !important;
-    color: white;
-    font-weight: bold;
-}
-</style>

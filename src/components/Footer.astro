@@ -24,34 +24,34 @@ import {
 ---
 <footer class="footer">
     <div class="footer__top" >
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-4">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-12">
+                <div class="col-span-12 md:col-span-4">
                     <div class="footer__logo">
                         <a href="./"><img src="img/logo-blanco.png" alt="logo blanco de más bella" style="width:160px"></a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-8">
+                <div class="col-span-12 md:col-span-8 lg:col-span-4">
                     <div class="footer__newslatter text-center">
                         <p class="text-white text-bold" style="font-size:18px;">La belleza comienza en el amor propio, ámate y siéntete <strong>Más Bella</strong> porque lo importante eres tú</p>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-12">
+                <div class="col-span-12 lg:col-span-4">
                     <div class="footer__social">
                         <a target="_blank" href={instagram}>
-                            <Instagram />
+                            <Instagram className="inline" />
                         </a>
                         <a target="_blank" href={facebook}>
-                            <Facebook />
+                            <Facebook className="inline" />
                         </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container" >
-        <div class="row">
-            <div class="col-lg-2 col-md-3 col-sm-6">
+    <div class="container mx-auto">
+        <div class="grid grid-cols-12">
+            <div class="col-span-12 sm:col-span-6 md:col-span-3 lg:col-span-2 px-4">
                 <div class="footer__widget">
                     <h5>Enlaces útiles</h5>
                     <ul>
@@ -67,36 +67,36 @@ import {
                     </ul>
                 </div>
             </div>
-            <div class="col-lg-2 col-md-3 col-sm-6">
+            <div class="col-span-12 sm:col-span-6 md:col-span-3 lg:col-span-2 px-4">
                 <div class="footer__widget">
                     <h5>Horarios</h5>
                     <p style="color:#fff;">{schedules}</p>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="col-span-12 md:col-span-6 lg:col-span-4 px-4">
                 <div class="footer__address">
                     <h5>Contactenos</h5>
                     <ul>
                         <li><a target="_blank" href={mapUrl}>
-                            <MapMarker />
+                            <MapMarker className="inline" />
                             {address}</a>
                         </li>
                         <li><a target="_blank" href={'tel:' + telphoneLinkeable}>
-                            <Phone />
+                            <Phone className="inline" />
                             {telphoneReadble}</a>
                         </li>
                         <li><a target="_blank" href={'https://wa.me/34' + whatsappLinkeable}>
-                            <WhatsApp />
+                            <WhatsApp className="inline" />
                             {whatsappReadble}</a>
                         </li>
                         <li><a target="_blank" href={'mailto:' + email}>
-                            <Envelope />
+                            <Envelope className="inline" />
                             {email}</a>
                         </li>
                     </ul>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-12 col-sm-6">
+            <div class="col-span-12 sm:col-span-6 md:col-span-12 md:max-lg:pb-20 lg:col-span-4 px-4">
                 <div class="footer__map">
                     <a target="_blank" href={mapUrl}><img src="./img/map.jpg" alt="mapa MasBella"/></a>
                 </div>
@@ -104,17 +104,12 @@ import {
         </div>
     </div>
     <div class="footer__copyright">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7">
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    <div class="footer__copyright__text">
-                        <p>Diseñado por <a class="text-white" target="_blank" href="https://manejoweb.com.ar/">ManejoWeb</a></p>
-                    </div>
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                </div>
-
+        <div class="container mx-auto">
+            
+            <div class="footer__copyright__text">
+                <p>Diseñado por <a class="text-white" target="_blank" href="https://manejoweb.com.ar/">ManejoWeb</a></p>
             </div>
+               
         </div>
     </div>
 </footer>

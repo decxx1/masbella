@@ -4,19 +4,17 @@ interface Props {
 }
 const { title } = Astro.props;
 ---
-<section class="breadcrumb-option spad set-bg" style="background-image: url('img/breadcrumb-bg.jpg')">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <div class="breadcrumb__text">
-                    <h1>{title}</h1>
-                    <div class="breadcrumb__links">
-                        <a href="./">Inicio</a>
-                        <span>{title}</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+<section class="breadcrumb-option spad set-bg bg-[url('img/breadcrumb-bg.jpg')]">
+    <div class="container mx-auto">
+		<div class="text-center">
+			<div class="breadcrumb__text">
+				<h1>{title}</h1>
+				<div class="breadcrumb__links">
+					<a href="./">Inicio</a>
+					<span>{title}</span>
+				</div>
+			</div>
+		</div>
     </div>
 </section>
 

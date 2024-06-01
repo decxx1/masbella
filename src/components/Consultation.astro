@@ -2,33 +2,28 @@
 import AboutForm from '@/components/AboutForm.jsx';
 ---
 <section class="consultation mb-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4">
+    <div class="container mx-auto">
+        <div class="grid grid-cols-12">
+            <div class="col-span-12 lg:col-span-4 px-4">
                 <div class="consultation__form">
                     <div class="section-title">
                         <span>Escríbenos</span>
                         <h2>Consultas</h2>
                     </div>
                     <AboutForm client:load />
-
                 </div>
             </div>
             
-            <div class="col-lg-8">
+            <div class="col-span-12 lg:col-span-8 px-4">
                 <div class="consultation__text">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="consultation__text__item">
-                                <div class="section-title">
-                                    <span>Depilación Láser y Estética Avanzada</span>
-                                    <h2 style="color:var(--color-primary)">¡Tu clínica de confianza!</h2>
-                                </div>
-                                <p>Nuestra clínica ofrece un enfoque exclusivamente personalizado en tratamientos estéticos no invasivos y preventivos. Nuestro objetivo es que te sientas como en casa, ofreciendo la mayor calidad en cuidados, un trato cercano y familiar.</p>
-                                <br/><p>Mas Bella surgió con el propósito de poner a disposición su amplia gama de tratamientos – estéticos más avanzados y enfocados para satisfacer tus necesidades, cuidando tu salud y mejorando tu autoestima.</p>
-                            </div>
-                        </div>
-                    </div>
+					<div class="consultation__text__item">
+						<div class="section-title">
+							<span>Depilación Láser y Estética Avanzada</span>
+							<h2 class="text-primary-100">¡Tu clínica de confianza!</h2>
+						</div>
+						<p>Nuestra clínica ofrece un enfoque exclusivamente personalizado en tratamientos estéticos no invasivos y preventivos. Nuestro objetivo es que te sientas como en casa, ofreciendo la mayor calidad en cuidados, un trato cercano y familiar.</p>
+						<br/><p>Mas Bella surgió con el propósito de poner a disposición su amplia gama de tratamientos - estéticos más avanzados y enfocados para satisfacer tus necesidades, cuidando tu salud y mejorando tu autoestima.</p>
+					</div>
                 </div>
             </div>
         </div>
@@ -63,30 +58,6 @@ import AboutForm from '@/components/AboutForm.jsx';
 
 .consultation__form form input {
 	height: 50px;
-}
-
-.consultation__form form input::-webkit-input-placeholder,.consultation__form form textarea::-webkit-input-placeholder {
-	color: #666666;
-}
-
-.consultation__form form input::-moz-placeholder,.consultation__form form textarea::-moz-placeholder {
-	color: #666666;
-}
-
-.consultation__form form input:-ms-input-placeholder,.consultation__form form textarea:-ms-input-placeholder {
-	color: #666666;
-}
-
-.consultation__form form input::-ms-input-placeholder,.consultation__form form textarea::-ms-input-placeholder {
-	color: #666666;
-}
-
-.consultation__form form input::placeholder,.consultation__form form textarea::placeholder {
-	color: #666666;
-}
-
-.consultation__form form input:focus,.consultation__form form textarea:focus {
-	border-color: #9d9d9d;
 }
 
 .consultation__form form .datepicker__item {

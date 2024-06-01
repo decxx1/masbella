@@ -6,15 +6,19 @@ const { background } = Astro.props;
 ---
 <section class="hero" >
 	<img loading="eager" decoding="async" src={background} class="backgroundImage" >
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="hero__text">
-                    <h1><em>Abre tu franquicia <span class="nowrap">Más Bella</span></em>Te facilitamos todo para que puedas abrir tu propio centro</h1>
-                    <a href="#franchiseForm" class="primary-btn normal-btn">Contactanos</a>
-                </div>
-            </div>
-        </div>
+    <div class="container mx-auto">
+		<div class="grid grid-cols-1 md:grid-cols-2">
+			<div class="hero__text">
+				<h1><em>Abre tu franquicia <span class="nowrap">Más Bella</span></em>Te facilitamos todo para que puedas abrir tu propio centro</h1>
+				<a href="#franchiseForm" class="primary-btn normal-btn">Contactanos</a>
+			</div>
+			<div>
+				<video class="w-full h-auto max-w-full border shadow-md shadow-primary-50 border-primary-50/50 rounded-lg" controls preload="none" poster="img/miniatura.webp" width="640" height="360">
+					<source src="videos/video_mas_bella_franquicias.mp4" type="video/mp4">
+					Tu navegador no soporta el elemento <code>video</code>.
+				</video>
+			</div>
+		</div>
     </div>
 	<div class="texture"></div>
 </section>

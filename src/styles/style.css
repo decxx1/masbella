@@ -1269,7 +1269,7 @@ ol {
 		border-radius: 2px;
 		cursor: pointer;
 		position: absolute;
-		right: 15px;
+		right: 10%;
 		top: 35px;
 	}
 	.offcanvas-menu-overlay {
@@ -1473,7 +1473,16 @@ ol {
 }
 
 /* Small Device = 320px */
-
+@media only screen and (max-width: 479px) {
+	.section-title h2 {
+		font-size: 24px;
+	}
+}
+@media only screen and (max-width: 350px) {
+	.section-title h2 {
+		font-size: 18px;
+	}
+}
 @media only screen and (max-width: 479px) {
 	.hero__text h2 {
 		font-size: 34px;

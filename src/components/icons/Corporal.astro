@@ -1,4 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" version="1.0" viewBox="0 0 48 48">
+---
+interface Props {
+    className?: string;
+}
+const { className } = Astro.props;
+---
+<svg class={className} xmlns="http://www.w3.org/2000/svg" version="1.0" viewBox="0 0 48 48">
     <defs>
       <clipPath id="a">
         <path d="M7 0h34v47H7Zm0 0"/>

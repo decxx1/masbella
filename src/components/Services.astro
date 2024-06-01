@@ -2,105 +2,107 @@
 import IconCorporal from '@/components/icons/Corporal.astro';
 import IconFacial from '@/components/icons/Facial.astro';
 import IconLaser from '@/components/icons/Laser.astro';
+import CheckIcon from '@/components/icons/Check.astro';
 ---
 <!-- Services Section Begin -->
 <section class="services spad set-bg" style="background-image: url('img/services-bg.jpg')">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-md-8 col-sm-6">
-                <div class="section-title">
-                    <span style="color:#888888;">¿Qué hacemos?</span>
-                    <h2>Nuestros servicios</h2>
+    <div class="container mx-auto">
+        <div class="grid grid-cols-12">
+            <div class="col-span-12 md:col-span-8 sm:col-span-6">
+                <div class="section-title max-sm:text-center">
+                    <span >¿Qué hacemos?</span>
+                    <h2 class="!text-white">Nuestros servicios</h2>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-6">
-                <div class="services__btn">
+            <div class="col-span-12 md:col-span-4 sm:col-span-6">
+                <div class="text-center sm:text-right text-white max-sm:mb-6">
                     <a href="./servicios" class="primary-btn">Ver todos</a>
                 </div>
             </div>
         </div>
-        <div class="row justify-content-center">
-            <div class="col-lg-6 col-md-6">
-                <div class="services__item">
-                    <div class="services__item__icon">
+        
+        <div class="grid grid-cols-12 items-center">
+            <div class="mx-auto max-w-xl col-span-12 lg:col-span-6 px-4">
+                <div class="services__item bg-white hover:bg-primary-100 py-11 pr-8 pl-12 rounded-md mb-8 transition-all duration-300 group">
+                    <div class="services__item__icon float-left mr-7">
                         <IconCorporal />
                     </div>
-                    <div class="services__item__text">
-                        <h5>Tratamientos corporales</h5>
+                    <div class="services__item__text overflow-hidden">
+                        <h5 class="text-gray-900 font-bold group-hover:text-white mb-2">Tratamientos corporales</h5>
                         <ul class="services__details__feature">
-                            <li><i class="fa fa-check-circle mr-2"></i>Remodelación corporal con Bellaction Dúo</li>
-                            <li><i class="fa fa-check-circle mr-2"></i>Tratamientos de celulitis</li>
-                            <li><i class="fa fa-check-circle mr-2"></i>Drenaje linfático</li>
-                            <li><i class="fa fa-check-circle mr-2"></i>Presoterapia</li>
-                            <li><i class="fa fa-check-circle mr-2"></i>Masajes para piernas cansadas</li>
-                            <li><i class="fa fa-check-circle mr-2"></i>Masajes descontracturantes</li>
-                            <li><i class="fa fa-check-circle mr-2"></i>Radiofrecuencia corporal</li>
-                            <li><i class="fa fa-check-circle mr-2"></i>Micropigmentación oncológica</li>
+                            <li class="text-gray-400 group-hover:text-white"><CheckIcon className="inline-block text-primary-100 group-hover:text-white w-5 h-5 mr-2" />Remodelación corporal con Bellaction Dúo</li>
+                            <li class="text-gray-400 group-hover:text-white"><CheckIcon className="inline-block text-primary-100 group-hover:text-white w-5 h-5 mr-2" />Tratamientos de celulitis</li>
+                            <li class="text-gray-400 group-hover:text-white"><CheckIcon className="inline-block text-primary-100 group-hover:text-white w-5 h-5 mr-2" />Drenaje linfático</li>
+                            <li class="text-gray-400 group-hover:text-white"><CheckIcon className="inline-block text-primary-100 group-hover:text-white w-5 h-5 mr-2" />Presoterapia</li>
+                            <li class="text-gray-400 group-hover:text-white"><CheckIcon className="inline-block text-primary-100 group-hover:text-white w-5 h-5 mr-2" />Masajes para piernas cansadas</li>
+                            <li class="text-gray-400 group-hover:text-white"><CheckIcon className="inline-block text-primary-100 group-hover:text-white w-5 h-5 mr-2" />Masajes descontracturantes</li>
+                            <li class="text-gray-400 group-hover:text-white"><CheckIcon className="inline-block text-primary-100 group-hover:text-white w-5 h-5 mr-2" />Radiofrecuencia corporal</li>
+                            <li class="text-gray-400 group-hover:text-white"><CheckIcon className="inline-block text-primary-100 group-hover:text-white w-5 h-5 mr-2" />Micropigmentación oncológica</li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 col-md-6">
-                <div class="services__item">
-                    <div class="services__item__icon">
+            <div class="mx-auto max-w-xl col-span-12 lg:col-span-6 px-4">
+                <div class="services__item bg-white hover:bg-primary-100 py-11 pr-8 pl-12 rounded-md mb-8 transition-all duration-300 group">
+                    <div class="services__item__icon float-left mr-7">
                         <IconFacial />
                     </div>
-                    <div class="services__item__text">
-                        <h5>Tratamientos faciales</h5>
+                    <div class="services__item__text overflow-hidden">
+                        <h5 class="text-gray-900 font-bold group-hover:text-white mb-2">Tratamientos faciales</h5>
                         <ul class="services__details__feature">
-                            <li><i class="fa fa-check-circle mr-2"></i>Rejuvenecimiento facial con Bellaction Dúo</li>
-                            <li><i class="fa fa-check-circle mr-2"></i>Dermapen </li>
-                            <li><i class="fa fa-check-circle mr-2"></i>Hydrafacial personalizada</li>
-                            <li><i class="fa fa-check-circle mr-2"></i>Peeling anti-acné, anti-age, despigmentante</li>
-                            <li><i class="fa fa-check-circle mr-2"></i>Micropigmentación de labios y cejas</li>
-                            <li><i class="fa fa-check-circle mr-2"></i>Eyeliner</li>
-                            <li><i class="fa fa-check-circle mr-2"></i>Radiofrecuencia</li>
-                            <li><i class="fa fa-check-circle mr-2"></i>Dermoabrasión</li>
+                            <li class="text-gray-400 group-hover:text-white"><CheckIcon className="inline-block text-primary-100 group-hover:text-white w-5 h-5 mr-2" />Rejuvenecimiento facial con Bellaction Dúo</li>
+                            <li class="text-gray-400 group-hover:text-white"><CheckIcon className="inline-block text-primary-100 group-hover:text-white w-5 h-5 mr-2" />Dermapen </li>
+                            <li class="text-gray-400 group-hover:text-white"><CheckIcon className="inline-block text-primary-100 group-hover:text-white w-5 h-5 mr-2" />Hydrafacial personalizada</li>
+                            <li class="text-gray-400 group-hover:text-white"><CheckIcon className="inline-block text-primary-100 group-hover:text-white w-5 h-5 mr-2" />Peeling anti-acné, anti-age, despigmentante</li>
+                            <li class="text-gray-400 group-hover:text-white"><CheckIcon className="inline-block text-primary-100 group-hover:text-white w-5 h-5 mr-2" />Micropigmentación de labios y cejas</li>
+                            <li class="text-gray-400 group-hover:text-white"><CheckIcon className="inline-block text-primary-100 group-hover:text-white w-5 h-5 mr-2" />Eyeliner</li>
+                            <li class="text-gray-400 group-hover:text-white"><CheckIcon className="inline-block text-primary-100 group-hover:text-white w-5 h-5 mr-2" />Radiofrecuencia</li>
+                            <li class="text-gray-400 group-hover:text-white"><CheckIcon className="inline-block text-primary-100 group-hover:text-white w-5 h-5 mr-2" />Dermoabrasión</li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <!-- <div class="col-lg-6 col-md-6">
-                <div class="services__item">
-                    <div class="services__item__icon">
+            <!-- <div class="col-lg-6 col-md-6 px-4">
+                <div class="services__item bg-white hover:bg-primary-100 py-11 pr-8 pl-12 rounded-md mb-8 transition-all duration-300 group">
+                    <div class="services__item__icon float-left mr-7">
                         <span class="flaticon-038-beauty"></span>
                     </div>
-                    <div class="services__item__text">
-                        <h5>Medicina estética</h5>
+                    <div class="services__item__text overflow-hidden">
+                        <h5 class="text-gray-900 font-bold group-hover:text-white mb-2">Medicina estética</h5>
                         <ul class="services__details__feature">
-                            <li><i class="fa fa-check-circle mr-2"></i>Relleno de labios con AH</li>
-                            <li><i class="fa fa-check-circle mr-2"></i>Rinomodelación con AH </li>
-                            <li><i class="fa fa-check-circle mr-2"></i>Rellenos faciales</li>
-                            <li><i class="fa fa-check-circle mr-2"></i>Entrecejo</li>
-                            <li><i class="fa fa-check-circle mr-2"></i>Frente</li>
-                            <li><i class="fa fa-check-circle mr-2"></i>Patas de gallo</li>
-                            <li><i class="fa fa-check-circle mr-2"></i>Ojeras</li>
-                            <li><i class="fa fa-check-circle mr-2"></i>Mentón y mandíbula</li>
-                            <li><i class="fa fa-check-circle mr-2"></i>Óvalo facial, nariz y ojos</li>
+                            <li class="text-gray-400 group-hover:text-white"><CheckIcon className="inline-block text-primary-100 group-hover:text-white w-5 h-5 mr-2" />Relleno de labios con AH</li>
+                            <li class="text-gray-400 group-hover:text-white"><CheckIcon className="inline-block text-primary-100 group-hover:text-white w-5 h-5 mr-2" />Rinomodelación con AH </li>
+                            <li class="text-gray-400 group-hover:text-white"><CheckIcon className="inline-block text-primary-100 group-hover:text-white w-5 h-5 mr-2" />Rellenos faciales</li>
+                            <li class="text-gray-400 group-hover:text-white"><CheckIcon className="inline-block text-primary-100 group-hover:text-white w-5 h-5 mr-2" />Entrecejo</li>
+                            <li class="text-gray-400 group-hover:text-white"><CheckIcon className="inline-block text-primary-100 group-hover:text-white w-5 h-5 mr-2" />Frente</li>
+                            <li class="text-gray-400 group-hover:text-white"><CheckIcon className="inline-block text-primary-100 group-hover:text-white w-5 h-5 mr-2" />Patas de gallo</li>
+                            <li class="text-gray-400 group-hover:text-white"><CheckIcon className="inline-block text-primary-100 group-hover:text-white w-5 h-5 mr-2" />Ojeras</li>
+                            <li class="text-gray-400 group-hover:text-white"><CheckIcon className="inline-block text-primary-100 group-hover:text-white w-5 h-5 mr-2" />Mentón y mandíbula</li>
+                            <li class="text-gray-400 group-hover:text-white"><CheckIcon className="inline-block text-primary-100 group-hover:text-white w-5 h-5 mr-2" />Óvalo facial, nariz y ojos</li>
                         </ul>
                     </div>
                 </div>
             </div> -->
-            <div class="col-lg-6 col-md-6">
-                <div class="services__item">
-                    <div class="services__item__icon">
+            <div class="col-span-12 max-w-xl mx-auto px-4">
+                <div class="services__item bg-white hover:bg-primary-100 py-11 pr-8 pl-12 rounded-md mb-8 transition-all duration-300 group">
+                    <div class="services__item__icon float-left mr-7">
                         <IconLaser />
                     </div>
-                    <div class="services__item__text">
-                        <h5>Depilación Láser de Diodo</h5>
+                    <div class="services__item__text overflow-hidden">
+                        <h5 class="text-gray-900 font-bold group-hover:text-white mb-2">Depilación Láser de Diodo</h5>
                         <ul class="services__details__feature">
-                            <li><i class="fa fa-check-circle mr-2"></i>Láser de diodo de alta potencia e intensidad</li>
-                            <li><i class="fa fa-check-circle mr-2"></i>Resultados desde la 1ra sesión</li>
-                            <li><i class="fa fa-check-circle mr-2"></i>Sesiones sueltas sin BONOS</li>
-                            <li><i class="fa fa-check-circle mr-2"></i>Indoloro con punta de hielo</li>
-                            <li><i class="fa fa-check-circle mr-2"></i>Compatible con el sol</li>
-                            <li><i class="fa fa-check-circle mr-2"></i>Apto para todo tipo de piel</li>
+                            <li class="text-gray-400 group-hover:text-white"><CheckIcon className="inline-block text-primary-100 group-hover:text-white w-5 h-5 mr-2" />Láser de diodo de alta potencia e intensidad</li>
+                            <li class="text-gray-400 group-hover:text-white"><CheckIcon className="inline-block text-primary-100 group-hover:text-white w-5 h-5 mr-2" />Resultados desde la 1ra sesión</li>
+                            <li class="text-gray-400 group-hover:text-white"><CheckIcon className="inline-block text-primary-100 group-hover:text-white w-5 h-5 mr-2" />Sesiones sueltas sin BONOS</li>
+                            <li class="text-gray-400 group-hover:text-white"><CheckIcon className="inline-block text-primary-100 group-hover:text-white w-5 h-5 mr-2" />Indoloro con punta de hielo</li>
+                            <li class="text-gray-400 group-hover:text-white"><CheckIcon className="inline-block text-primary-100 group-hover:text-white w-5 h-5 mr-2" />Compatible con el sol</li>
+                            <li class="text-gray-400 group-hover:text-white"><CheckIcon className="inline-block text-primary-100 group-hover:text-white w-5 h-5 mr-2" />Apto para todo tipo de piel</li>
                         </ul>
-                        <p>Pide tu sesión de axilas gratis para probar nuestro método (plazas limitadas)</p>
+                        <p class="text-gray-400 group-hover:text-white">Pide tu sesión de axilas gratis para probar nuestro método (plazas limitadas)</p>
                     </div>
                 </div>
             </div>
-            <div class="col-12">
+            <div class="col-span-12">
                 <div class="text-center text-white">
                     <a href="./contacto" class="primary-btn">Más información</a>
                 </div>
@@ -109,94 +111,3 @@ import IconLaser from '@/components/icons/Laser.astro';
     </div>
 </section>
 
-<style>
-    .services {
-	padding-bottom: 70px;
-}
-
-.services .section-title span {
-	color: var(--color-primary);
-}
-
-.services .section-title h2 {
-	color: #ffffff;
-}
-
-.services__btn {
-	text-align: right;
-}
-
-.services__btn .primary-btn {
-	color: #ffffff;
-}
-
-.services__item {
-	background: #ffffff;
-	padding: 45px 30px 45px 50px;
-	margin-bottom: 30px;
-	border-radius: 5px;
-}
-
-.services__item:hover {
-	background: var(--color-primary);
-	-webkit-transition: all, 0.3s;
-	-o-transition: all, 0.3s;
-	transition: all, 0.3s;
-}
-
-.services__item:hover .services__item__icon span,.services__item:hover .services__item__text ul li {
-	color: #ffffff;
-}
-.services__item:hover .services__item__text ul li i {
-	color: #ff82c8;
-}
-
-.services__item:hover .services__item__text h5 {
-	color: #ffffff;
-}
-
-.services__item:hover .services__item__text p {
-	color: #ffffff;
-}
-
-.services__item__icon {
-	float: left;
-	margin-right: 30px;
-}
-
-.services__item__icon span {
-	color: var(--color-primary);
-	font-size: 40px;
-	display: inline-block;
-	line-height: 76px;
-	-webkit-transition: all, 0.3s;
-	-o-transition: all, 0.3s;
-	transition: all, 0.3s;
-}
-
-.services__item__icon span:before {
-	font-size: 70px;
-}
-
-.services__item__text {
-	overflow: hidden;
-}
-
-.services__item__text h5 {
-	font-size: 20px;
-	color: #111111;
-	font-weight: 600;
-	margin-bottom: 14px;
-	-webkit-transition: all, 0.3s;
-	-o-transition: all, 0.3s;
-	transition: all, 0.3s;
-}
-
-.services__item__text p {
-	margin-bottom: 0;
-	-webkit-transition: all, 0.3s;
-	-o-transition: all, 0.3s;
-	transition: all, 0.3s;
-}
-
-</style>

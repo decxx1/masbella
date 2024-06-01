@@ -8,21 +8,17 @@ import IconWhatsApp from "@/components/icons/WhatsAppSimple.astro";
 import IconDate from "@/components/icons/Date.astro";
 ---
 <section class="bg-light call-to-action">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-8 col-md-8 col-sm-6">
-                <div class="section-title">
-                    <span>Pide cita</span>
-                    <h2>Haz una reserva</h2>
-                </div>
-            </div>
+    <div class="container mx-auto">
+        <div class="section-title">
+            <span>Pide cita</span>
+            <h2>Haz una reserva</h2>
         </div>
-        <div class="row justify-content-center">
-            <div class="col-6 text-right">
-                <a target="_blank" href={dateLink} class="btn btn-primary rounded-pill btn-masbella button-cta" type="button"><IconDate /><span class="ml-2">Cita Online</span></a>
+        <div class="inline-block">
+            <div class="inline-block text-right">
+                <a target="_blank" href={dateLink} class="py-2 px-4 btn-primary rounded-lg btn-masbella button-cta" type="button"><IconDate className="inline-block" /><span class="ml-2">Cita Online</span></a>
             </div>
-            <div class="col-6 text-left">
-                <a target="_blank" href={'https://wa.me/34' + whatsappLinkeable} class="btn btn-primary rounded-pill whatsapp-color button-cta" type="button"><IconWhatsApp /><span class="ml-2">WhatsApp</span></a>
+            <div class="inline-block text-left">
+                <a target="_blank" href={'https://wa.me/34' + whatsappLinkeable} class="py-2 px-4 btn-primary rounded-lg whatsapp-color button-cta" type="button"><IconWhatsApp className="inline-block" /><span class="ml-2">WhatsApp</span></a>
             </div>
         </div>
     </div>
@@ -41,6 +37,7 @@ import IconDate from "@/components/icons/Date.astro";
     .whatsapp-color {
         background: linear-gradient(0deg, #00B100, #09db09);
         border:none;
+        color: white;
     }
     .whatsapp-color:hover {
         background: white;
