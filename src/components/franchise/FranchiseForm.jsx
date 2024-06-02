@@ -144,41 +144,41 @@ export default function FranchiseForm() {
                                 </div>
                                 <div className="col-span-12 md:col-span-6 mb-3 px-2">
                                     <label className="block mb-2 text-sm font-medium text-primary-100">Tiene experiencia en:</label>
-                                    <ul class="w-48 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg">
-                                        <li class="w-full border-b border-gray-200 rounded-t-lg ">
-                                            <div class="flex items-center ps-3">
+                                    <ul className="w-48 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg">
+                                        <li className="w-full border-b border-gray-200 rounded-t-lg ">
+                                            <div className="flex items-center ps-3">
                                                 <input className="form-check-input" type="checkbox" value="1" name="estetica" id="estetica"/>
                                                 <label className="w-full py-3 ms-2 text-sm font-medium text-gray-900" htmlFor="estetica">
                                                     Estética
                                                 </label>
                                             </div>
                                         </li>
-                                        <li class="w-full border-b border-gray-200 rounded-t-lg ">
-                                            <div class="flex items-center ps-3">
+                                        <li className="w-full border-b border-gray-200 rounded-t-lg ">
+                                            <div className="flex items-center ps-3">
                                                 <input className="form-check-input" type="checkbox" value="1" name="depilacion_laser" id="depilacion_laser"/>
                                                 <label className="w-full py-3 ms-2 text-sm font-medium text-gray-900" htmlFor="depilacion_laser">
                                                     Depilación Láser
                                                 </label>
                                                 </div>
                                         </li>
-                                        <li class="w-full border-b border-gray-200 rounded-t-lg ">
-                                            <div class="flex items-center ps-3">
+                                        <li className="w-full border-b border-gray-200 rounded-t-lg ">
+                                            <div className="flex items-center ps-3">
                                                 <input className="form-check-input" type="checkbox" value="1" name="cuidado_personal" id="cuidado_personal"/>
                                                 <label className="w-full py-3 ms-2 text-sm font-medium text-gray-900" htmlFor="cuidado_personal">
                                                     Cuidado Personal
                                                 </label>
                                             </div>
                                         </li>
-                                        <li class="w-full border-b border-gray-200 rounded-t-lg ">
-                                            <div class="flex items-center ps-3">
+                                        <li className="w-full border-b border-gray-200 rounded-t-lg ">
+                                            <div className="flex items-center ps-3">
                                                 <input className="form-check-input" type="checkbox" value="1" name="fotodepilacion" id="fotodepilacion"/>
                                                 <label className="w-full py-3 ms-2 text-sm font-medium text-gray-900" htmlFor="fotodepilacion">
                                                     Fotodepilación
                                                 </label>
                                             </div>
                                         </li>
-                                        <li class="w-full border-b border-gray-200 rounded-t-lg ">
-                                            <div class="flex items-center ps-3">
+                                        <li className="w-full border-b border-gray-200 rounded-t-lg ">
+                                            <div className="flex items-center ps-3">
                                                 <input className="form-check-input" type="checkbox" value="1" name="luz_pulsada" id="luz_pulsada"/>
                                                 <label className="w-full py-3 ms-2 text-sm font-medium text-gray-900" htmlFor="luz_pulsada">
                                                     Luz Pulsada

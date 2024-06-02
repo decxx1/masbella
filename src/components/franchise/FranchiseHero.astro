@@ -4,18 +4,18 @@ interface Props {
 }
 const { background } = Astro.props;
 ---
-<section class="hero" >
+<section class="hero pt-8 lg:pt-32 pb-10 sm:pb-20 md:pb-8 lg:pb-60" >
 	<img loading="eager" decoding="async" src={background} class="backgroundImage" >
     <div class="container mx-auto">
-		<div class="grid grid-cols-1 md:grid-cols-2">
-			<div class="hero__text">
-				<h1><em>Abre tu franquicia <span class="nowrap">Más Bella</span></em>Te facilitamos todo para que puedas abrir tu propio centro</h1>
+		<div class="grid grid-cols-1 lg:grid-cols-2">
+			<div class="hero__text max-lg:mb-5 max-lg:text-center">
+				<h1><em class="lg:w-fit">Abre tu franquicia <span class="nowrap">Más Bella</span></em>Te facilitamos todo para que puedas abrir tu propio centro</h1>
 				<a href="#franchiseForm" class="primary-btn normal-btn">Contactanos</a>
 			</div>
 			<div>
 				<video class="w-full h-auto max-w-full border shadow-md shadow-primary-50 border-primary-50/50 rounded-lg" controls preload="none" poster="img/miniatura.webp" width="640" height="360">
 					<source src="videos/video_mas_bella_franquicias.mp4" type="video/mp4">
-					Tu navegador no soporta el elemento <code>video</code>.
+					No se puede reproducir el video desde este navegador.
 				</video>
 			</div>
 		</div>
@@ -26,20 +26,9 @@ const { background } = Astro.props;
 	.nowrap {
 		white-space: nowrap;
 	}
-	@media screen and (max-width: 991px) {
-		.hero {
-			padding-top: 54px !important;
-		}
-	}
-	@media screen and (max-width: 1200px) {
-		.hero {
-			padding-top: 74px !important;
-		}
-	}
+
 	@media screen and (max-width: 768px) {
-		.hero {
-			padding-top: 30px !important;
-		}
+	
 		.hero__text h2,.hero__text h1 {
 			font-size: 38px !important;
 		}
@@ -69,8 +58,6 @@ const { background } = Astro.props;
 		z-index: -1;
 	}
 .hero {
-	padding-top: 145px;
-	padding-bottom: 215px;
 	margin-bottom: -90px;
 	margin-top: 110px;
 }
@@ -83,7 +70,6 @@ const { background } = Astro.props;
 	display: block;
 	text-shadow: 0px 1px 2px rgba(255, 0, 84, 0.7);
 	background-color: var(--color-primary);
-	width: fit-content;
 	line-height: normal;
 	padding: 0px 20px;
 	border-radius: 7px;
