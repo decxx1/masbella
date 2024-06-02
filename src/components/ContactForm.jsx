@@ -50,11 +50,11 @@ export default function Contactform () {
             <h3>Escríbenos un mensaje</h3>
             <form id="contactForm" method="post" onSubmit={handleSubmit} >
                 <input className="input" type="text" name="nombre" placeholder="Nombre" required/>
-                <div className="row">
-                    <div className="col-lg-6 col-md-6">
+                <div className="grid grid-cols-12">
+                    <div className="col-span-12 md:col-span-6 md:mr-4">
                         <input className="input" type="email" name="email" placeholder="E-mail" required/>
                     </div>
-                    <div className="col-lg-6 col-md-6">
+                    <div className="col-span-12 md:col-span-6">
                         <input className="input" type="tel" name="telefono" placeholder="Teléfono" required/>
                     </div>
                 </div>

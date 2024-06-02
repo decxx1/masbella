@@ -31,12 +31,12 @@ import {
 >
     <BreadCrumbs title="Contacto" />
     <section class="contact spad">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-4 col-md-4 col-sm-6">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-12 px-4">
+                <div class="col-span-12 sm:col-span-6 md:col-span-4">
                     <div class="contact__widget">
                         <div class="contact__widget__icon">
-                            <MapMarker />
+                            <MapMarker className="inline" />
                         </div>
                         <div class="contact__widget__text">
                             <h5>Dirección</h5>
@@ -44,10 +44,10 @@ import {
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="col-span-12 sm:col-span-6 md:col-span-4">
                     <div class="contact__widget">
                         <div class="contact__widget__icon">
-                            <Phone />
+                            <Phone className="inline" />
                         </div>
                         <div class="contact__widget__text">
                             <h5>Teléfono</h5>
@@ -55,10 +55,10 @@ import {
                         </div>
                     </div>
                 </div>
-				<div class="col-lg-4 col-md-4 col-sm-6">
+				<div class="col-span-12 sm:col-span-6 md:col-span-4">
                     <div class="contact__widget">
                         <div class="contact__widget__icon">
-                            <Envelope />
+                            <Envelope className="inline" />
                         </div>
                         <div class="contact__widget__text">
                             <h5>E-mail</h5>
@@ -66,10 +66,10 @@ import {
                         </div>
                     </div>
                 </div>
-				 <div class="col-lg-4 col-md-4 col-sm-6">
+				 <div class="col-span-12 sm:col-span-6 md:col-span-4 md:col-start-3 ">
                     <div class="contact__widget">
                         <div class="contact__widget__icon">
-                            <WhatsAppSimple />
+                            <WhatsAppSimple className="inline" />
                         </div>
                         <div class="contact__widget__text">
 							<h5>WhatsApp</h5>
@@ -77,10 +77,10 @@ import {
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="col-span-12 sm:col-span-6 md:col-span-4">
                     <div class="contact__widget">
                         <div class="contact__widget__icon">
-                            <IconDate />
+                            <IconDate className="inline" />
                         </div>
                         <div class="contact__widget__text">
 							<h5>Haz reserva</h5>
@@ -90,12 +90,12 @@ import {
                 </div>
             </div>
             <div class="contact__content">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6">
+                <div class="grid grid-cols-12">
+                    <div class="col-span-12 md:col-span-6 px-4">
                         <div class="contact__pic" set:html={ mapIframe }>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6">
+                    <div class="col-span-12 md:col-span-6 px-4">
                         <ContactForm client:load />
                     </div>
                 </div>
