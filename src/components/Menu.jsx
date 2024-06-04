@@ -21,6 +21,9 @@ export default function Menu() {
           <li className={path === "/franquicias" ? "active" : ""}>
             <a href="./franquicias">Franquicias</a>
           </li>
+          <li className={path === "/centros" ? "active" : ""}>
+            <a href="./centros">Centros</a>
+          </li>
         </ul>
       </nav>
       <div className="header__btn">
