@@ -7,16 +7,25 @@ export default function ModalPolitics() {
         isModalPoliticsOpen.set(false);
     }
     return(
-        <div className={`modal fade ${isOpen ? 'show' : ''}`} style={{display: isOpen ? 'block' : 'none'}} >
-            <div className="modal-dialog modal-lg">
-                <div className="modal-content">
-                    <div className="modal-header">
-                        <h4 className="modal-title">Información básica sobre Protección de datos</h4>
-                        <button type="button" className="close" onClick={handleCloseModal}>
-                            <span aria-hidden="true">X</span>
+        <>
+        <div className={`${isOpen ? 'block' : 'hidden'} flex overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[998] justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full`} >
+            <div className="relative p-4 w-full max-w-2xl max-h-full">
+                <div className="relative bg-white rounded-lg shadow">
+                    <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t">
+                        <h4 className="text-xl font-semibold text-gray-900">Información básica sobre Protección de datos</h4>
+                       
+                        <button
+                            onClick={handleCloseModal} 
+                            type="button"
+                            className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
+                        >
+                            <svg className="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                            </svg>
+                            <span className="sr-only">Close modal</span>
                         </button>
                     </div>
-                    <div className="modal-body">
+                    <div className="p-4 md:p-5 space-y-4">
                         <p>De acuerdo con lo establecido por el Reglamento (UE) 2016/679 del Parlamento
                         Europeo y del Consejo, y de la Ley 3/2018 de Protección de Datos Personales y
                         Garantías de los Derechos Digitales, le informamos que los datos personales aportados
@@ -38,11 +47,14 @@ export default function ModalPolitics() {
                         <p>Puede consultar información adicional y detallada sobre Protección de Datos aquí:<br/>
                         <a target="_blank" href="./politica-privacidad">Política de privacidad</a></p>
                     </div>
-                    <div className="modal-footer justify-content-between">
-                        <button type="button" className="btn btn-default w-100" onClick={handleCloseModal}>Cerrar</button>
+                    <div className="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b">
+                        <button type="button" className="w-full py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100" onClick={handleCloseModal}>Cerrar</button>
                     </div>
                 </div>
             </div>
         </div>
+        
+        <div className={`${isOpen ? 'bg-gray-900/50 dark:bg-gray-900/80 fixed inset-0 z-[997]' : 'hidden'}`} ></div>
+        </>
     )
 }

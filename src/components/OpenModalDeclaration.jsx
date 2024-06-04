@@ -7,7 +7,7 @@ export default function OpenModalDeclaration() {
   // escribe en el store importado usando `.set`
   return (
     <>
-      <a type="button" onClick={() => isModalDeclarationOpen.set(!isOpen)}>Declaración de cookies</a>
+      <a type="button" className="cursor-pointer" onClick={() => isModalDeclarationOpen.set(!isOpen)}>Declaración de cookies</a>
     </>
   )
 }
