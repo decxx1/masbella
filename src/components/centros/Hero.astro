@@ -1,0 +1,77 @@
+---
+import MapInteractive from '@/components/MapInteractive.jsx'
+interface Props {
+	background: string;
+}
+const { background } = Astro.props;
+---
+<section class="hero pt-8 lg:pt-32 pb-10 sm:pb-20 md:pb-8 lg:pb-60" >
+	<img loading="eager" decoding="async" src={background} class="backgroundImage" >
+    <MapInteractive client:load />
+	<div class="texture"></div>
+</section>
+<style is:global>
+	.nowrap {
+		white-space: nowrap;
+	}
+
+	@media screen and (max-width: 768px) {
+	
+		.hero__text h2,.hero__text h1 {
+			font-size: 38px !important;
+		}
+	}
+	@media screen and (min-width: 1200px) {
+		.backgroundImage {
+			width: -moz-available !important;
+		}
+	}
+	.backgroundImage {
+		position: absolute;
+		z-index: -1;
+		min-width: -webkit-fill-available;
+		width: max-content;
+		height: 100%;
+		top: 0;
+  		object-fit: cover;
+	}
+	.texture {
+		width: 100%;
+		height: 100%;
+		background-color: #000;
+		opacity: .4;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+	}
+.hero {
+	margin-bottom: -90px;
+	margin-top: 110px;
+}
+
+.hero__text h1 em {
+	font-size: 22px;
+	font-weight: 500;
+	color: white;
+	text-transform: uppercase;
+	display: block;
+	text-shadow: 0px 1px 2px rgba(255, 0, 84, 0.7);
+	background-color: var(--color-primary);
+	line-height: normal;
+	padding: 0px 20px;
+	border-radius: 7px;
+	margin-bottom: 16px;
+}
+
+.hero__text h2,.hero__text h1 {
+	font-size: 48px;
+	color: white;
+	font-weight: 700;
+	line-height: 60px;
+	margin-top: 10px;
+	margin-bottom: 35px;
+	text-shadow: 0px 2px 4px rgba(0,0,0,.56);
+}
+
+</style>

@@ -1,6 +1,7 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-import Gallery from '@/components/franchise/Gallery.astro';
+import Hero from '@/components/centros/Hero.astro'
+import Cards from '@/components/centros/Cards.astro';
 import Tips from '@/components/Tips.astro';
 import { secretKey } from '@/services/enviroment.js';
 ---
@@ -10,4 +11,7 @@ import { secretKey } from '@/services/enviroment.js';
 	metaTitle="Más Bella - Nuestros Centros"
 	metaDescription=""
 	metaImg="https://masbellamedical.com/img/centro/1.jpg"
-></Layout>
+>
+	<Hero background="img/centro/1.jpg" />
+	<Cards />
+</Layout>
