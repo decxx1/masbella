@@ -44,14 +44,7 @@ import IconFacebook from "@/components/icons/Facebook.astro";
   <div class="offcanvas__btn">
     <a href="./contacto" class="primary-btn">Contacto</a>
   </div>
-  <ul class="offcanvas__widget">
-    <li>
-      <a target="_blank" href={"tel:" + telphoneLinkeable}
-        ><IconPhone className="inline" /> {telphoneReadble}</a>
-    </li>
-    <li><a target="_blank" href={mapUrl}><IconMapMarker className="inline" /> {address}</a></li>
-    <li><IconClock className="inline" /> {schedules}</li>
-  </ul>
+ 
   <div class="offcanvas__social">
     <a target="_blank" href={instagram}><IconInstagram /></a>
     <a target="_blank" href={facebook}><IconFacebook /></a>
@@ -64,14 +57,8 @@ import IconFacebook from "@/components/icons/Facebook.astro";
       <div class="col-span-12 lg:col-span-8">
         <ul class="header__top__left">
           <li class="inline-block">
-            <a  target="_blank" href={"tel:" + telphoneLinkeable}>
-                <IconPhone className="inline" />
-                {telphoneReadble}
-            </a>
-          </li>
-          <li class="inline-block">
-            <a class="max-md:hidden" target="_blank" href={mapUrl}>
-                <IconMapMarker className="inline" />{address}
+            <a class="bg-white py-2 shadow px-4 font-semibold !text-primary-100 rounded-md" target="_blank" href="./franquicias">
+              Abre tu franquicia
             </a>
           </li>
         </ul>
