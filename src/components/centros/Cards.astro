@@ -16,20 +16,22 @@ interface Props {
 const { images, title, iframe,id } = Astro.props;
 import Gallery from '@/components/centros/Gallery.astro';
 ---
-<section id={id} class="container mx-auto p-4 mt-16">
-    <div class="border border-primary-50 rounded-lg shadow shadow-primary-50 p-4">
-        <header class="bg-primary-100 rounded-lg py-4 mb-4">
-            <h3 class="text-center text-4xl font-semibold text-white">{title}</h3>
-        </header>
-        <div class="grid grid-cols-12 p-4">
-            <slot />
-            <div class="col-span-12 max-sm:mt-6 sm:col-span-5 border border-primary-50 rounded-lg shadow p-4 mx-4" set:html={iframe}>
+<section class="even:bg-body-light pb-10 pt-1">
+    <div id={id} class="container mx-auto p-4 mt-16">
+        <div class="border bg-white border-primary-50 rounded-lg shadow shadow-primary-50 p-4">
+            <header class="bg-primary-100 rounded-lg py-4 mb-4">
+                <h3 class="text-center text-4xl font-semibold text-white">{title}</h3>
+            </header>
+            <div class="grid grid-cols-12 p-4">
+                <slot />
+                <div class="col-span-12 max-sm:mt-6 sm:col-span-5 border border-primary-50 rounded-lg shadow p-4 mx-4" set:html={iframe}>
+                </div>
             </div>
-        </div>
-        <div>
-            <Gallery
-                images={images}
-            />
+            <div>
+                <Gallery
+                    images={images}
+                />
+            </div>
         </div>
     </div>
 </section>
