@@ -18,11 +18,11 @@ export default function Menu() {
           <li className={path === "/about" ? "active" : ""}>
             <a href="./about">Nosotros</a>
           </li>
-          <li className={path === "/franquicias" ? "active" : ""}>
-            <a href="./franquicias">Franquicias</a>
-          </li>
           <li className={path === "/centros" ? "active" : ""}>
             <a href="./centros">Centros</a>
+          </li>
+          <li className={path === "/franquicias" ? "active" : ""}>
+            <a href="./franquicias">Franquicias</a>
           </li>
         </ul>
       </nav>

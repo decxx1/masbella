@@ -2,16 +2,124 @@
 import Layout from '@/layouts/Layout.astro';
 import Hero from '@/components/centros/Hero.astro'
 import Cards from '@/components/centros/Cards.astro';
+import MapMarker from '@/components/icons/MapMarker.astro';
+import Phone from '@/components/icons/Phone.astro';
+import WhatsApp from '@/components/icons/WhatsApp.astro';
+import Clock from '@/components/icons/Clock.astro';
 import Tips from '@/components/Tips.astro';
 import { secretKey } from '@/services/enviroment.js';
+const images = [
+    {
+        src: "img/centro/1.jpg",
+        mini: "img/centro/thumb/1.jpg",
+        class: "",
+        width: 1536,
+        height: 2048,
+    },
+    {
+        src: "img/centro/5.jpg",
+        mini: "img/centro/thumb/5.jpg",
+        class: "wide",
+        width: 1536,
+        height: 2048,
+    },
+    {
+        src: "img/centro/3.jpg",
+        mini: "img/centro/thumb/3.jpg",
+        class: "",
+        width: 1536,
+        height: 2048,
+    },
+]
+const suc1Images = [];
+import { 
+    mapIframe,
+	telphoneReadble,
+    telphoneLinkeable,
+    whatsappReadble,
+    whatsappLinkeable,
+    address,
+    schedules,
+    mapUrl,
+
+	suc1WhatsappReadble,
+	suc1WhatsappLinkeable,
+	suc1Schedules,
+	suc1Address,
+	suc1MapUrl,
+	suc1MapIframe,
+} from '@/services/enviroment.js';
+
 ---
 <Layout
 	title="Más Bella - Nuestros Centros"
 	canonical="https://masbellamedical.com/about"
 	metaTitle="Más Bella - Nuestros Centros"
-	metaDescription=""
+	metaDescription="¿Dónde encontrarnos? todos nuestros centros en España, ¿quieres tu propio centro? adquiera una franquicia de Más Bella."
 	metaImg="https://masbellamedical.com/img/centro/1.jpg"
 >
 	<Hero background="img/centro/1.jpg" />
-	<Cards />
+	<div class="section-title text-center mt-24">
+		<span>¿Dónde encontrarnos?</span>
+		<h2>Centros Más Bella</h2>
+	</div>
+	<Cards
+		title="Málaga - Torre del Mar"
+		id="malaga"
+		images={images}
+		iframe={mapIframe}
+	>
+		<div class="col-span-12 sm:col-span-7 border border-primary-50 rounded-lg shadow p-4 mx-4">
+			<ul class="text-lg">
+				<li class="mb-2"><MapMarker className="inline w-5 h-5 text-primary-100 mr-3" /> <a href={mapUrl} target="_blank" rel="noopener noreferrer">{address}</a></li>
+				<li class="mb-2"><WhatsApp className="inline w-5 h-5 mr-3" /> <a href={'https://wa.me/34'+whatsappLinkeable} target="_blank" rel="noopener noreferrer">{whatsappReadble}</a></li>
+				<li class="mb-2"><Phone className="inline text-primary-100 w-5 h-5 mr-3" /> <a href={'tel:'+telphoneLinkeable} target="_blank" rel="noopener noreferrer">{telphoneReadble}</a></li>
+				<li class=""><Clock className="inline w-5 h-5 text-primary-100 mr-4" />{schedules}</li>
+			</ul>
+		</div>
+	</Cards>
+	<Cards
+		title="Córdoba - Poniente Sur"
+		id="cordoba"
+		images={suc1Images}
+		iframe={suc1MapIframe}
+	>
+		<div class="col-span-12 sm:col-span-7 border border-primary-50 rounded-lg shadow p-4 mx-4">
+			<ul class="text-lg">
+				<li class="mb-2"><MapMarker className="inline w-5 h-5 text-primary-100 mr-3" /> <a href={suc1MapUrl} target="_blank" rel="noopener noreferrer">{suc1Address}</a></li>
+				<li class="mb-2"><WhatsApp className="inline w-5 h-5 mr-3" /> <a href={'https://wa.me/34'+suc1WhatsappLinkeable} target="_blank" rel="noopener noreferrer">{suc1WhatsappReadble}</a></li>
+				<li class=""><Clock className="inline w-5 h-5 text-primary-100 mr-4" />{suc1Schedules}</li>
+			</ul>
+		</div>
+	</Cards>
+	<Tips
+        title="¿Tienes alguna consulta?"
+        subTitle1="Abre tu propio centro Más Bella"
+        description1="Te facilitamos todo para que puedas abrir tu propio centro."
+        subTitle2="¡Comunícate con nosotros!"
+        description2="No dudes en preguntar sobre cualquier servicio o tratamiento que te interese."
+        subTitle3="Personaliza tu tratamiento"
+        description3="Infórmanos sobre tus necesidades y personaliza tu tratamiento."
+    />
 </Layout>
+<script>
+    import PhotoSwipeLightbox from 'photoswipe/lightbox';
+    import 'photoswipe/style.css';
+
+    const lightbox = new PhotoSwipeLightbox({
+        gallery: '.lightbox',
+        mouseMovePan: true,
+        showHideAnimationType: 'zoom',
+        initialZoomLevel: 'fit',
+        secondaryZoomLevel: 1.5,
+        maxZoomLevel: 1,
+    
+        imageClickAction: 'close',
+        tapAction: 'close',
+    
+        pswpModule: () => import('photoswipe')
+        
+    });
+    
+    lightbox.init();
+</script>

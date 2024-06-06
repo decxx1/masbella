@@ -13,3 +13,10 @@ export const endPoint = import.meta.env.PUBLIC_ENDPOINT;
 export const secretKey = import.meta.env.PUBLIC_SECRET_KEY;
 export const dateLink = import.meta.env.PUBLIC_DATE_LINK;
 export const addressLegal = import.meta.env.PUBLIC_ADDRESS_LEGAL;
+
+export const suc1WhatsappReadble = import.meta.env.PUBLIC_SUC1_WHATSAPP_READBLE;
+export const suc1WhatsappLinkeable = import.meta.env.PUBLIC_SUC1_WHATSAPP_LINKEABLE;
+export const suc1Schedules = import.meta.env.PUBLIC_SUC1_SCHEDULES;
+export const suc1Address = import.meta.env.PUBLIC_SUC1_ADDRESS;
+export const suc1MapUrl = import.meta.env.PUBLIC_SUC1_MAP_URL;
+export const suc1MapIframe = import.meta.env.PUBLIC_SUC1_MAP_IFRAME;
