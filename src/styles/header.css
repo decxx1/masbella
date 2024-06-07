@@ -34,38 +34,19 @@
     top: -48px;
 }
 
-.header__top__left {
-    padding: 12px 0;
-}
-
 .header__top__left li,
 .header__top__left li a {
-    font-size: 13px;
-    color: #ffffff;
     list-style: none;
-    margin-right: 25px;
     transition: 0.3s;
 }
 
-.header__top__left li:last-child {
-    margin-right: 0;
-}
-
-.header__top__left li i {
-    font-size: 15px;
-    margin-right: 5px;
-}
 
 .header__top__right {
     text-align: right;
-    padding: 12px 0;
 }
 
 .header__top__right a {
-    font-size: 16px;
-    color: #ffffff;
     display: inline-block;
-    margin-right: 20px;
     transition: 0.3s;
 }
 
@@ -201,9 +182,5 @@
     color: var(--color-primary) !important;
     fill: var(--color-primary) !important;
     font-size: 15px;
-    margin-right: 6px;
-}
-
-.header__top__left li a svg {
     margin-right: 6px;
 }

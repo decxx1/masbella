@@ -3,7 +3,9 @@ import Layout from '@/layouts/Layout.astro';
 import BreadCrumbs from '@/components/BreadCrumbs.astro';
 import MapMarker from '@/components/icons/MapMarker.astro';
 import Phone from '@/components/icons/Phone.astro';
-import WhatsAppSimple from '@/components/icons/WhatsAppSimple.astro';
+import Cards from '@/components/contacto/Cards.astro';
+import WhatsApp from '@/components/icons/WhatsApp.astro';
+import Clock from '@/components/icons/Clock.astro';
 import Envelope from '@/components/icons/Envelope.astro';
 import Tips from '@/components/Tips.astro';
 import ContactForm from '@/components/ContactForm.jsx';
@@ -16,11 +18,19 @@ import {
     email,
     address,
     mapUrl,
+    schedules,
     mapIframe,
     secretKey,
     dateLink,
 
+    suc1WhatsappReadble,
+	suc1WhatsappLinkeable,
+	suc1Schedules,
+	suc1Address,
+	suc1MapUrl,
+	suc1MapIframe,
 } from '@/services/enviroment.js';
+
 ---
 <Layout 
 	title="Más Bella - Contacto"
@@ -31,33 +41,11 @@ import {
 >
     <BreadCrumbs title="Contacto" />
     <section class="contact spad">
-        <div class="container mx-auto">
-            <div class="grid grid-cols-12 px-4">
-                <div class="col-span-12 sm:col-span-6 md:col-span-4">
+        <div class="container mx-auto px-4">
+            <div class="flex sm:justify-center flex-wrap">
+				<div class="w-max px-4">
                     <div class="contact__widget">
-                        <div class="contact__widget__icon">
-                            <MapMarker className="inline" />
-                        </div>
-                        <div class="contact__widget__text">
-                            <h5>Dirección</h5>
-                            <p><a target="_blank" href={mapUrl}>{address}</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-span-12 sm:col-span-6 md:col-span-4">
-                    <div class="contact__widget">
-                        <div class="contact__widget__icon">
-                            <Phone className="inline" />
-                        </div>
-                        <div class="contact__widget__text">
-                            <h5>Teléfono</h5>
-                            <p><a target="_blank" href={'tel:' + telphoneLinkeable}>{telphoneReadble}</a></p>
-                        </div>
-                    </div>
-                </div>
-				<div class="col-span-12 sm:col-span-6 md:col-span-4">
-                    <div class="contact__widget">
-                        <div class="contact__widget__icon">
+                        <div class="h-20 w-20 bg-body-light text-primary-100 rounded-full text-center text-2xl  sm:float-left mr-7 leading-[76px]">
                             <Envelope className="inline" />
                         </div>
                         <div class="contact__widget__text">
@@ -66,43 +54,54 @@ import {
                         </div>
                     </div>
                 </div>
-				 <div class="col-span-12 sm:col-span-6 md:col-span-4 md:col-start-3 ">
+				
+                <div class="w-max px-4">
                     <div class="contact__widget">
-                        <div class="contact__widget__icon">
-                            <WhatsAppSimple className="inline" />
-                        </div>
-                        <div class="contact__widget__text">
-							<h5>WhatsApp</h5>
-							<p><a target="_blank" href={'https://wa.me/34' + whatsappLinkeable}> {whatsappReadble}</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-span-12 sm:col-span-6 md:col-span-4">
-                    <div class="contact__widget">
-                        <div class="contact__widget__icon">
+                        <div class="h-20 w-20 bg-body-light text-primary-100 rounded-full text-center text-2xl sm:float-left mr-7 leading-[76px]">
                             <IconDate className="inline" />
                         </div>
                         <div class="contact__widget__text">
 							<h5>Haz reserva</h5>
-							<p><a target="_blank" href={dateLink}> Cita Online</a></p>
+							<p><a target="_blank" href={dateLink}>Cita Online</a></p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="contact__content">
-                <div class="grid grid-cols-12">
-                    <div class="col-span-12 md:col-span-6 px-4">
-                        <div class="contact__pic h-full" set:html={ mapIframe }>
-                        </div>
-                    </div>
-                    <div class="col-span-12 md:col-span-6 px-4">
+                <div class="max-w-xl mx-auto">
+                    
+                    <div class="px-4">
                         <ContactForm client:load />
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
+    <Cards
+		title="Málaga - Torre del Mar"
+		iframe={mapIframe}
+	>
+		<div class="col-span-12 sm:col-span-7 border border-primary-50 rounded-lg shadow p-4 md:mx-4">
+			<ul class="text-lg">
+				<li class="mb-2"><MapMarker className="inline w-5 h-5 text-primary-100 mr-3" /> <a href={mapUrl} target="_blank" rel="noopener noreferrer">{address}</a></li>
+				<li class="mb-2"><WhatsApp className="inline w-5 h-5 mr-3" /> <a href={'https://wa.me/34'+whatsappLinkeable} target="_blank" rel="noopener noreferrer">{whatsappReadble}</a></li>
+				<li class="mb-2"><Phone className="inline text-primary-100 w-5 h-5 mr-3" /> <a href={'tel:'+telphoneLinkeable} target="_blank" rel="noopener noreferrer">{telphoneReadble}</a></li>
+				<li class=""><Clock className="inline w-5 h-5 text-primary-100 mr-4" />{schedules}</li>
+			</ul>
+		</div>
+	</Cards>
+	<Cards
+		title="Córdoba - Poniente Sur"
+		iframe={suc1MapIframe}
+	>
+		<div class="col-span-12 sm:col-span-7 border border-primary-50 rounded-lg shadow p-4 md:mx-4">
+			<ul class="text-lg">
+				<li class="mb-2"><MapMarker className="inline w-5 h-5 text-primary-100 mr-3" /> <a href={suc1MapUrl} target="_blank" rel="noopener noreferrer">{suc1Address}</a></li>
+				<li class="mb-2"><WhatsApp className="inline w-5 h-5 mr-3" /> <a href={'https://wa.me/34'+suc1WhatsappLinkeable} target="_blank" rel="noopener noreferrer">{suc1WhatsappReadble}</a></li>
+				<li class=""><Clock className="inline w-5 h-5 text-primary-100 mr-4" />{suc1Schedules}</li>
+			</ul>
+		</div>
+	</Cards>
     <Tips
         title="Tips para contactarnos"
         subTitle1="¡Comunícate con nosotros!"

@@ -912,18 +912,6 @@ ol {
 	margin-bottom: 30px;
 }
 
-.contact__widget__icon {
-	height: 70px;
-	width: 70px;
-	background: #f2f7f8;
-	border-radius: 50%;
-	line-height: 70px;
-	text-align: center;
-	font-size: 24px;
-	color: var(--color-primary);
-	float: left;
-	margin-right: 30px;
-}
 
 .contact__widget__text {
 	overflow: hidden;
