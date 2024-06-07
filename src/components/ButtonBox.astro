@@ -55,7 +55,7 @@ import IconDate from "@/components/icons/Date.astro";
 					<div class="wa__popup_avatar">
 						<img
 							class="w-14 relative overflow-hidden mt-2"
-							src="/img/logo.png"
+							src="img/logo.png"
 							alt="logo"
 						/>
 					</div>
@@ -76,7 +76,7 @@ import IconDate from "@/components/icons/Date.astro";
 					<div class="wa__popup_avatar">
 						<img
 							class="w-14 relative overflow-hidden mt-2"
-							src="/img/logo.png"
+							src="img/logo.png"
 							alt="logo"
 						/>
 					</div>
@@ -620,8 +620,9 @@ import IconDate from "@/components/icons/Date.astro";
 
 	.wa__stt_offline.wa__btn_w_img .wa__cs_img:after {
 		content: "";
-		background: #ffffff url("/img/wsp/whatsapp_logo_gray.svg") center center
+		background: #ffffff url("/img/wsp/whatsapp_logo_green.svg") center center
 			no-repeat;
+		filter: grayscale(100%);
 		background-size: 21px;
 		display: block;
 		width: 27px;
@@ -835,7 +836,8 @@ import IconDate from "@/components/icons/Date.astro";
 		-moz-background-size: 100% 100%;
 	}
 	.wa__popup_chat_box .wa__stt.wa__stt_offline:after {
-		background-image: url("/img/wsp/whatsapp_logo_gray_sm.svg");
+		background-image: url("/img/wsp/whatsapp_logo_green.svg");
+		filter: grayscale(100%);
 	}
 	.wa__popup_chat_box .wa__stt.wa__stt_online {
 		transition: 0.2s ease all;
@@ -946,12 +948,12 @@ import IconDate from "@/components/icons/Date.astro";
 	}
 	.wa__popup_content_list .wa__popup_content_item .wa__member_duty {
 		font-size: 11px;
-		color: #989b9f;
+		color: gray;
 		padding: 2px 0 0;
 		line-height: 1.125em !important;
 	}
 	.wa__popup_content_list .wa__popup_content_item .wa__member_status {
-		color: var(--color-primary);
+		color: gray;
 		font-size: 10px;
 		padding: 5px 0 0;
 		line-height: 1.125em !important;
@@ -1045,7 +1047,7 @@ import IconDate from "@/components/icons/Date.astro";
 	}
 	.wa__popup_chat_box_gray .wa__popup_heading_gray:before {
 		content: "";
-		background: url(/img/wsp/whatsapp_logo_green.svg) center top no-repeat;
+		background: url('/img/wsp/whatsapp_logo_green.svg') center top no-repeat;
 		background-size: 33px;
 		display: block;
 		width: 55px;
@@ -1070,7 +1072,7 @@ import IconDate from "@/components/icons/Date.astro";
 
 	.wa__popup_chat_box_ct .wa__popup_heading_ct:before {
 		content: "";
-		background: url(/img/wsp/whatsapp_logo.svg) center top no-repeat;
+		background: url('/img/wsp/whatsapp_logo.svg') center top no-repeat;
 		background-size: 30px;
 		display: block;
 		width: 30px;
