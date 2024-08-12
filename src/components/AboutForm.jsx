@@ -2,7 +2,12 @@ import { Toaster, toast } from 'sonner'
 import { OpenModalPolitics } from '@/components/OpenModalPolitics'
 import { useState } from 'react'
 import axios from 'axios';
-import { endPoint, secretKey } from '@/services/enviroment.js';
+import { 
+    secretKey,
+    siteKey,
+    endPoint,
+    email
+} from '@/services/enviroment.js';
 
 export default function AboutForm () {
     const [isSending, setIsSending] = useState(false);
@@ -13,12 +18,14 @@ export default function AboutForm () {
     const handleSubmit = (event) => {
         event.preventDefault();
         const fields = Object.fromEntries(new window.FormData(event.target))
+        fields.secret_key = secretKey
+        fields.addressee = email
+        fields.asunto = "Contacto desde la web - de: " + fields.name
         if(!isSending){
             setIsSending(true);
             grecaptcha.ready(function() {
-                grecaptcha.execute(secretKey, { action: 'contacto' }).then(function(getToken) {
+                grecaptcha.execute(siteKey, { action: 'contacto' }).then(function(getToken) {
                     fields.token = getToken;
-                    fields.action = 'contacto';
                     
                     sendForm(fields);
                 });
@@ -36,7 +43,7 @@ export default function AboutForm () {
             resetForm()
         })
         .catch(error => {
-            console.error(error)
+            //console.error(error)
             toast.error('No se pudo enviar el mensaje vuelva a intentarlo más tarde.')
         })
         .finally(() => {
@@ -46,9 +53,9 @@ export default function AboutForm () {
     return (
         <form id="aboutForm" method="post" onSubmit={handleSubmit}>
             <Toaster richColors position="bottom-right" />
-            <input className="input placeholder:text-gray-400 focus:ring-1 ring-primary-50" type="text" name="nombre" placeholder="Nombre" required />
-            <input className="input placeholder:text-gray-400 focus:ring-1 ring-primary-50" type="tel" name="telefono" placeholder="Teléfono" required />
-            <textarea className="placeholder:text-gray-400 focus:ring-1 ring-primary-50" rows="3" name="mensaje" placeholder="Tu consulta" required></textarea>
+            <input className="input placeholder:text-gray-400 focus:ring-1 ring-primary-50" type="text" name="name" placeholder="Nombre" required />
+            <input className="input placeholder:text-gray-400 focus:ring-1 ring-primary-50" type="tel" name="phone" placeholder="Teléfono" required />
+            <textarea className="placeholder:text-gray-400 focus:ring-1 ring-primary-50" rows="3" name="message" placeholder="Tu consulta" required></textarea>
             <div className="form-check mb-2 flex">
                 <input className="form-check-input mr-3" name="politicas" type="checkbox" value="" id="flexCheckDefault" required />
                 <label className="form-check-label" htmlFor="flexCheckDefault" >

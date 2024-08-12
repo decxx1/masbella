@@ -10,7 +10,9 @@ export const facebook = import.meta.env.PUBLIC_FACEBOOK;
 export const mapUrl = import.meta.env.PUBLIC_MAP_URL;
 export const mapIframe = import.meta.env.PUBLIC_MAP_IFRAME;
 export const endPoint = import.meta.env.PUBLIC_ENDPOINT;
+export const endPointFranchise = import.meta.env.PUBLIC_ENDPOINT_FRANCHISE;
 export const secretKey = import.meta.env.PUBLIC_SECRET_KEY;
+export const siteKey = import.meta.env.PUBLIC_SITE_KEY;
 export const dateLink = import.meta.env.PUBLIC_DATE_LINK;
 export const addressLegal = import.meta.env.PUBLIC_ADDRESS_LEGAL;
 

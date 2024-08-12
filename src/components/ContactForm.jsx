@@ -2,7 +2,7 @@ import { Toaster, toast } from 'sonner'
 import { OpenModalPolitics } from '@/components/OpenModalPolitics'
 import { useState } from 'react'
 import axios from 'axios';
-import { endPoint, secretKey } from '@/services/enviroment.js';
+import { endPoint, secretKey, siteKey, email } from '@/services/enviroment.js';
 
 
 export default function Contactform () {
@@ -14,12 +14,14 @@ export default function Contactform () {
     const handleSubmit = (event) => {
         event.preventDefault();
         const fields = Object.fromEntries(new window.FormData(event.target))
+        fields.secret_key = secretKey
+        fields.addressee = email
+        fields.asunto = "Contacto desde la web - de: " + fields.name
         if(!isSending){
             setIsSending(true);
             grecaptcha.ready(function() {
-                grecaptcha.execute(secretKey, { action: 'contacto' }).then(function(getToken) {
+                grecaptcha.execute(siteKey, { action: 'contacto' }).then(function(getToken) {
                     fields.token = getToken;
-                    fields.action = 'contacto';
                     
                     sendForm(fields);
                 });
@@ -37,7 +39,7 @@ export default function Contactform () {
             resetForm()
         })
         .catch(error => {
-            console.error(error)
+            //console.error(error)
             toast.error('No se pudo enviar el mensaje vuelva a intentarlo más tarde.')
         })
         .finally(() => {
@@ -49,16 +51,16 @@ export default function Contactform () {
             <Toaster richColors position="bottom-right" />
             <h3>Escríbenos un mensaje</h3>
             <form id="contactForm" method="post" onSubmit={handleSubmit} >
-                <input className="input" type="text" name="nombre" placeholder="Nombre" required/>
+                <input className="input" type="text" name="name" placeholder="Nombre" required/>
                 <div className="grid grid-cols-12">
                     <div className="col-span-12 md:col-span-6 md:mr-4">
                         <input className="input" type="email" name="email" placeholder="E-mail" required/>
                     </div>
                     <div className="col-span-12 md:col-span-6">
-                        <input className="input" type="tel" name="telefono" placeholder="Teléfono" required/>
+                        <input className="input" type="tel" name="phone" placeholder="Teléfono" required/>
                     </div>
                 </div>
-                <textarea name="mensaje" placeholder="Mensaje" required></textarea>
+                <textarea name="message" placeholder="Mensaje" required></textarea>
                 <div className="form-check mb-2">
                     <input className="form-check-input" name="politicas" type="checkbox" value="" id="flexCheckDefault" required/>
                     <label className="form-check-label" htmlFor="flexCheckDefault">

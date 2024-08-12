@@ -2,7 +2,7 @@ import { Toaster, toast } from 'sonner'
 import { OpenModalPolitics } from '@/components/OpenModalPolitics'
 import { useState } from 'react'
 import axios from 'axios';
-import { endPoint, secretKey } from '@/services/enviroment.js';
+import { endPointFranchise, secretKey, siteKey, email } from '@/services/enviroment.js';
 
 export default function FranchiseForm() {
     const [isSending, setIsSending] = useState(false);
@@ -13,12 +13,13 @@ export default function FranchiseForm() {
     const handleSubmit = (event) => {
         event.preventDefault();
         const fields = Object.fromEntries(new window.FormData(event.target))
+        fields.secret_key = secretKey
+        fields.addressee = email
         if(!isSending){
             setIsSending(true);
             grecaptcha.ready(function() {
-                grecaptcha.execute(secretKey, { action: 'contacto' }).then(function(getToken) {
+                grecaptcha.execute(siteKey, { action: 'franchise' }).then(function(getToken) {
                     fields.token = getToken;
-                    fields.action = 'contacto';
                     
                     sendForm(fields);
                 });
@@ -26,7 +27,7 @@ export default function FranchiseForm() {
         }
     }
     const sendForm = (fields) => {
-        axios.post(endPoint, fields, {
+        axios.post(endPointFranchise, fields, {
             headers: {
               'Content-Type': 'multipart/form-data'
             }
@@ -36,7 +37,7 @@ export default function FranchiseForm() {
             resetForm()
         })
         .catch(error => {
-            console.error(error)
+            //console.error(error)
             toast.error('No se pudo enviar el mensaje vuelva a intentarlo más tarde.')
         })
         .finally(() => {
@@ -64,53 +65,53 @@ export default function FranchiseForm() {
                                 </div>
                                 <div className="col-span-12 md:col-span-6 mb-3 px-2">
                                     <label className="block mb-2 text-sm font-medium text-primary-100">Apellido*</label>
-                                    <input name="apellido" className="bg-gray-50 border border-gray-300 text-gray-900 placeholder:text-gray-400 text-sm rounded-lg focus:ring-primary-50 focus:border-primary-50 block w-full p-2.5" type="text" placeholder="Apellido" required/>
+                                    <input name="last_name" className="bg-gray-50 border border-gray-300 text-gray-900 placeholder:text-gray-400 text-sm rounded-lg focus:ring-primary-50 focus:border-primary-50 block w-full p-2.5" type="text" placeholder="Apellido" required/>
                                 </div>
                                 <div className="col-span-12 md:col-span-6 mb-3 px-2">
                                     <label className="block mb-2 text-sm font-medium text-primary-100">teléfono *</label>
-                                    <input name="telphone" className="bg-gray-50 border border-gray-300 text-gray-900 placeholder:text-gray-400 text-sm rounded-lg focus:ring-primary-50 focus:border-primary-50 block w-full p-2.5" type="tel" placeholder="Teléfono" required/>
+                                    <input name="phone" className="bg-gray-50 border border-gray-300 text-gray-900 placeholder:text-gray-400 text-sm rounded-lg focus:ring-primary-50 focus:border-primary-50 block w-full p-2.5" type="tel" placeholder="Teléfono" required/>
                                 </div>
                                 <div className="col-span-12 md:col-span-6 mb-3 px-2">
-                                    <label className="block mb-2 text-sm font-medium text-primary-100">E-mail*</label>
+                                    <label className="block mb-2 text-sm font-medium text-primary-100">E-mail *</label>
                                     <input name="email" className="bg-gray-50 border border-gray-300 text-gray-900 placeholder:text-gray-400 text-sm rounded-lg focus:ring-primary-50 focus:border-primary-50 block w-full p-2.5" type="email" placeholder="E-mail" required/>
                                 </div>
                                 <div className="col-span-12 mb-3 px-2">
-                                    <label className="block mb-2 text-sm font-medium text-primary-100">Dirección</label>
-                                    <input name="direccion" className="bg-gray-50 border border-gray-300 text-gray-900 placeholder:text-gray-400 text-sm rounded-lg focus:ring-primary-50 focus:border-primary-50 block w-full p-2.5" type="text" placeholder="Dirección" required/>
+                                    <label className="block mb-2 text-sm font-medium text-primary-100">Dirección *</label>
+                                    <input name="address" className="bg-gray-50 border border-gray-300 text-gray-900 placeholder:text-gray-400 text-sm rounded-lg focus:ring-primary-50 focus:border-primary-50 block w-full p-2.5" type="text" placeholder="Dirección" required/>
                                 </div>
                                 <div className="col-span-12 md:col-span-6 mb-3 px-2">
-                                    <label className="block mb-2 text-sm font-medium text-primary-100">Pais</label>
-                                    <input name="pais" type="text" className="bg-gray-50 border border-gray-300 text-gray-900 placeholder:text-gray-400 text-sm rounded-lg focus:ring-primary-50 focus:border-primary-50 block w-full p-2.5" defaultValue="España" placeholder="País" required/>
+                                    <label className="block mb-2 text-sm font-medium text-primary-100">Pais *</label>
+                                    <input name="country" type="text" className="bg-gray-50 border border-gray-300 text-gray-900 placeholder:text-gray-400 text-sm rounded-lg focus:ring-primary-50 focus:border-primary-50 block w-full p-2.5" defaultValue="España" placeholder="País" required/>
                                 </div>
                                 <div className="col-span-12 md:col-span-6 mb-3 px-2">
-                                    <label className="block mb-2 text-sm font-medium text-primary-100">Estado/Provincia/Región</label>
-                                    <input name="estado" className="bg-gray-50 border border-gray-300 text-gray-900 placeholder:text-gray-400 text-sm rounded-lg focus:ring-primary-50 focus:border-primary-50 block w-full p-2.5" type="text" placeholder="Estado/Provincia/Región" required/>
+                                    <label className="block mb-2 text-sm font-medium text-primary-100">Estado/Provincia/Región *</label>
+                                    <input name="state" className="bg-gray-50 border border-gray-300 text-gray-900 placeholder:text-gray-400 text-sm rounded-lg focus:ring-primary-50 focus:border-primary-50 block w-full p-2.5" type="text" placeholder="Estado/Provincia/Región" required/>
                                 </div>
                                 <div className="col-span-12 md:col-span-6 mb-3 px-2">
-                                    <label className="block mb-2 text-sm font-medium text-primary-100">Ciudad</label>
-                                    <input name="ciudad" className="bg-gray-50 border border-gray-300 text-gray-900 placeholder:text-gray-400 text-sm rounded-lg focus:ring-primary-50 focus:border-primary-50 block w-full p-2.5" type="text" placeholder="Ciudad" required/>
-                                </div>
-                                
-                                <div className="col-span-12 md:col-span-6 mb-3 px-2">
-                                    <label className="block mb-2 text-sm font-medium text-primary-100">Código Postal</label>
-                                    <input name="codigo_postal" className="bg-gray-50 border border-gray-300 text-gray-900 placeholder:text-gray-400 text-sm rounded-lg focus:ring-primary-50 focus:border-primary-50 block w-full p-2.5" type="text" placeholder="Código Postal" required/>
+                                    <label className="block mb-2 text-sm font-medium text-primary-100">Ciudad *</label>
+                                    <input name="city" className="bg-gray-50 border border-gray-300 text-gray-900 placeholder:text-gray-400 text-sm rounded-lg focus:ring-primary-50 focus:border-primary-50 block w-full p-2.5" type="text" placeholder="Ciudad" required/>
                                 </div>
                                 
                                 <div className="col-span-12 md:col-span-6 mb-3 px-2">
-                                    <label className="block mb-2 text-sm font-medium text-primary-100">¿Ha trabajado en una franquicia alguna vez?</label>
+                                    <label className="block mb-2 text-sm font-medium text-primary-100">Código Postal *</label>
+                                    <input name="zip" className="bg-gray-50 border border-gray-300 text-gray-900 placeholder:text-gray-400 text-sm rounded-lg focus:ring-primary-50 focus:border-primary-50 block w-full p-2.5" type="text" placeholder="Código Postal" required/>
+                                </div>
+                                
+                                <div className="col-span-12 md:col-span-6 mb-3 px-2">
+                                    <label className="block mb-2 text-sm font-medium text-primary-100">¿Ha trabajado en una franquicia alguna vez? *</label>
                                     <ul className="w-48 text-sm font-medium text-gray-900 bg-white border border-pink-200 rounded-lg">
                                         <li className="w-full border-b border-pink-200 rounded-t-lg">
                                             <div className="flex items-center ps-3">
-                                                <input type="radio" value="Si" name="consulta1_1" id="consulta1_1" required/>
-                                                <label className="w-full py-3 ms-2 text-sm font-medium text-gray-900" htmlFor="consulta1_1">
+                                                <input type="radio" value="1" name="consult1_1" id="consult1_1" required/>
+                                                <label className="w-full py-3 ms-2 text-sm font-medium text-gray-900" htmlFor="consult1_1">
                                                     Si
                                                 </label>
                                             </div>
                                         </li>
                                         <li className="w-full rounded-t-lg">
                                             <div className="flex items-center ps-3">
-                                                <input type="radio" value="No" name="consulta1_1" id="consulta1_2" required/>
-                                                <label className="w-full py-3 ms-2 text-sm font-medium text-gray-900" htmlFor="consulta1_2">
+                                                <input type="radio" value="0" name="consult1_1" id="consult1_2" required/>
+                                                <label className="w-full py-3 ms-2 text-sm font-medium text-gray-900" htmlFor="consult1_2">
                                                     No
                                                 </label>
                                             </div>
@@ -122,11 +123,11 @@ export default function FranchiseForm() {
                                     <input name="sector" type="text" className="bg-gray-50 border border-gray-300 text-gray-900 placeholder:text-gray-400 text-sm rounded-lg focus:ring-primary-50 focus:border-primary-50 block w-full p-2.5" />
                                 </div>
                                 <div className="col-span-12 md:col-span-6 mb-3 px-2">
-                                    <label className="block mb-2 text-sm font-medium text-primary-100">¿Tiene conocimientos en Depilación Láser o Estética?</label>
+                                    <label className="block mb-2 text-sm font-medium text-primary-100">¿Tiene conocimientos en Depilación Láser o Estética? *</label>
                                     <ul className="w-48 text-sm font-medium text-gray-900 bg-white border border-pink-200 rounded-lg">
                                         <li className="w-full border-b border-pink-200 rounded-t-lg">
                                             <div className="flex items-center ps-3">
-                                                <input className="form-check-input" type="radio" value="Si" name="consulta2_1" id="consulta2_1" required />
+                                                <input className="form-check-input" type="radio" value="1" name="consult2_1" id="consulta2_1" required />
                                                 <label className="w-full py-3 ms-2 text-sm font-medium text-gray-900" htmlFor="consulta2_1">
                                                     Si
                                                 </label>
@@ -134,7 +135,7 @@ export default function FranchiseForm() {
                                         </li>
                                         <li className="w-full rounded-t-lg">
                                             <div className="flex items-center ps-3">
-                                                <input className="form-check-input" type="radio" value="No" name="consulta2_1" id="consulta2_2" required />
+                                                <input className="form-check-input" type="radio" value="0" name="consult2_1" id="consulta2_2" required />
                                                 <label className="w-full py-3 ms-2 text-sm font-medium text-gray-900" htmlFor="consulta2_2">
                                                     No
                                                 </label>
@@ -188,19 +189,19 @@ export default function FranchiseForm() {
                                     </ul>
                                 </div>
                                 <div className="col-span-12 mb-3 px-2">
-                                    <label className="block mb-2 text-sm font-medium text-primary-100">¿Cómo nos conoció?</label>
+                                    <label className="block mb-2 text-sm font-medium text-primary-100">¿Cómo nos conoció? *</label>
                                     <input name="conocio" className="bg-gray-50 border border-gray-300 text-gray-900 placeholder:text-gray-400 text-sm rounded-lg focus:ring-primary-50 focus:border-primary-50 block w-full p-2.5" type="text" required />
                                 </div>
                                 <div className="col-span-12 mb-3 px-2">
-                                    <label className="block mb-2 text-sm font-medium text-primary-100">¿En qué zona geográfica desea ubicar su centro?</label>
+                                    <label className="block mb-2 text-sm font-medium text-primary-100">¿En qué zona geográfica desea ubicar su centro? *</label>
                                     <input name="ubicar_centro" className="bg-gray-50 border border-gray-300 text-gray-900 placeholder:text-gray-400 text-sm rounded-lg focus:ring-primary-50 focus:border-primary-50 block w-full p-2.5" type="text" required />
                                 </div>
                                 <div className="col-span-12 mb-3 px-2">
-                                    <label className="block mb-2 text-sm font-medium text-primary-100">¿En qué día y horario nos podemos comunicar con usted?</label>
+                                    <label className="block mb-2 text-sm font-medium text-primary-100">¿En qué día y horario nos podemos comunicar con usted? *</label>
                                     <input name="comunicar" className="bg-gray-50 border border-gray-300 text-gray-900 placeholder:text-gray-400 text-sm rounded-lg focus:ring-primary-50 focus:border-primary-50 block w-full p-2.5" type="text" required />
                                 </div>
                                 <div className="col-span-12 mb-3 px-2">
-                                    <label  className="block mb-2 text-sm font-medium text-primary-100">Consulta</label>
+                                    <label className="block mb-2 text-sm font-medium text-primary-100">Consulta</label>
                                     <textarea name="consulta_extra" className="bg-gray-50 border border-gray-300 text-gray-900 placeholder:text-gray-400 text-sm rounded-lg focus:ring-primary-50 focus:border-primary-50 block w-full p-2.5" rows="3"></textarea>
                                 </div>
                                 
