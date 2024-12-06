@@ -2,7 +2,6 @@
 import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
 import ButtonBox from '@/components/ButtonBox.astro';
-import ModalDeclaration from '@/components/ModalDeclaration.jsx';
 import ModalPolitics from '@/components/ModalPolitics.jsx';
 import '@fontsource/poppins/300.css';
 import '@fontsource/poppins/400.css';
@@ -12,6 +11,8 @@ import '@fontsource/poppins/700.css';
 import '@fontsource/poppins/800.css';
 import '@fontsource/poppins/900.css';
 import '@/styles/style.css'
+import 'vanilla-cookieconsent/dist/cookieconsent.css';
+import '@/styles/consentStyle.css'
 interface Props {
 	title: string;
 	canonical: string;
@@ -40,16 +41,39 @@ const {
 		<title>{title}</title>
 		
 		<!-- Css Styles -->
-		<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="7862cd37-4076-44cb-9688-c3581e4fd905" data-blockingmode="auto" type="text/javascript"></script>
+		<!-- <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="7862cd37-4076-44cb-9688-c3581e4fd905" data-blockingmode="auto" type="text/javascript"></script> -->
 		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-PS464M3XKC">
+		
+		<script
+			is:inline
+			src="https://www.googletagmanager.com/gtag/js?id=G-PS464M3XKC">
 		</script>
-		<script is:inline>
+		<script>
+			// We need a global definition to avoid type warnings
+			declare global {
+			interface Window {
+				dataLayer: Record<string, any>[];
+				gtag: (...args: any[]) => void;
+			}
+			}
+		
+			// Initialize dataLayer
 			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-
-			gtag('config', 'G-PS464M3XKC');
+		
+			// Define gtag function
+			window.gtag = function gtag(...args: any[]) {
+			window.dataLayer.push(arguments);
+			};
+		
+			// Load GA4 with denied default consents
+			window.gtag("js", new Date());
+			window.gtag("consent", "default", {
+				ad_storage: "denied",
+				ad_user_data: "denied",
+				ad_personalization: "denied",
+				analytics_storage: "denied",
+			});
+			window.gtag("config", "G-PS464M3XKC");
 		</script>
 		<!-- SEO -->
 		<link rel="canonical" href={canonical} />
@@ -82,11 +106,25 @@ const {
 		<slot />
 		<Footer />
 		<ButtonBox />
-		<ModalDeclaration client:load />
+		<button 
+			class="fixed bottom-4 left-4 z-[9999] w-12 h-12 bg-primary-50 rounded-full text-white"
+			type="button"
+			data-cc="show-preferencesModal"
+		>
+		<svg class="inline w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><g fill="none"><path fill="#f3ad61" d="M2 16c0 9.29 6.27 14 14 14s14-4.74 14-14c0-9.43-6.27-14-14-14S2 6.43 2 16"/><path fill="#6d4534" d="m19.89 8.32l.62.04a.95.95 0 0 0 1.01-1.01l-.04-.61a1.55 1.55 0 0 0-.22-.71a1.51 1.51 0 0 0-1.85-.59c-.8.34-1.14 1.28-.76 2.05c.23.5.72.79 1.24.83m7.03 6.29l.04-.62a.95.95 0 0 0-1.01-1.01l-.61.04c-.24.01-.49.09-.71.22a1.51 1.51 0 0 0-.59 1.85c.34.8 1.28 1.14 2.05.76c.5-.23.79-.72.83-1.24m-16.3 9.91l.05-.77c.04-.64.41-1.24 1.03-1.55a1.85 1.85 0 0 1 2.54.94c.35.84.04 1.82-.73 2.3c-.28.17-.58.26-.88.28l-.76.05c-.71.05-1.3-.54-1.25-1.25m9.78-9.33l.03-.46c.1-1.51-1.15-2.76-2.67-2.67l-.45.03c-.45.02-.9.15-1.32.4a2.93 2.93 0 0 0-1.22 3.62c.65 1.59 2.5 2.26 4.01 1.51c.98-.47 1.56-1.42 1.62-2.43M7.65 9l.03.42c.06.91.59 1.77 1.47 2.21c1.37.68 3.05.07 3.64-1.37c.49-1.21.02-2.63-1.11-3.29a2.65 2.65 0 0 0-1.2-.36l-.41-.03C8.7 6.49 7.57 7.63 7.65 9m16.61 13.82l.02.36c.08 1.17-.9 2.15-2.07 2.07l-.35-.02c-.35-.02-.7-.12-1.03-.31a2.28 2.28 0 0 1-.95-2.81A2.27 2.27 0 0 1 23 20.94c.76.36 1.21 1.09 1.26 1.88m-18.39-5.9l.04.62c.03.52.33 1.01.83 1.24c.77.38 1.71.04 2.05-.76c.28-.67.03-1.46-.59-1.85a1.55 1.55 0 0 0-.71-.22l-.61-.04a.95.95 0 0 0-1.01 1.01"/></g></svg>
+		</button>
 		<ModalPolitics client:load />
 	</body>
 </html>
 <script>
+	//cookie consent
+	import { run } from 'vanilla-cookieconsent';
+    import { config } from '@/services/CookieConsentConfig.ts';
+	// toggle custom theme
+    //document.body.classList.add('cc--light-funky');
+
+    run(config);
+
 	//Menu Hamburguesa
 	const openButton = document.querySelector(".canvas__open");
 	const menuWrapper = document.querySelector(".offcanvas-menu-wrapper");

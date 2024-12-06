@@ -6,7 +6,6 @@ import MapMarker from '@/components/icons/MapMarker.astro';
 import Phone from '@/components/icons/Phone.astro';
 import WhatsApp from '@/components/icons/WhatsApp.astro';
 import Envelope from '@/components/icons/Envelope.astro';
-import OpenModalDeclaration from '@/components/OpenModalDeclaration';
 
 import { 
     telphoneReadble,
@@ -60,7 +59,13 @@ import {
                         <li><a href="./servicios">Servicios</a></li>
                         <li><a href="./contacto">Contacto</a></li>
                         <li>
-                            <OpenModalDeclaration client:load />
+                            <a 
+                                class="cursor-pointer"
+                                type="button"
+                                data-cc="show-preferencesModal"
+                            >
+		                        Declaración de cookies
+                            </a>
                         </li>
                         <li><a href="./aviso-legal">Aviso Legal</a></li>
                         <li><a href="./politica-privacidad">Política de Privacidad</a></li>

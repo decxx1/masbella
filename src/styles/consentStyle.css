@@ -1,0 +1,27 @@
+#cc-main {
+    /** Change font **/
+    --cc-font-family: poppins;
+
+    /** Change button primary color to black **/
+    --cc-btn-primary-bg: #d80a7c;
+    --cc-btn-primary-border-color: #e63f9b;
+    --cc-btn-primary-hover-bg: #e63f9b;
+    --cc-btn-primary-hover-border-color: #d80a7c;
+
+    --cc-btn-secondary-bg: white;
+    --cc-btn-secondary-border-color: #d80a7c;
+    --cc-btn-secondary-color: black;
+    --cc-btn-secondary-hover-bg: #d80a7c;
+    --cc-btn-secondary-hover-color: white;
+
+    /** Also make toggles the same color as the button **/
+    --cc-toggle-on-bg: var(--cc-btn-primary-bg);
+
+    /** Make the buttons a bit rounder **/
+    --cc-btn-border-radius: 10px;
+    
+    --cc-footer-border-color: #fdb4dc;
+    --cc-footer-bg: #fee7f7;
+
+    --cc-footer-color: black;
+}

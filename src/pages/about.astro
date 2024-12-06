@@ -36,7 +36,12 @@ import { siteKey } from '@/services/enviroment.js';
     <Release />
 </Layout>
 <!-- recaptcha v3 -->
-<script async src={'https://www.google.com/recaptcha/api.js?render=' + siteKey}></script>
+<script 
+    async
+    data-category="necessary"
+    data-service="<a href='https://policies.google.com/privacy?hl=es-419' target='_blank'>Google</a>"
+    src={'https://www.google.com/recaptcha/api.js?render=' + siteKey}
+></script>
 <style>
     .margenes {
         margin: 80px auto;

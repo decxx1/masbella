@@ -1,0 +1,100 @@
+{
+    "consentModal": {
+        "label": "Consentimiento de cookies",
+        "title": "Esta página web usa cookies",
+        "description": "Las cookies de este sitio web se usan para personalizar el contenido y los anuncios, ofrecer funciones de redes sociales y analizar el tráfico. Además, compartimos información sobre el uso que haga del sitio web con nuestros partners de redes sociales, publicidad y análisis web. ",
+        "acceptAllBtn": "Aceptar todo",
+        "acceptNecessaryBtn": "Rechazar todo",
+        "showPreferencesBtn": "Gestionar preferencias",
+        "footer": "<a href=\"https://masbellamedical.com/politica-privacidad\">Política de privacidad</a>\n<a href=\"https://masbellamedical.com/aviso-legal\">Aviso Legal</a>"
+    },
+    "preferencesModal": {
+        "title": "Preferencias de Consentimiento",
+        "acceptAllBtn": "Aceptar todo",
+        "acceptNecessaryBtn": "Rechazar todo",
+        "savePreferencesBtn": "Guardar preferencias",
+        "closeIconLabel": "Cerrar modal",
+        "serviceCounterLabel":"Servicios",
+        "sections": [
+            {
+                "title": "Uso de Cookies",
+                "description": "Las cookies son pequeños archivos de texto que las páginas web pueden utilizar para hacer más eficiente la experiencia del usuario.\n La ley afirma que podemos almacenar cookies en su dispositivo si son estrictamente necesarias para el funcionamiento de esta página.\n Para todos los demás tipos de cookies necesitamos su permiso. Esta página utiliza tipos diferentes de cookies. Algunas cookies son colocadas por servicios de terceros que aparecen en nuestras páginas. En cualquier momento puede cambiar o retirar su consentimiento desde la Declaración de cookies en el pie de página de nuestro sitio web. Obtenga más información sobre quiénes somos, cómo puede contactarnos y cómo procesamos los datos personales en nuestra <a href=\"https://masbellamedical.com/politica-privacidad\">Política de privacidad</a>."
+            },
+            {
+                "title": "Cookies Estrictamente Necesarias <span class=\"pm__badge\">Siempre Habilitado</span>",
+                "description": "Las cookies necesarias ayudan a hacer una página web utilizable activando funciones básicas como la navegación en la página y el acceso a áreas seguras de la página web. La página web no puede funcionar adecuadamente sin estas cookies.",
+                "linkedCategory": "necessary",
+                "cookieTable": {
+                    "headers": {
+                        "name": "Nombre",
+                        "provider": "Proveedor",
+                        "description": "Descripción",
+                        "expiration": "Expiración"
+                    },
+                    "body": [
+                        {
+                          "name": "cc_cookie",
+                          "provider": "MásBella",
+                          "description": "Almacena el estado de consentimiento de cookies del usuario para el dominio actual",
+                          "expiration": "1 año"
+                        },
+                        {
+                            "name": "rc::a",
+                            "provider": "<a href=\"https://business.safety.google/privacy/\">Google</a>",
+                            "description": "Para distinguir entre humanos y bots. Esto es beneficioso para la web con el objeto de elaborar informes válidos sobre el uso de su web.",
+                            "expiration": "Permanente"
+                        },
+                        {
+                            "name": "rc::c",
+                            "provider": "<a href=\"https://business.safety.google/privacy/\">Google</a>",
+                            "description": "Esta cookie se utiliza para distinguir entre humanos y bots.",
+                            "expiration": "Sesión"
+                        }
+                    ]
+                }
+            },
+            
+            {
+                "title": "Cookies Analíticas",
+                "description": "Las cookies analíticas ayudan a los propietarios de páginas web a comprender cómo interactúan los visitantes con las páginas web reuniendo y proporcionando información de forma anónima.",
+                "linkedCategory": "analytics",
+                "cookieTable": {
+                    "headers": {
+                        "name": "Nombre",
+                        "provider": "Proveedor",
+                        "description": "Descripción",
+                        "expiration": "Expiración"
+                    },
+                    "body": [
+                        {
+                          "name": "_ga",
+                          "provider": "<a href=\"https://business.safety.google/privacy/\">Google</a>",
+                          "description": "Registra una identificación única que se utiliza para generar datos estadísticos acerca de cómo utiliza el visitante el sitio web.",
+                          "expiration": "2 años"
+                        },
+                        {
+                          "name": "_ga_#",
+                          "provider": "<a href=\"https://business.safety.google/privacy/\">Google</a>",
+                          "description": "Recopila datos sobre el número de veces que un usuario ha visitado el sitio web además de las fechas de la primera visita y de la más reciente. Utilizada por Google Analytics.",
+                          "expiration": "2 años"
+                        }
+                      ]
+                }
+            },
+            {
+                "title": "Cookies de Funcionalidad (no usamos estas cookies)",
+                "description": "Estas cookies permiten que el sitio web recuerde elecciones que haces (como tu idioma preferido o región) y proporcionan características mejoradas y personalizadas. Sin ellas, algunas funciones pueden no estar disponibles o no funcionar correctamente.",
+                "linkedCategory": "functionality"
+            },
+            {
+                "title": "Cookies Publicitarias (no usamos estas cookies)",
+                "description": "Las cookies publicitarias se utilizan para rastrear a los visitantes en las páginas web. La intención es mostrar anuncios relevantes y atractivos para el usuario individual, y por lo tanto, más valiosos para los editores y terceros anunciantes.",
+                "linkedCategory": "marketing"
+            },
+            {
+                "title": "Más información",
+                "description": "Para cualquier consulta en relación con las políticas de cookies y sus opciones, contáctenos <a class=\"cc__link\" href=\"mailto:privacidad@masbellamedical.com\">privacidad@masbellamedical.com</a>."
+            }
+        ]
+    }
+}
