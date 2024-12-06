@@ -1,62 +1,99 @@
 {
     "consentModal": {
-        "label": "Cookie consent",
-        "title": "Hello traveller, it's cookie time!",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.",
+        "label": "Cookie Consent",
+        "title": "This website uses cookies",
+        "description": "The cookies on this website are used to analyze traffic and visitor behavior on the site anonymously, for analytics and bot detection. The cookies in question are created and managed by Google Analytics, Google reCaptcha, and Google Tag Manager.",
         "acceptAllBtn": "Accept all",
         "acceptNecessaryBtn": "Reject all",
         "showPreferencesBtn": "Manage preferences",
-        "footer": "<a href=\"#link\">Privacy Policy</a>\n<a href=\"#link\">Terms and conditions</a>"
+        "footer": "<a href=\"https://masbellamedical.com/politica-privacidad\">Privacy Policy</a>\n<a href=\"https://masbellamedical.com/aviso-legal\">Legal Notice</a>"
     },
     "preferencesModal": {
-        "title": "Consent Preferences Center",
+        "title": "Consent Preferences",
         "acceptAllBtn": "Accept all",
         "acceptNecessaryBtn": "Reject all",
         "savePreferencesBtn": "Save preferences",
         "closeIconLabel": "Close modal",
-        "serviceCounterLabel": "Service|Services",
+        "serviceCounterLabel": "Services",
         "sections": [
             {
-                "title": "Cookie Usage",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                "title": "Use of Cookies",
+                "description": "Cookies are small text files that websites can use to make the user experience more efficient.\n The law states that we can store cookies on your device if they are strictly necessary for the operation of this site.\n For all other types of cookies, we need your permission. This site uses different types of cookies. Some cookies are placed by third-party services that appear on our pages. You can change or withdraw your consent at any time from the Cookie Declaration in the footer of our website. Learn more about who we are, how you can contact us, and how we process personal data in our <a href=\"https://masbellamedical.com/politica-privacidad\">Privacy Policy</a>."
             },
             {
                 "title": "Strictly Necessary Cookies <span class=\"pm__badge\">Always Enabled</span>",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                "linkedCategory": "necessary"
-            },
-            {
-                "title": "Functionality Cookies",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                "linkedCategory": "functionality"
-            },
-            {
-                "title": "Analytics Cookies",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                "linkedCategory": "analytics",
+                "description": "Necessary cookies help make a website usable by enabling basic functions like page navigation and access to secure areas of the website. The website cannot function properly without these cookies.",
+                "linkedCategory": "necessary",
                 "cookieTable": {
                     "headers": {
                         "name": "Name",
+                        "provider": "Provider",
                         "description": "Description",
-                        "Service": "Service"
+                        "expiration": "Expiration"
                     },
                     "body": [
                         {
-                            "name": "_ga_*, _gid",
-                            "description": "Used to track you ...",
-                            "Service": "Google Analytics"
+                          "name": "cc_cookie",
+                          "provider": "MásBella",
+                          "description": "Stores the user's cookie consent state for the current domain",
+                          "expiration": "1 year"
+                        },
+                        {
+                            "name": "rc::a",
+                            "provider": "<a href=\"https://business.safety.google/privacy/\">Google</a>",
+                            "description": "To distinguish between humans and bots. This is beneficial for the website in order to generate valid reports on its usage.",
+                            "expiration": "Permanent"
+                        },
+                        {
+                            "name": "rc::c",
+                            "provider": "<a href=\"https://business.safety.google/privacy/\">Google</a>",
+                            "description": "This cookie is used to distinguish between humans and bots.",
+                            "expiration": "Session"
                         }
                     ]
                 }
             },
+            
             {
-                "title": "Advertisement Cookies",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                "title": "Analytical Cookies",
+                "description": "Analytical cookies help website owners understand how visitors interact with websites by collecting and reporting information anonymously.",
+                "linkedCategory": "analytics",
+                "cookieTable": {
+                    "headers": {
+                        "name": "Name",
+                        "provider": "Provider",
+                        "description": "Description",
+                        "expiration": "Expiration"
+                    },
+                    "body": [
+                        {
+                          "name": "_ga",
+                          "provider": "<a href=\"https://business.safety.google/privacy/\">Google</a>",
+                          "description": "Registers a unique ID that is used to generate statistical data on how the visitor uses the website.",
+                          "expiration": "2 years"
+                        },
+                        {
+                          "name": "_ga_#",
+                          "provider": "<a href=\"https://business.safety.google/privacy/\">Google</a>",
+                          "description": "Collects data on the number of times a user has visited the website as well as the dates of the first and most recent visits. Used by Google Analytics.",
+                          "expiration": "2 years"
+                        }
+                      ]
+                }
+            },
+            {
+                "title": "Functionality Cookies (we do not use these cookies)",
+                "description": "These cookies allow the website to remember choices you make (such as your preferred language or region) and provide enhanced, personalized features. Without them, some functions may not be available or work properly.",
+                "linkedCategory": "functionality"
+            },
+            {
+                "title": "Advertising Cookies (we do not use these cookies)",
+                "description": "Advertising cookies are used to track visitors across websites. The intention is to display ads that are relevant and engaging for the individual user and thereby more valuable for publishers and third-party advertisers.",
                 "linkedCategory": "marketing"
             },
             {
-                "title": "More information",
-                "description": "For any query in relation to my policy on cookies and your choices, please <a class=\"cc__link\" href=\"#yourdomain.com\">contact me</a>."
+                "title": "More Information",
+                "description": "For any queries regarding the cookie policies and your options, contact us at <a class=\"cc__link\" href=\"mailto:privacidad@masbellamedical.com\">privacidad@masbellamedical.com</a>."
             }
         ]
     }

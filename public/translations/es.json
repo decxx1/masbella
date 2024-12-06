@@ -2,7 +2,7 @@
     "consentModal": {
         "label": "Consentimiento de cookies",
         "title": "Esta página web usa cookies",
-        "description": "Las cookies de este sitio web se usan para personalizar el contenido y los anuncios, ofrecer funciones de redes sociales y analizar el tráfico. Además, compartimos información sobre el uso que haga del sitio web con nuestros partners de redes sociales, publicidad y análisis web. ",
+        "description": "Las cookies de este sitio web se usan para analizar el tráfico y el comportamiento de las visitas al sitio de forma anónima, para analíticas y detecciones de bots. Las cookies utilizadas en cuestión son creadas y gestionadas por Google Analytics, Google reCAPTCHA y Google Tag Manager.",
         "acceptAllBtn": "Aceptar todo",
         "acceptNecessaryBtn": "Rechazar todo",
         "showPreferencesBtn": "Gestionar preferencias",
