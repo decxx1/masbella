@@ -21,6 +21,12 @@ import {
 
 } from '@/services/enviroment.js';
 ---
+<script>
+    //obtener el año actual
+    const year = new Date().getFullYear();
+    document.getElementById('year').innerHTML = year.toString();
+
+</script>
 <footer class="footer">
     <div class="footer__top" >
         <div class="container mx-auto">
@@ -101,16 +107,17 @@ import {
                     </ul>
                 </div>
             </div>
-            <div class="col-span-12 sm:col-span-6 md:col-span-12 md:max-lg:pb-20 lg:col-span-4 px-4">
+            <div class="col-span-12 sm:col-span-6 md:col-span-12 lg:col-span-4 px-4">
                 <div class="footer__map">
                     <a target="_blank" href={mapUrl}><img src="./img/map.jpg" alt="mapa MasBella"/></a>
                 </div>
             </div>
         </div>
+        <p class="text-sm text-white text-center max-lg:mt-6 md:max-lg:pb-12">Más Bella ® <span id="year"></span>  - Marca registrada</p>
     </div>
     <div class="bg-[#b71b6d] py-6 mt-8 max-sm:pb-20">
         <div class="container mx-auto">
-            <div class="text-center">
+            <div class="text-center text-base">
                 <p class="text-gray-200">Diseñado por <a class="text-white hover:font-bold hover:text-white" target="_blank" href="https://manejoweb.com.ar/">ManejoWeb</a></p>
             </div>
         </div>
