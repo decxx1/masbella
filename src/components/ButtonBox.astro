@@ -117,29 +117,31 @@ import IconDate from "@/components/icons/Date.astro";
 
 		var wa_time_out, wa_time_in;
         //code toggle whatsapp
-		document.querySelector(".wa__btn_popup").addEventListener("click", function () {
-            if (chatBox.classList.contains("wa__active")) {
-                chatBox.classList.remove("wa__active");
-                btnPopup.classList.remove("wa__active");
-                clearTimeout(wa_time_in);
-                if (chatBox.classList.contains("wa__lauch")) {
-                    wa_time_out = setTimeout(function () {
-                        chatBox.classList.remove("wa__pending");
-                        chatBox.classList.remove("wa__lauch");
-                    }, 400);
-                }
-            } else {
-                chatBox.classList.add("wa__pending");
-                chatBox.classList.add("wa__active");
-                btnPopup.classList.add("wa__active");
-                clearTimeout(wa_time_out);
-                if (!chatBox.classList.contains("wa__lauch")) {
-                    wa_time_in = setTimeout(function () {
-                        chatBox.classList.add("wa__lauch");
-                    }, 100);
-                }
-            }
-        });
+		document.querySelectorAll(".wa__btn_popup").forEach(function (btnPopup) {
+			btnPopup.addEventListener("click", function () {
+				if (chatBox.classList.contains("wa__active")) {
+					chatBox.classList.remove("wa__active");
+					btnPopup.classList.remove("wa__active");
+					clearTimeout(wa_time_in);
+					if (chatBox.classList.contains("wa__lauch")) {
+						wa_time_out = setTimeout(function () {
+							chatBox.classList.remove("wa__pending");
+							chatBox.classList.remove("wa__lauch");
+						}, 400);
+					}
+				} else {
+					chatBox.classList.add("wa__pending");
+					chatBox.classList.add("wa__active");
+					btnPopup.classList.add("wa__active");
+					clearTimeout(wa_time_out);
+					if (!chatBox.classList.contains("wa__lauch")) {
+						wa_time_in = setTimeout(function () {
+							chatBox.classList.add("wa__lauch");
+						}, 100);
+					}
+				}
+			});
+		});
 	});
 </script>
 <style>
