@@ -1,8 +1,13 @@
-
-	
-<div class="grid grid-cols-12 marco-about">
+---
+interface Props {
+	className?: string;
+}
+const { url } = Astro;
+const { className } = Astro.props;
+---
+<div class={`grid grid-cols-12 marco-about ${className}`}>
 	<div class="col-span-12 md:col-span-6">
-		<div class="about__video set-bg" style="background-image: url('img/bg-promo.jpg')">
+		<div class="about__video set-bg" style={`background-image: url('${url.origin}/img/bg-promo.jpg')`}>
 		</div>
 	</div>
 	<div class="col-span-12 md:col-span-6">

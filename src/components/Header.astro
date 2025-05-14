@@ -8,16 +8,17 @@ import {
 
 import IconInstagram from "@/components/icons/Instagram.astro";
 import IconFacebook from "@/components/icons/Facebook.astro";
+const { url } = Astro;
 ---
 
 <div class="offcanvas-menu-overlay"></div>
 <div class="offcanvas-menu-wrapper">
   <div class="offcanvas__logo">
     <a
-      href="./"
+      href={url.origin}
       style="justify-content: center;display: flex;margin: -35px 0 0 -15px;"
     ><img
-        src="img/logo-web.png"
+        src={`${url.origin}/img/logo-web.png`}
         alt="logo más bella"
         class="w-max"
     /></a>
@@ -26,16 +27,16 @@ import IconFacebook from "@/components/icons/Facebook.astro";
   <div class="slicknav_menu">
     <nav class="slicknav_nav slicknav_hidden" role="menu">
       <ul>
-        <li ><a href='./' role="menuitem">Inicio</a></li>
-        <li ><a href='./servicios' role="menuitem">Servicios</a></li>
-        <li ><a href='./about' role="menuitem">Nosotros</a></li>
-        <li ><a href='./centros' role="menuitem">Centros</a></li>
-        <li ><a href='./franquicias' role="menuitem">Franquicias</a></li>
+        <li ><a href={url.origin} role="menuitem">Inicio</a></li>
+        <li ><a href={`${url.origin}/servicios`} role="menuitem">Servicios</a></li>
+        <li ><a href={`${url.origin}/about`} role="menuitem">Nosotros</a></li>
+        <li ><a href={`${url.origin}/centros`} role="menuitem">Centros</a></li>
+        <li ><a href={`${url.origin}/franquicias`} role="menuitem">Franquicias</a></li>
       </ul>
     </nav>
   </div>
   <div class="offcanvas__btn">
-    <a href="./contacto" class="primary-btn">Contacto</a>
+    <a href={`${url.origin}/contacto`} class="primary-btn">Contacto</a>
   </div>
  
   <div class="offcanvas__social">
@@ -50,7 +51,7 @@ import IconFacebook from "@/components/icons/Facebook.astro";
       <div class="col-span-12 lg:col-span-8">
         <ul class="header__top__left py-3 ml-2">
           <li class="inline-block">
-            <a class="text-lg text-white hover:font-semibold hover:!text-white" href="./contacto">PRIMERA CITA GRATUITA</a>
+            <a class="text-lg text-white hover:font-semibold hover:!text-white" href={`${url.origin}/contacto`}>PRIMERA CITA GRATUITA</a>
           </li>
         </ul>
       </div>
@@ -69,14 +70,14 @@ import IconFacebook from "@/components/icons/Facebook.astro";
     <div class="grid grid-cols-12 px-2">
       <div class="col-span-12 min-[990px]:col-span-2">
         <div class="header__logo">
-          <a href="./" ><img
-              src="img/logo.png"
+          <a href={url.origin} ><img
+              src={`${url.origin}/img/logo.png`}
               alt="logo más bella"
               class="w-36" /></a>
         </div>
       </div>
       <div class="col-span-12 min-[990px]:col-span-10">
-        <Menu client:load />
+        <Menu client:load origin={url.origin} />
       </div>
     </div>
     <div class="canvas__open">

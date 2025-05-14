@@ -11,6 +11,7 @@ import {
 import MapMarker from '@/components/icons/MapMarker.astro';
 import Clock from '@/components/icons/Clock.astro';
 import IconDate from "@/components/icons/Date.astro";
+const { url } = Astro;
 ---
 
 <div class="wrapper">
@@ -54,7 +55,7 @@ import IconDate from "@/components/icons/Date.astro";
 					<div class="wa__popup_avatar">
 						<img
 							class="w-14 relative overflow-hidden mt-2"
-							src="img/logo.png"
+							src={`${url.origin}/img/logo.png`}
 							alt="logo"
 						/>
 					</div>
@@ -75,7 +76,7 @@ import IconDate from "@/components/icons/Date.astro";
 					<div class="wa__popup_avatar">
 						<img
 							class="w-14 relative overflow-hidden mt-2"
-							src="img/logo.png"
+							src={`${url.origin}/img/logo.png`}
 							alt="logo"
 						/>
 					</div>

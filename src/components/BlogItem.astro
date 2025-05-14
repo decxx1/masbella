@@ -6,11 +6,12 @@ interface Props {
     ribbon?: string;
 }
 const { title, img, ruta, ribbon } = Astro.props;
+const { url } = Astro;
 ---
 <div class="col-span-12 sm:col-span-6 lg:col-span-4 px-4">
   <div class="blog__item">
       <div class="blog__item__pic relative overflow-hidden">
-          <img src={img} alt={title}>
+          <img src={`${url.origin}/${img}`} alt={title}>
           { ribbon && 
               <div class="absolute right-0 top-0 h-16 w-16">
                 <div

@@ -1,0 +1,51 @@
+---
+interface PriceItem {
+    duration: string;
+    service: string;
+    price: string;
+}
+
+interface Props {
+    title: string;
+    image: string;
+    imageAlt: string;
+    prices: PriceItem[];
+}
+
+const { title, image, imageAlt, prices } = Astro.props;
+const url = Astro.url;
+---
+
+<div class="col-span-12 md:col-span-6 px-4 mb-8">
+    <div class="col-span-12 px-4 mt-8">
+        <div class="section-title text-center">
+            <h2 class="text-primary-100">{title}</h2>
+        </div>
+    </div>
+    <img src={`${url.origin}${image}`} alt={imageAlt} class="w-full rounded-lg shadow-lg mb-6">
+    
+    <div class="price-table bg-white rounded-lg shadow-lg overflow-hidden">
+        <div class="grid grid-cols-12 bg-primary-100 text-white py-3">
+            <div class="col-span-2 text-center font-bold">Tiempo</div>
+            <div class="col-span-8 text-center font-bold">Servicio</div>
+            <div class="col-span-2 text-center font-bold">Precio</div>
+        </div>
+        
+        {prices.map((item) => (
+            <div class="grid grid-cols-12 border-b py-3 hover:bg-gray-50">
+                <div class="col-span-2 text-center flex items-center justify-center">
+                    
+                    <span class="bg-primary-100 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold">
+                        {item.duration}
+                    </span>
+                </div>
+                <div class="col-span-8 px-4 flex items-center">
+                    {item.service}
+                </div>
+                <div class="col-span-2 text-center flex items-center justify-center font-bold">
+                    <span class="bg-primary-100 text-white rounded-full w-12 h-12 flex items-center justify-center">{item.price}</span>
+                </div>
+            </div>
+        ))}
+    </div>
+</div>

@@ -20,6 +20,7 @@ import {
     mapUrl,
 
 } from '@/services/enviroment.js';
+const { url } = Astro;
 ---
 <script>
     //obtener el año actual
@@ -33,7 +34,7 @@ import {
             <div class="grid grid-cols-12">
                 <div class="col-span-12 md:col-span-4">
                     <div class="footer__logo">
-                        <a href="./"><img src="img/logo-blanco.png" alt="logo blanco de más bella" style="width:160px"></a>
+                        <a href="./"><img src={`${url.origin}/img/logo-blanco.png`} alt="logo blanco de más bella" style="width:160px"></a>
                     </div>
                 </div>
                 <div class="col-span-12 md:col-span-8 lg:col-span-4">

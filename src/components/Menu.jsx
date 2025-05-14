@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function Menu() {
+export default function Menu({origin}) {
   const [path, setPath] = useState(null);
   useEffect(() => {
     setPath(window.location.pathname);
@@ -10,25 +10,25 @@ export default function Menu() {
       <nav className="header__menu">
         <ul>
           <li className={path === "/" ? "active" : ""}>
-            <a href="./">Inicio</a>
+            <a href={`${origin}/`}>Inicio</a>
           </li>
-          <li className={path === "/servicios" ? "active" : ""}>
-            <a href="./servicios">Servicios</a>
+          <li className={path?.includes("/servicios") ? "active" : ""}>
+            <a href={`${origin}/servicios`}>Servicios</a>
           </li>
           <li className={path === "/about" ? "active" : ""}>
-            <a href="./about">Nosotros</a>
+            <a href={`${origin}/about`}>Nosotros</a>
           </li>
           <li className={path === "/centros" ? "active" : ""}>
-            <a href="./centros">Centros</a>
+            <a href={`${origin}/centros`}>Centros</a>
           </li>
           <li className={path === "/franquicias" ? "active" : ""}>
-            <a href="./franquicias">Franquicias</a>
+            <a href={`${origin}/franquicias`}>Franquicias</a>
           </li>
         </ul>
       </nav>
       <div className="header__btn">
         <a
-          href="./contacto"
+          href={`${origin}/contacto`}
           className={
             path === "/contacto" ? "contact-select primary-btn" : "primary-btn"
           }

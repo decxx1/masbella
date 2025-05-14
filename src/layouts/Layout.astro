@@ -28,6 +28,7 @@ const {
 	metaDescription,
 	metaImg,
 } = Astro.props;
+const { url } = Astro;
 ---
 <!doctype html>
 <html lang="es">
@@ -36,8 +37,8 @@ const {
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<!-- Favicons -->
-		<link href="img/favicon.png" rel="icon">
-		<link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+		<link href={`${url.origin}/img/favicon.png`} rel="icon">
+		<link href={`${url.origin}/img/apple-touch-icon.png`} rel="apple-touch-icon">
 		<title>{title}</title>
 		
 		<!-- Css Styles -->

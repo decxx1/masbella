@@ -17,8 +17,25 @@ import BlogItem from '@/components/BlogItem.astro';
     
     <section class="blog spad">
         <div class="container mx-auto">
-            <Promo />
+            <Promo className="mb-20"/>
             <div class="grid grid-cols-12 mt-5">
+                <div class="col-span-12 px-4">
+                    <div class="section-title text-center">
+                        <h2 class="text-primary-100">Depilación Láser</h2>
+                        <p>Sesiones sueltas sin BONOS - Láser de Diodo de alta potencia e intensidad - Compatible con el sol - Apto para todo tipo de pieles .</p>
+                    </div>
+                </div>
+                <BlogItem 
+                    title="Depilación láser - Mujeres"
+                    img="img/servicios/depilacion-laser-mujer.webp"
+                    ruta="/servicios/depilacion-laser"
+                ></BlogItem>
+                <BlogItem 
+                    title="Depilación láser - Hombres"
+                    img="img/servicios/depilacion-laser-hombre.webp"
+                    ruta="/servicios/depilacion-laser"
+                ></BlogItem>
+
 				<div class="col-span-12 px-4">
 					<div class="section-title text-center">
 						<h2 class="text-primary-100">Bellaction Duo</h2>
@@ -128,20 +145,6 @@ import BlogItem from '@/components/BlogItem.astro';
                     <BlogItem 
                         title="Eyeliner"
                         img="img/servicios/eyeliner.webp"
-                    ></BlogItem>
-                    <div class="col-span-12 px-4">
-                        <div class="section-title text-center">
-                            <h2 class="text-primary-100">Depilación Láser</h2>
-                            <p>Sesiones sueltas sin BONOS - Láser de Diodo de alta potencia e intensidad - Compatible con el sol - Apto para todo tipo de pieles .</p>
-                        </div>
-                    </div>
-                    <BlogItem 
-                        title="Depilación láser - Mujeres"
-                        img="img/servicios/depilacion-laser-mujer.webp"
-                    ></BlogItem>
-                    <BlogItem 
-                        title="Depilación láser - Hombres"
-                        img="img/servicios/depilacion-laser-hombre.webp"
                     ></BlogItem>
 
                     <div class="col-span-12 px-4">
