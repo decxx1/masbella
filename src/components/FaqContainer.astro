@@ -1,0 +1,18 @@
+---
+import FaqItem from './FaqItem.astro';
+
+export interface FaqProps {
+  faqs: {
+    ask: string;
+    answer: string;
+  }[];
+}
+
+const { faqs } = Astro.props;
+---
+
+<div class="faqs grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+  {faqs.map((faq) => (
+    <FaqItem ask={faq.ask} answer={faq.answer} />
+  ))}
+</div>

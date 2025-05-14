@@ -1,0 +1,37 @@
+---
+const { url } = Astro;
+---
+<section class="col-span-12 py-20">
+    <div class="px-4 features-grid grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-4 justify-center">
+        <div class="text-center">
+            <div class="flex justify-center">
+                <img src={`${url.origin}/img/laser/skin.svg`} alt="Compatible con todo tipo de piel" class="h-16">
+            </div>
+            <p class="text-sm mt-2 font-semibold text-primary-100">COMPATIBLE CON TODO TIPO DE PIEL</p>
+        </div>
+        <div class="text-center">
+            <div class="flex justify-center">
+                <img src={`${url.origin}/img/laser/sun.svg`} alt="Todo el año" class="h-16">
+            </div>
+            <p class="text-sm mt-2 font-semibold text-primary-100">TODO EL AÑO</p>
+        </div>
+        <div class="text-center">
+            <div class="flex justify-center">
+                <img src={`${url.origin}/img/laser/euro.svg`} alt="Cada dos meses" class="h-16">
+            </div>
+            <p class="text-sm mt-2 font-semibold text-primary-100">CADA DOS MESES</p>
+        </div>
+        <div class="text-center">
+            <div class="flex justify-center">
+                <img src={`${url.origin}/img/laser/bono.svg`} alt="Sin bonos" class="h-16">
+            </div>
+            <p class="text-sm mt-2 font-semibold text-primary-100">SIN BONOS</p>
+        </div>
+        <div class="text-center">
+            <div class="flex justify-center">
+                <img src={`${url.origin}/img/laser/laser-diodo.svg`} alt="Láser de diodo" class="h-16">
+            </div>
+            <p class="text-sm mt-2 font-semibold text-primary-100">LÁSER DE DIODO</p>
+        </div>
+    </div>
+</section>

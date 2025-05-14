@@ -2,8 +2,11 @@
 import Layout from '@/layouts/Layout.astro';
 import '@/styles/blog.css';
 import BreadCrumbs from '@/components/BreadCrumbs.astro';
-import PricingTable from '@/components/servicios/PricingTable.astro';
+import PricingTable from '@/components/servicios/PricingTable.astro';  
+import Features from '@/components/servicios/ServicesFeatures.astro';
 import Tips from '@/components/Tips.astro';
+import FaqContainer from '@/components/FaqContainer.astro';
+import LaserInfo from '@/components/servicios/LaserInfo.astro';
 const { url } = Astro;
 ---
 <Layout 
@@ -21,13 +24,21 @@ const { url } = Astro;
             
             <div class="px-4 mb-20">
                 <div class="text-center">
-                    <h2 class="text-primary-100 text-4xl font-bold mt-3">Descubre la libertad de una piel suave y sin vello con nuestra avanzada tecnología de depilación láser</h2>
-                    <p class="bg-primary-100 font-medium text-lg text-white p-4 rounded-lg mt-5">En Más Bella utilizamos equipos de última generación que garantizan resultados duraderos con el máximo confort. Nuestro láser de diodo de alta potencia es compatible con todos los tipos de piel y puede utilizarse durante todo el año, incluso en verano. Olvídate de métodos tradicionales y disfruta de sesiones rápidas, prácticamente indoloras y con resultados visibles desde las primeras sesiones.</p>
+                    <h2 class="text-primary-100 text-4xl font-bold mt-3">Descubre la libertad de una piel suave y sin vello</h2>
+                    <p class="bg-primary-100 font-medium text-lg text-white p-4 rounded-lg mt-5">Olvídate de métodos tradicionales y disfruta de sesiones rápidas, prácticamente indoloras y con resultados visibles desde las primeras sesiones.</p>
                 </div>
-            </div>
-
-                <!-- Sección de precios para mujeres -->
-                
+            </div>  
+            <Features />
+            <!-- Sección de precios para mujeres -->
+            <section class="col-span-12 py-8 w-full sm:w-96 mx-auto">
+                <div class="plan-amigos bg-white rounded-lg shadow sm:shadow-lg p-4 flex sm:flex-row flex-col items-center justify-between">
+                    <div class="flex flex-col justify-center items-center">
+                        <img src={`${url.origin}/img/laser/friends.svg`} alt="Plan amigos" class="h-16">
+                        <span class="font-bold text-primary-100">PLAN AMIGOS</span>
+                    </div>
+                    <div class="text-7xl font-bold text-primary-100">-20%</div>
+                </div>
+            </section>
             <div class="grid grid-cols-12 mt-5">
                 <PricingTable 
                     title="Precios para Mujeres"
@@ -85,48 +96,8 @@ const { url } = Astro;
                         }
                     ]}
                 />
-                <section class="col-span-12 pt-32 w-96 mx-auto">
-                    <div class="plan-amigos bg-white rounded-lg shadow-lg p-4 flex items-center justify-between">
-                        <div class="flex flex-col justify-center items-center">
-                            <img src={`${url.origin}/img/laser/friends.svg`} alt="Plan amigos" class="h-12 mr-4">
-                            <span class="font-bold text-primary-100">PLAN AMIGOS</span>
-                        </div>
-                        <div class="text-7xl font-bold text-primary-100">-20%</div>
-                    </div>
-                </section>
-                <section class="col-span-12 py-20">
-                    <div class="px-4 features-grid grid grid-cols-5 gap-4 justify-center">
-                        <div class="text-center">
-                            <div class="flex justify-center">
-                                <img src={`${url.origin}/img/laser/skin.svg`} alt="Compatible con todo tipo de piel" class="h-16">
-                            </div>
-                            <p class="text-sm mt-2 font-semibold text-primary-100">COMPATIBLE CON TODO TIPO DE PIEL</p>
-                        </div>
-                        <div class="text-center">
-                            <div class="flex justify-center">
-                                <img src={`${url.origin}/img/laser/sun.svg`} alt="Todo el año" class="h-16">
-                            </div>
-                            <p class="text-sm mt-2 font-semibold text-primary-100">TODO EL AÑO</p>
-                        </div>
-                        <div class="text-center">
-                            <div class="flex justify-center">
-                                <img src={`${url.origin}/img/laser/euro.svg`} alt="Cada dos meses" class="h-16">
-                            </div>
-                            <p class="text-sm mt-2 font-semibold text-primary-100">CADA DOS MESES</p>
-                        </div>
-                        <div class="text-center">
-                            <div class="flex justify-center">
-                                <img src={`${url.origin}/img/laser/bono.svg`} alt="Sin bonos" class="h-16">
-                            </div>
-                            <p class="text-sm mt-2 font-semibold text-primary-100">SIN BONOS</p>
-                        </div>
-                        <div class="text-center">
-                            <div class="flex justify-center">
-                                <img src={`${url.origin}/img/laser/laser-diodo.svg`} alt="Láser de diodo" class="h-16">
-                            </div>
-                            <p class="text-sm mt-2 font-semibold text-primary-100">LÁSER DE DIODO</p>
-                        </div>
-                    </div>
+                <section class="col-span-12 py-8">
+                    <LaserInfo />
                 </section>
                 <!-- Preguntas Frecuentes -->
                 <div class="col-span-12 px-4 mt-8">
@@ -134,105 +105,88 @@ const { url } = Astro;
                         <h2 class="text-primary-100">Preguntas Frecuentes</h2>
                     </div>
                     
-                    <div class="faqs grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-                        <div class="faq-item bg-white rounded-lg shadow-lg p-6">
-                            <h3 class="text-xl font-bold text-primary-100 mb-3">¿El láser duele?</h3>
-                            <p>El láser no duele ya que tiene una punta de frío que se enfría a -10 grados, es prácticamente indoloro.</p>
-                        </div>
-                        
-                        <div class="faq-item bg-white rounded-lg shadow-lg p-6">
-                            <h3 class="text-xl font-bold text-primary-100 mb-3">¿Cuántas sesiones necesito para eliminar el vello?</h3>
-                            <p>Las sesiones van a depender del tipo de vello y del color de la piel. Normalmente un tratamiento completo en 12/14 sesiones se elimina en 95% del vello, el resto del 5% es un vello residual.</p>
-                        </div>
-                        
-                        <div class="faq-item bg-white rounded-lg shadow-lg p-6">
-                            <h3 class="text-xl font-bold text-primary-100 mb-3">¿Es compatible con el sol?</h3>
-                            <p>Nuestro láser es compatible con el sol. ☀️ Sin embargo, es importante que 3 días no tomes el sol: el día de antes, el día de la cita y el día de después de tu sesión de láser.</p>
-                        </div>
-                        
-                        <div class="faq-item bg-white rounded-lg shadow-lg p-6">
-                            <h3 class="text-xl font-bold text-primary-100 mb-3">¿A partir de qué edad mi hijo/a se lo puede hacer?</h3>
-                            <p>Las niñas a partir de los 14 años podrán realizarse el láser siempre y cuando tengan la regla controlada mes a mes. Los niños a partir de los 14 años pueden hacerse el láser sin inconveniente.</p>
-                        </div>
-                        
-                        <div class="faq-item bg-white rounded-lg shadow-lg p-6">
-                            <h3 class="text-xl font-bold text-primary-100 mb-3">¿El precio es por bono?</h3>
-                            <p>El precio de nuestros pack es por sesión, nosotros no tenemos bonos.</p>
-                        </div>
-                        
-                        <div class="faq-item bg-white rounded-lg shadow-lg p-6">
-                            <h3 class="text-xl font-bold text-primary-100 mb-3">¿Tengo que rasurarme antes de venir?</h3>
-                            <p>Es super importante que te rasures antes de venir a tu cita del láser, ya que si lo hacemos en el momento podemos irritar la piel.</p>
-                        </div>
-                        
-                        <div class="faq-item bg-white rounded-lg shadow-lg p-6">
-                            <h3 class="text-xl font-bold text-primary-100 mb-3">¿Estoy tomando medicamento, puedo hacer el láser?</h3>
-                            <p>Nuestro láser es compatible con la mayoría de medicamentos, no obstante es importante avisarle a nuestro técnico que lo verifique.</p>
-                        </div>
-                        
-                        <div class="faq-item bg-white rounded-lg shadow-lg p-6">
-                            <h3 class="text-xl font-bold text-primary-100 mb-3">¿Estoy dando el pecho, puedo hacerme el láser?</h3>
-                            <p>Si estás dando el pecho/amamantando a tu bebé tienes que esperar 6 meses para poder realizarte el láser.</p>
-                        </div>
-                        
-                        <div class="faq-item bg-white rounded-lg shadow-lg p-6">
-                            <h3 class="text-xl font-bold text-primary-100 mb-3">¿Estoy con la regla, puedo hacerme el láser?</h3>
-                            <p>Si estás con la regla puedes hacerte la sesión del láser, te pones un tampax y sin problemas. (Recuerda no tomar ibuprofeno las 8 horas antes de tu sesión) puedes tomar paracetamol y sin problemas.</p>
-                        </div>
-                        
-                        <div class="faq-item bg-white rounded-lg shadow-lg p-6">
-                            <h3 class="text-xl font-bold text-primary-100 mb-3">¿El láser facial me pasan cuchilla? ¿Me crecerá más el vello?</h3>
-                            <p>El láser facial se realiza cada mes, es un vello hormonal por lo que no te crecerá más vello por pasarte cuchilla, ¡SIEMPRE Y CUANDO! Continúes con las sesiones. Si estás decidida a dejar la depilación láser es importante que no te vuelvas a rasurar.</p>
-                        </div>
-                        
-                        <div class="faq-item bg-white rounded-lg shadow-lg p-6">
-                            <h3 class="text-xl font-bold text-primary-100 mb-3">¿Si me hago solo una zona me cobran el pack?</h3>
-                            <p>Si te haces una zona que no encuentras en el pack, tenemos también precios por zona suelta.</p>
-                        </div>
-                        
-                        <div class="faq-item bg-white rounded-lg shadow-lg p-6">
-                            <h3 class="text-xl font-bold text-primary-100 mb-3">¿Qué pasa si no vengo rasurado/a?</h3>
-                            <p>Si no vienes rasurado, lo tendremos que hacer en cabina dejando más tiempo la sesión y luego te cobraremos un plus por rasurarte (según qué zona es un precio u otro).</p>
-                        </div>
-                        
-                        <div class="faq-item bg-white rounded-lg shadow-lg p-6">
-                            <h3 class="text-xl font-bold text-primary-100 mb-3">¿Qué pasa si me ha dado el sol?</h3>
-                            <p>Si te ha dado el ☀️ y la piel está irritada (roja) no podremos hacerte el láser, ya que la piel está muy sensible y al pasar el láser podremos dejar consecuencias graves.</p>
-                        </div>
-                        
-                        <div class="faq-item bg-white rounded-lg shadow-lg p-6">
-                            <h3 class="text-xl font-bold text-primary-100 mb-3">¿Qué tipo de láser es?</h3>
-                            <p>Nuestro láser es De Diodo de alta potencia e intensidad, eso significa que es una tecnología avanzada y puede llegar a trabajar en todos tipos de pieles.</p>
-                        </div>
-                        
-                        <div class="faq-item bg-white rounded-lg shadow-lg p-6">
-                            <h3 class="text-xl font-bold text-primary-100 mb-3">¿Tengo mi piel morena/negra, puedo hacerme el láser?</h3>
-                            <p>Sí, eres apta. Tu tratamiento se estirará en el tiempo ya que tenemos que ir con cuidado porque el láser no distingue si es piel o vello, normalmente para tu piel son 36 sesiones.</p>
-                        </div>
-                        
-                        <div class="faq-item bg-white rounded-lg shadow-lg p-6">
-                            <h3 class="text-xl font-bold text-primary-100 mb-3">¿Tengo mi piel blanca pero mis vellos son rubios o pelirrojos, me puedo hacer el láser?</h3>
-                            <p>Sí eres apta. Al igual que las pieles más oscuras, nuestro láser tiene que identificar si tu vello recibe la luz que emite el láser ya que normalmente el vello pelirrojo o inclusive blanco no tiene melanina (color) entonces primero se te hará una prueba para ver si eres apta.</p>
-                        </div>
-                        
-                        <div class="faq-item bg-white rounded-lg shadow-lg p-6">
-                            <h3 class="text-xl font-bold text-primary-100 mb-3">¿Qué pasa si dejo mi tratamiento más de 5/6 meses?</h3>
-                            <p>Si abandonas el tratamiento y lo retomas más adelante es como empezar de 0. Pero no te preocupes que al menos las sesiones que te has dado los folículos están "muertos" por así decirlo y no crecerá ese vello allí.</p>
-                        </div>
-                    </div>
+                    <FaqContainer 
+                        faqs={[
+                            {
+                                ask: "¿El láser duele?",
+                                answer: "El láser no duele ya que tiene una punta de frío que se enfría a -10 grados, es prácticamente indoloro."
+                            },
+                            {
+                                ask: "¿Cuántas sesiones necesito para eliminar el vello?",
+                                answer: "Las sesiones van a depender del tipo de vello y del color de la piel. Normalmente un tratamiento completo en 12/14 sesiones se elimina en 95% del vello, el resto del 5% es un vello residual."
+                            },
+                            {
+                                ask: "¿Es compatible con el sol?",
+                                answer: "Nuestro láser es compatible con el sol. ☀️ Sin embargo, es importante que 3 días no tomes el sol: el día de antes, el día de la cita y el día de después de tu sesión de láser."
+                            },
+                            {
+                                ask: "¿A partir de qué edad mi hijo/a se lo puede hacer?",
+                                answer: "Las niñas a partir de los 14 años podrán realizarse el láser siempre y cuando tengan la regla controlada mes a mes. Los niños a partir de los 14 años pueden hacerse el láser sin inconveniente."
+                            },
+                            {
+                                ask: "¿El precio es por bono?",
+                                answer: "El precio de nuestros pack es por sesión, nosotros no tenemos bonos."
+                            },
+                            {
+                                ask: "¿Tengo que rasurarme antes de venir?",
+                                answer: "Es super importante que te rasures antes de venir a tu cita del láser, ya que si lo hacemos en el momento podemos irritar la piel."
+                            },
+                            {
+                                ask: "¿Estoy tomando medicamento, puedo hacer el láser?",
+                                answer: "Nuestro láser es compatible con la mayoría de medicamentos, no obstante es importante avisarle a nuestro técnico que lo verifique."
+                            },
+                            {
+                                ask: "¿Estoy dando el pecho, puedo hacerme el láser?",
+                                answer: "Si estás dando el pecho/amamantando a tu bebé tienes que esperar 6 meses para poder realizarte el láser."
+                            },
+                            {
+                                ask: "¿Estoy con la regla, puedo hacerme el láser?",
+                                answer: "Si estás con la regla puedes hacerte la sesión del láser, te pones un tampax y sin problemas. (Recuerda no tomar ibuprofeno las 8 horas antes de tu sesión) puedes tomar paracetamol y sin problemas."
+                            },
+                            {
+                                ask: "¿El láser facial me pasan cuchilla? ¿Me crecerá más el vello?",
+                                answer: "El láser facial se realiza cada mes, es un vello hormonal por lo que no te crecerá más vello por pasarte cuchilla, ¡SIEMPRE Y CUANDO! Continúes con las sesiones. Si estás decidida a dejar la depilación láser es importante que no te vuelvas a rasurar."
+                            },
+                            {
+                                ask: "¿Si me hago solo una zona me cobran el pack?",
+                                answer: "Si te haces una zona que no encuentras en el pack, tenemos también precios por zona suelta."
+                            },
+                            {
+                                ask: "¿Qué pasa si no vengo rasurado/a?",
+                                answer: "Si no vienes rasurado, lo tendremos que hacer en cabina dejando más tiempo la sesión y luego te cobraremos un plus por rasurarte (según qué zona es un precio u otro)."
+                            },
+                            {
+                                ask: "¿Qué pasa si me ha dado el sol?",
+                                answer: "Si te ha dado el ☀️ y la piel está irritada (roja) no podremos hacerte el láser, ya que la piel está muy sensible y al pasar el láser podremos dejar consecuencias graves."
+                            },
+                            {
+                                ask: "¿Tengo mi piel morena/negra, puedo hacerme el láser?",
+                                answer: "Sí, eres apta. Tu tratamiento se estirará en el tiempo ya que tenemos que ir con cuidado porque el láser no distingue si es piel o vello, normalmente para tu piel son 36 sesiones."
+                            },
+                            {
+                                ask: "¿Tengo mi piel blanca pero mis vellos son rubios o pelirrojos, me puedo hacer el láser?",
+                                answer: "Sí eres apta. Al igual que las pieles más oscuras, nuestro láser tiene que identificar si tu vello recibe la luz que emite el láser ya que normalmente el vello pelirrojo o inclusive blanco no tiene melanina (color) entonces primero se te hará una prueba para ver si eres apta."
+                            },
+                            {
+                                ask: "¿Qué pasa si dejo mi tratamiento más de 5/6 meses?",
+                                answer: "Si abandonas el tratamiento y lo retomas más adelante es como empezar de 0. Pero no te preocupes que al menos las sesiones que te has dado los folículos están \"muertos\" por así decirlo y no crecerá ese vello allí."
+                            }
+                        ]}
+                    />
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Tips para depilación láser -->
     <Tips
-        title="¿Por qué venir a Más Bella ®?"
-        subTitle1="Alivia el estrés diario"
-        description1="para cuando sientas que necesitas un respiro y relajación."
-        subTitle2="Recupera la energía"
-        description2="Cuando sientas que necesitas un boost de energía para enfrentar el día a día."
-        subTitle3="Mejora tu apariencia"
-        description3="Cuando quieres sentirte más atractivo y mejor contigo mismo."
+        title="Tips para depilación láser"
+        subTitle1="No te depiles con cera"
+        description1="Evitá usar cera o pinzas 3-4 semanas antes"
+        subTitle2="Piel limpia y sin productos"
+        description2="Asistí sin cremas, desodorante ni maquillaje en la zona a tratar para evitar irritaciones."
+        subTitle3="Cuida bien tu piel"
+        description3="Para mantenerla sana y receptiva al tratamiento."
     />
 </Layout>
 
