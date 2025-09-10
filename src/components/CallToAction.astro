@@ -18,9 +18,9 @@ import IconDate from "@/components/icons/Date.astro";
                 <a target="_blank" href={dateLink} class="py-2 px-4 btn-primary rounded-lg btn-masbella button-cta" type="button"><IconDate className="inline-block" /><span class="ml-2">Cita Online</span></a>
             </div>
             <div class="inline-block text-left">
-                <a class="wa__btn_popup cursor-pointer py-2 px-4 btn-primary rounded-lg whatsapp-color button-cta" type="button">
+                <button class="wa__btn_popup cursor-pointer py-2 px-4 btn-primary rounded-lg whatsapp-color button-cta" type="button">
                     <IconWhatsApp className="inline-block" /><span class="ml-2">WhatsApp</span>
-                </a>
+                </button>
             </div>
         </div>
     </div>
@@ -47,6 +47,6 @@ import IconDate from "@/components/icons/Date.astro";
     .whatsapp-color:hover {
         background: white;
         color: #09db09;
-        border: 1px solid #09db09;
+        outline: 1px solid #09db09;
     }
 </style>
