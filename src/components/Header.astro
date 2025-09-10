@@ -25,13 +25,13 @@ const { url } = Astro;
   </div>
   <div id="mobile-menu-wrap"></div>
   <div class="slicknav_menu">
-    <nav class="slicknav_nav slicknav_hidden" role="menu">
+    <nav class="slicknav_nav slicknav_hidden">
       <ul>
-        <li ><a href={url.origin} role="menuitem">Inicio</a></li>
-        <li ><a href={`${url.origin}/servicios`} role="menuitem">Servicios</a></li>
-        <li ><a href={`${url.origin}/about`} role="menuitem">Nosotros</a></li>
-        <li ><a href={`${url.origin}/centros`} role="menuitem">Centros</a></li>
-        <li ><a href={`${url.origin}/franquicias`} role="menuitem">Franquicias</a></li>
+        <li ><a href={url.origin}>Inicio</a></li>
+        <li ><a href={`${url.origin}/servicios`}>Servicios</a></li>
+        <li ><a href={`${url.origin}/about`}>Nosotros</a></li>
+        <li ><a href={`${url.origin}/centros`}>Centros</a></li>
+        <li ><a href={`${url.origin}/franquicias`}>Franquicias</a></li>
       </ul>
     </nav>
   </div>
@@ -40,8 +40,8 @@ const { url } = Astro;
   </div>
  
   <div class="offcanvas__social">
-    <a target="_blank" href={instagram}><IconInstagram /></a>
-    <a target="_blank" href={facebook}><IconFacebook /></a>
+    <a target="_blank" aria-label="ir al Instagram" href={instagram}><IconInstagram /></a>
+    <a target="_blank" aria-label="ir al Facebook" href={facebook}><IconFacebook /></a>
   </div>
 </div>
 

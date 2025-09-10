@@ -142,7 +142,7 @@ ol {
 	text-transform: uppercase;
 }
 
-.section-title h2 {
+.section-title h2,.section-title h3 {
 	color: var(--color-primary);
 	font-weight: 700;
 	margin-top: 8px;
@@ -373,15 +373,15 @@ ol {
 	box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
 }
 
-.latest__item:hover h5 a {
+.latest__item:hover h5 a, .latest__item:hover h4 a {
 	text-decoration: underline;
 }
 
-.latest__item h5 {
+.latest__item h5, .latest__item h4 {
 	margin-bottom: 10px;
 }
 
-.latest__item h5 a {
+.latest__item h5 a, .latest__item h4 a {
 	color: #111111;
 	font-weight: 600;
 	line-height: 24px;
@@ -558,7 +558,7 @@ ol {
 	padding-top: 4px;
 }
 
-.testimonial__author__text h5 {
+.testimonial__author__text h5, .testimonial__author__text h3 {
 	color: #111111;
 	font-weight: 600;
 }

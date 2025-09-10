@@ -20,14 +20,16 @@ const { url } = Astro;
 			<i class="fa--comments"></i>
 		</div>
 		<article>Primera cita Gratis</article>
-		<button type="button" class="wa__btn_popup">
+		<button type="button" class="wa__btn_popup" aria-label="Abrir chat de WhatsApp">
 			<div class="wa__btn_popup_icon"></div>
 		</button>
 		<a
 			target="_blank"
 			href={dateLink}
 			class="tooltip--left date-color"
-			data-tooltip="Cita online"><IconDate /></a
+			data-tooltip="Cita online"
+			aria-label="Pedir cita online"
+			><IconDate /></a
 		>
 		
 	</div>
