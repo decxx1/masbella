@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function Menu({origin}) {
+export default function Menu({ origin }) {
   const [path, setPath] = useState(null);
   useEffect(() => {
     setPath(window.location.pathname);
@@ -33,7 +33,7 @@ export default function Menu({origin}) {
             path === "/contacto" ? "contact-select primary-btn" : "primary-btn"
           }
         >
-          Contacto
+          RESERVA AHORA
         </a>
       </div>
     </div>

@@ -39,20 +39,81 @@ import {
 	metaDescription="¿Tienes alguna duda o pregunta sobre nuestros servicios? Contacta con Más Bella ®, La primer cita es gratis, solicita tu cita hoy mismo sin compromiso."
 	metaImg="https://masbellamedical.com/img/logo-web.png"
 >
-    <BreadCrumbs title="Contacto" />
+    <BreadCrumbs title="Reserva" />
     <section class="bg-[#f8f4f4]">
-        <div class="container mx-auto px-4 pt-8">
-            <div class="section-title text-center">
-                <h2>Escoge tu Centro y <b>Reserva Online</b></h2>
-            </div>
-            <iframe
-                src="https://fwa1.flowww.net/142417/1/appointment"
-                style="width:100%; height:140vh; border:0;"
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                allow="payment *; clipboard-read; clipboard-write">
-            </iframe>
+        <section class="mb-centers">
+  <div class="mb-container">
+    <h2 class="mb-title">Escoge tu centro</h2>
+
+    <div class="mb-grid">
+      <!-- TORRE DEL MAR -->
+      <article class="mb-card">
+        <span class="mb-pill">Torre del Mar</span>
+        <div class="mb-media" role="img" aria-label="Mas Bella Torre del Mar"
+             style="background-image:url('https://eu104.flowww.net/142417/custom_app/APP_000000005.JPG');"></div>
+        <div class="mb-body">
+          <h3>MAS BELLA – Torre del Mar</h3>
+          <p>Tu espacio de depilación láser y estética avanzada en la Axarquía. Reserva tu cita en Torre del Mar.</p>
+          <a target="_blank" class="mb-btn" href="https://fwa1.flowww.net/142417/2/treatment">Reservar ahora</a>
         </div>
+      </article>
+
+      <!-- CÓRDOBA -->
+      <article class="mb-card">
+        <span class="mb-pill">Córdoba</span>
+        <div class="mb-media" role="img" aria-label="Mas Bella Córdoba"
+             style="background-image:url('https://eu104.flowww.net/142417/custom_app/APP_000000007.jpg');"></div>
+        <div class="mb-body">
+          <h3>MAS BELLA – Córdoba</h3>
+          <p>Depilación láser de diodo y estética avanzada, con trato cercano y familiar. Reserva tu cita en Córdoba.</p>
+          <a target="_blank" class="mb-btn" href="https://fwa1.flowww.net/142417/3/treatment">Reservar ahora</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+  :root{
+    --mb-pink:#d80a7c;      /* rosa Mas Bella */
+    --mb-pink-dark:#d80a7c;
+    --mb-text:#d80a7c;
+    --mb-muted:#7a7a7a;
+    --mb-bg:#fff6fa;
+    --mb-radius:18px;
+  }
+
+  .mb-centers{padding:clamp(28px,4vw,56px) 16px;background:#fff;}
+  .mb-container{max-width:1200px;margin:0 auto;}
+  .mb-title{text-align:center;color:var(--mb-text);margin:0 0 28px;}
+  .mb-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:24px;}
+
+  .mb-card{position:relative;display:flex;flex-direction:column;border-radius:var(--mb-radius);background:#fff;
+    box-shadow:0 10px 24px rgba(233,30,99,.12);overflow:hidden;transition:transform .25s, box-shadow .25s;}
+  .mb-card:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(233,30,99,.18);}
+
+  .mb-pill{position:absolute;z-index:2;top:14px;left:14px;background:#fff;color:var(--mb-pink);
+    border:2px solid var(--mb-pink);padding:6px 12px;border-radius:999px;font-weight:600;font-size:13px;
+    box-shadow:0 4px 12px rgba(0,0,0,.06);}
+
+  .mb-media{aspect-ratio:16/9;background:var(--mb-bg) center/cover no-repeat;}
+
+  .mb-body{padding:18px 18px 20px;}
+  .mb-body h3{
+    margin:0 0 8px;
+    font-size:20px;
+    color:#d80a7c !important; /* Rosa corporativo */
+  }
+  .mb-body p{margin:0 0 16px;color:var(--mb-muted);line-height:1.5;}
+
+  .mb-card .mb-btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:5px;
+    background:var(--mb-pink) !important;color:#fff !important;text-decoration:none;font-weight:700;
+    box-shadow:0 10px 18px rgba(233,30,99,.22);transition:background .2s, transform .2s, box-shadow .2s;}
+  .mb-card .mb-btn:hover{background:var(--mb-pink-dark) !important;transform:translateY(-1px);
+    box-shadow:0 12px 22px rgba(233,30,99,.28);}
+  .mb-card .mb-btn:active{transform:translateY(0);}
+</style>
+
     </section>
     <section class="contact spad">
         <div class="container mx-auto px-4">
